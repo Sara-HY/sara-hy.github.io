@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="String to Integer (atoi)Implement atoi which converts a string to an integer.（字符串转32位整形）">
-<meta name="keywords" content="medium,math,string,regular expression">
+  <meta name="description" content="Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M for 1, 5, 10, 50, 100, 500 and 1000.（罗马字符转整数）">
+<meta name="keywords" content="math,string,easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_String to Integer">
-<meta property="og:url" content="https://sara-hy.github.io/2018/11/26/leetcode-StringtoInteger/index.html">
+<meta property="og:title" content="LeetCode_Roman to Integer">
+<meta property="og:url" content="https://sara-hy.github.io/2018/11/29/leetcode-RomantoInteger/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="String to Integer (atoi)Implement atoi which converts a string to an integer.（字符串转32位整形）">
+<meta property="og:description" content="Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M for 1, 5, 10, 50, 100, 500 and 1000.（罗马字符转整数）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_8.png">
-<meta property="og:updated_time" content="2018-11-27T06:25:14.123Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_13.png">
+<meta property="og:updated_time" content="2018-11-29T02:36:18.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_String to Integer">
-<meta name="twitter:description" content="String to Integer (atoi)Implement atoi which converts a string to an integer.（字符串转32位整形）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_8.png">
+<meta name="twitter:title" content="LeetCode_Roman to Integer">
+<meta name="twitter:description" content="Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M for 1, 5, 10, 50, 100, 500 and 1000.（罗马字符转整数）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_13.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/11/26/leetcode-StringtoInteger/">
+  <link rel="canonical" href="https://sara-hy.github.io/2018/11/29/leetcode-RomantoInteger/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_String to Integer | Sara</title>
+  <title>LeetCode_Roman to Integer | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/11/26/leetcode-StringtoInteger/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/11/29/leetcode-RomantoInteger/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_String to Integer
+          <h1 class="post-title" itemprop="name headline">LeetCode_Roman to Integer
               
             
           </h1>
@@ -343,24 +343,12 @@
                 
               
 
-              <time title="Created: 2018-11-26 16:23:21" itemprop="dateCreated datePublished" datetime="2018-11-26T16:23:21+08:00">2018-11-26</time>
+              <time title="Created: 2018-11-29 10:29:41 / Modified: 10:36:18" itemprop="dateCreated datePublished" datetime="2018-11-29T10:29:41+08:00">2018-11-29</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-27 14:25:14" itemprop="dateModified" datetime="2018-11-27T14:25:14+08:00">2018-11-27</time>
               
             
           </span>
@@ -418,17 +406,22 @@
       
 
       
-        <h2 id="String-to-Integer-atoi"><a href="#String-to-Integer-atoi" class="headerlink" title="String to Integer (atoi)"></a><a href="https://leetcode.com/problems/string-to-integer-atoi/" target="_blank" rel="noopener">String to Integer (atoi)</a></h2><p>Implement atoi which converts a string to an integer.<br>（字符串转32位整形）</p>
+        <h1 id="Roman-to-Integer"><a href="#Roman-to-Integer" class="headerlink" title="Roman to Integer"></a><a href="https://leetcode.com/problems/roman-to-integer/" target="_blank" rel="noopener">Roman to Integer</a></h1><p>Roman numerals are represented by seven different symbols: <strong>I, V, X, L, C, D and M</strong> for <strong>1, 5, 10, 50, 100, 500 and 1000</strong>.<br>（罗马字符转整数）</p>
 <a id="more"></a>
-<p>Note:</p>
-<p>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: \([−2^{31},  2^{31} − 1]\). For the purpose of this problem, assume that your function <strong>returns 0 when the reversed integer overflows</strong>.</p>
-<p><strong>Example:</strong></p>
-<div align="center"><br>    <img src="/images/leetcode_8.png" width="500" align="center/"><br></div>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number <strong>four is written as IV</strong>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:</p>
+<ul>
+<li><strong>I</strong> can be placed before <strong>V</strong> (5) and <strong>X</strong> (10) to make 4 and 9. </li>
+<li><strong>X</strong> can be placed before <strong>L</strong> (50) and <strong>C</strong> (100) to make 40 and 90. </li>
+<li><strong>C</strong> can be placed before <strong>D</strong> (500) and <strong>M</strong> (1000) to make 400 and 900.</li>
+<li>Given an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.</li>
+</ul>
+<p><strong>Example:</strong> </p>
+<div align="center"><br>    <img src="/images/leetcode_13.png" width="500" align="center/"><br></div>
 
 
-<h3 id="字符串过滤-正则表达式"><a href="#字符串过滤-正则表达式" class="headerlink" title="字符串过滤-正则表达式"></a>字符串过滤-正则表达式</h3><p>首先删除字符串首尾的空格，通过正则表达式过滤剩下以 “+-0123456789” 开头的句子，提取剩下的字符串首部的数字串，再将其转换为整形。（注意需要将超出范围的部分返回0。）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">myAtoi</span><span class="params">(self, str)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type str: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        string = str.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> re.match(<span class="string">r'^(\-|\+)?\d+'</span>, string):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">       </span><br><span class="line">        INT_MIN = -pow(<span class="number">2</span>, <span class="number">31</span>)</span><br><span class="line">        INT_MAX = pow(<span class="number">2</span>, <span class="number">31</span>) - <span class="number">1</span></span><br><span class="line">        char_string = <span class="string">'+-0123456789'</span></span><br><span class="line">        </span><br><span class="line">        num_string = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> i, char <span class="keyword">in</span> enumerate(string):</span><br><span class="line">            <span class="keyword">if</span> char <span class="keyword">not</span> <span class="keyword">in</span> char_string:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> i != <span class="number">0</span> <span class="keyword">and</span> (char == <span class="string">'+'</span> <span class="keyword">or</span> char == <span class="string">'-'</span>):</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            num_string += char</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> num_string[<span class="number">0</span>] == <span class="string">'-'</span>:</span><br><span class="line">            result = int(num_string[<span class="number">1</span>:])</span><br><span class="line">            result = max(result * - <span class="number">1</span>, INT_MIN)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line">        <span class="keyword">elif</span> num_string[<span class="number">0</span>] == <span class="string">'+'</span>: </span><br><span class="line">            result = int(num_string[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result = int(num_string)</span><br><span class="line">        result = min(result, INT_MAX)  </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-<p><strong>注</strong>：需要考虑 \(+/- \) 出现在数字字符串中间的部分，因此 ‘0-1’ 需要通过<code>if i != 0 and (char == &#39;+&#39; or char == &#39;-&#39;)</code>过滤掉。</p>
+<h3 id="1-遍历字符串-1"><a href="#1-遍历字符串-1" class="headerlink" title="1. 遍历字符串_1"></a>1. 遍历字符串_1</h3><p>遍历整个字符串，其中优先考虑两个字符表示的数值。其时间复杂度为 \(O(n)\)，具体实现过程如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">romanToInt</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        base = &#123;</span><br><span class="line">            <span class="string">'M'</span>: <span class="number">1000</span>,</span><br><span class="line">            <span class="string">'CM'</span>: <span class="number">900</span>,</span><br><span class="line">            <span class="string">'D'</span>: <span class="number">500</span>,</span><br><span class="line">            <span class="string">'CD'</span>: <span class="number">400</span>,</span><br><span class="line">            <span class="string">'C'</span>: <span class="number">100</span>,</span><br><span class="line">            <span class="string">'XC'</span>: <span class="number">90</span>,</span><br><span class="line">            <span class="string">'L'</span>: <span class="number">50</span>,</span><br><span class="line">            <span class="string">'XL'</span>: <span class="number">40</span>,</span><br><span class="line">            <span class="string">'X'</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="string">'IX'</span>: <span class="number">9</span>,</span><br><span class="line">            <span class="string">'V'</span>: <span class="number">5</span>,</span><br><span class="line">            <span class="string">'IV'</span>: <span class="number">4</span>,</span><br><span class="line">            <span class="string">'I'</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        n = len(s)</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; n:</span><br><span class="line">            <span class="keyword">if</span> i &lt; n<span class="number">-1</span> <span class="keyword">and</span> s[i:i+<span class="number">2</span>] <span class="keyword">in</span> base:</span><br><span class="line">                result += base[s[i:i+<span class="number">2</span>]]</span><br><span class="line">                i += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> s[i] <span class="keyword">in</span> base:</span><br><span class="line">                result += base[s[i]]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-遍历字符串-2"><a href="#2-遍历字符串-2" class="headerlink" title="2. 遍历字符串_2"></a>2. 遍历字符串_2</h3><p>直接遍历整个字符串，但是在扫描过程中若出现后面的字符对应的字符大于前面的字符，则减去两倍的前面的字符表示的数值。其时间复杂度为 \(O(n)\)，具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">romanToInt</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        base = &#123;</span><br><span class="line">            <span class="string">'M'</span>:<span class="number">1000</span>,</span><br><span class="line">            <span class="string">'D'</span>:<span class="number">500</span>,</span><br><span class="line">            <span class="string">'C'</span>:<span class="number">100</span>,</span><br><span class="line">            <span class="string">'L'</span>:<span class="number">50</span>,</span><br><span class="line">            <span class="string">'X'</span>:<span class="number">10</span>,</span><br><span class="line">            <span class="string">'V'</span>:<span class="number">5</span>,</span><br><span class="line">            <span class="string">'I'</span>:<span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        temp = <span class="number">0</span></span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> ch <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> base[ch] &gt; temp:</span><br><span class="line">                result -= <span class="number">2</span> * temp</span><br><span class="line">            temp = base[ch]    </span><br><span class="line">            result += temp</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -449,13 +442,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/medium/" rel="tag"># medium</a>
-          
             <a href="/tags/math/" rel="tag"># math</a>
           
             <a href="/tags/string/" rel="tag"># string</a>
           
-            <a href="/tags/regular-expression/" rel="tag"># regular expression</a>
+            <a href="/tags/easy/" rel="tag"># easy</a>
           
         </div>
       
@@ -468,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/26/leetcode-ReverseInteger/" rel="next" title="LeetCode_Reverse Integer">
-                <i class="fa fa-chevron-left"></i> LeetCode_Reverse Integer
+              <a href="/2018/11/28/leetcode-IntegertoRoman/" rel="next" title="LeetCode_Integer to Roman">
+                <i class="fa fa-chevron-left"></i> LeetCode_Integer to Roman
               </a>
             
           </div>
@@ -477,10 +468,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/26/leetcode-PalindromeNumber/" rel="prev" title="LeetCode_Palindrome Number">
-                LeetCode_Palindrome Number <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#String-to-Integer-atoi"><span class="nav-number">1.</span> <span class="nav-text">String to Integer (atoi)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串过滤-正则表达式"><span class="nav-number">1.1.</span> <span class="nav-text">字符串过滤-正则表达式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Roman-to-Integer"><span class="nav-number">1.</span> <span class="nav-text">Roman to Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-遍历字符串-1"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 遍历字符串_1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-遍历字符串-2"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 遍历字符串_2</span></a></li></ol></li></ol></div>
             
 
           </div>
