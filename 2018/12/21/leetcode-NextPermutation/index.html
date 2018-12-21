@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="ZigZag ConversionThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:123P   A   H   NA P L S I I GY   I   R And then read line by line: “PAHNAPLSIIGYIR”.（字符串">
-<meta name="keywords" content="medium,string">
+  <meta name="description" content="Next PermutationImplement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lo">
+<meta name="keywords" content="medium,array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Zig Zag Conversion">
-<meta property="og:url" content="https://sara-hy.github.io/2018/11/26/leetcode-ZigZagConversion/index.html">
+<meta property="og:title" content="LeetCode_Next Permutation">
+<meta property="og:url" content="https://sara-hy.github.io/2018/12/21/leetcode-NextPermutation/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="ZigZag ConversionThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:123P   A   H   NA P L S I I GY   I   R And then read line by line: “PAHNAPLSIIGYIR”.（字符串">
+<meta property="og:description" content="Next PermutationImplement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lo">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_6.png">
-<meta property="og:updated_time" content="2018-11-27T06:25:29.850Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_31.png">
+<meta property="og:updated_time" content="2018-12-21T02:54:15.745Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Zig Zag Conversion">
-<meta name="twitter:description" content="ZigZag ConversionThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:123P   A   H   NA P L S I I GY   I   R And then read line by line: “PAHNAPLSIIGYIR”.（字符串">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_6.png">
+<meta name="twitter:title" content="LeetCode_Next Permutation">
+<meta name="twitter:description" content="Next PermutationImplement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lo">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_31.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/11/26/leetcode-ZigZagConversion/">
+  <link rel="canonical" href="https://sara-hy.github.io/2018/12/21/leetcode-NextPermutation/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Zig Zag Conversion | Sara</title>
+  <title>LeetCode_Next Permutation | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/11/26/leetcode-ZigZagConversion/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/12/21/leetcode-NextPermutation/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Zig Zag Conversion
+          <h1 class="post-title" itemprop="name headline">LeetCode_Next Permutation
               
             
           </h1>
@@ -343,24 +343,12 @@
                 
               
 
-              <time title="Created: 2018-11-26 14:49:30" itemprop="dateCreated datePublished" datetime="2018-11-26T14:49:30+08:00">2018-11-26</time>
+              <time title="Created: 2018-12-21 10:13:55 / Modified: 10:54:15" itemprop="dateCreated datePublished" datetime="2018-12-21T10:13:55+08:00">2018-12-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-27 14:25:29" itemprop="dateModified" datetime="2018-11-27T14:25:29+08:00">2018-11-27</time>
               
             
           </span>
@@ -418,20 +406,19 @@
       
 
       
-        <h2 id="ZigZag-Conversion"><a href="#ZigZag-Conversion" class="headerlink" title="ZigZag Conversion"></a><a href="https://leetcode.com/problems/zigzag-conversion/" target="_blank" rel="noopener">ZigZag Conversion</a></h2><p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P   A   H   N</span><br><span class="line">A P L S I I G</span><br><span class="line">Y   I   R</span><br></pre></td></tr></table></figure></p>
-<p>And then read line by line: “PAHNAPLSIIGYIR”.<br>（字符串ZIGZAG之后按行输出）</p>
+        <h2 id="Next-Permutation"><a href="#Next-Permutation" class="headerlink" title="Next Permutation"></a><a href="https://leetcode.com/problems/next-permutation/" target="_blank" rel="noopener">Next Permutation</a></h2><p>Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order). The replacement must be in-place and use only constant extra memory.<br>（从小到大全排列的下一个）</p>
 <a id="more"></a>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_6.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_31.png" width="500" align="center/"><br></div>
 
-<h3 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h3><p>根据ZigZag的规律，当行数为 numRows 时：</p>
-<ul>
-<li>ZigZag的第 i 行字符的序号为 \(k * (2 * numRows - 2) + i \) ；</li>
-<li>ZigZag的非第一行和最后一行的第 i 行的偶数个字符的序号是 \((k + 1) * (2 * numRows - 2) - i \)；<br>其时间复杂度为 \(O(n)\)，具体实现过程如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">convert</span><span class="params">(self, s, numRows)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type numRows: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> numRows == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        </span><br><span class="line">        result = <span class="string">""</span></span><br><span class="line">        n = len(s)</span><br><span class="line">        add = <span class="number">2</span> * numRows - <span class="number">2</span> </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(numRows):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, n-i, add):</span><br><span class="line">                result += s[i+j]</span><br><span class="line">                <span class="keyword">if</span> (i != <span class="number">0</span> <span class="keyword">and</span> i != numRows<span class="number">-1</span> <span class="keyword">and</span> j+add-i&lt;n):</span><br><span class="line">                    result += s[j+add-i]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>注</strong>：这里需要特别注意的是保证 \(add = 2 * numRows - 2\) 的有效性，因此需要单独考虑 numRows 为1时的情况。</p>
-<h3 id="变步长遍历字符串"><a href="#变步长遍历字符串" class="headerlink" title="变步长遍历字符串"></a>变步长遍历字符串</h3><p>这是一个十分巧妙的思路，仅仅只需要遍历一次字符串。题目的本质可以理解为将字符串分成 numRows 组，然后再连接起来。但是在遍历字符串时，需要根据 ZigZag 的形式来回的遍历，但实质也只遍历了一次。其时间复杂度为 \(O(n)\)，具体实现过程如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">convert</span><span class="params">(self, s, numRows)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type numRows: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        n = len(s)</span><br><span class="line">        <span class="keyword">if</span> numRows == <span class="number">1</span> <span class="keyword">or</span> numRows &gt;= n:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        </span><br><span class="line">        group_list = [<span class="string">""</span>] * numRows</span><br><span class="line"></span><br><span class="line">        index = <span class="number">0</span></span><br><span class="line">        step = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> char <span class="keyword">in</span> s:</span><br><span class="line">            group_list[index] += char</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> index == <span class="number">0</span>:</span><br><span class="line">                step = <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> index == numRows - <span class="number">1</span>:</span><br><span class="line">                step = <span class="number">-1</span></span><br><span class="line">            index += step</span><br><span class="line">           </span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>.join(group_list)</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-后向遍历"><a href="#1-后向遍历" class="headerlink" title="1. 后向遍历"></a>1. 后向遍历</h3><p>整体的思路就是从后向前遍历：</p>
+<ol>
+<li>当遇到第一个数值大于其前面的数值，记录下这个数值，如 [1, 3, 5, 4, 2], 则此时的 i 为2。</li>
+<li>将数组中从i到最后的部分倒序，即变为 [1, 3, 2, 4, 5]。</li>
+<li>再次遍历从i到最后的部分，找到第一个大于 nums[i-1]（此处为3） 的值并交换即可，即为 [1, 4, 2, 3, 5]。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nextPermutation</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: void Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        </span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">                nums.reverse()</span><br><span class="line">                <span class="keyword">return</span> </span><br><span class="line">            <span class="keyword">if</span> nums[i] &gt; nums[i<span class="number">-1</span>]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        j, k = i, n<span class="number">-1</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; k:</span><br><span class="line">            nums[j], nums[k] = nums[k], nums[j]</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">            k -= <span class="number">1</span></span><br><span class="line">      </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i, n):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &gt; nums[i<span class="number">-1</span>]:</span><br><span class="line">                nums[i<span class="number">-1</span>], nums[j] = nums[j], nums[i<span class="number">-1</span>]</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-后向遍历"><a href="#2-后向遍历" class="headerlink" title="2. 后向遍历"></a>2. 后向遍历</h2><p>另一种思路与上述一致，只是交换步骤2和步骤3的顺序。即先找到位置i，并同时找到后续数组中最小的值j，交换值后再倒序。</p>
 
       
     </div>
@@ -454,7 +441,7 @@
           
             <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/string/" rel="tag"># string</a>
+            <a href="/tags/array/" rel="tag"># array</a>
           
         </div>
       
@@ -467,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/26/leetcode-LongestPalindromicSubstring/" rel="next" title="LeetCode_Longest Palindromic Substring">
-                <i class="fa fa-chevron-left"></i> LeetCode_Longest Palindromic Substring
+              <a href="/2018/12/18/leetcode-SubstringwithConcatenationofAllWords/" rel="next" title="LeetCode_Substring with Concatenation of All Words">
+                <i class="fa fa-chevron-left"></i> LeetCode_Substring with Concatenation of All Words
               </a>
             
           </div>
@@ -477,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/26/leetcode-ReverseInteger/" rel="prev" title="LeetCode_Reverse Integer">
-                LeetCode_Reverse Integer <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/21/leetcode-LongestValidParentheses/" rel="prev" title="LeetCode_Longest Valid Parentheses">
+                LeetCode_Longest Valid Parentheses <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ZigZag-Conversion"><span class="nav-number">1.</span> <span class="nav-text">ZigZag Conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#规律"><span class="nav-number">1.1.</span> <span class="nav-text">规律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变步长遍历字符串"><span class="nav-number">1.2.</span> <span class="nav-text">变步长遍历字符串</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-Permutation"><span class="nav-number">1.</span> <span class="nav-text">Next Permutation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-后向遍历"><span class="nav-number">1.1.</span> <span class="nav-text">1. 后向遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-后向遍历"><span class="nav-number">2.</span> <span class="nav-text">2. 后向遍历</span></a></li></ol></div>
             
 
           </div>
