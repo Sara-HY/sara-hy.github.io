@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2018/12/21/leetcode-SearchInsertPosition/</loc>
+    
+    <lastmod>2018-12-21T06:37:52.352Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sara-hy.github.io/2018/12/21/leetcode-FindFirstandLastPositionofElementinSortedArray/</loc>
+    
+    <lastmod>2018-12-21T06:25:23.753Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sara-hy.github.io/2018/12/21/leetcode-SearchinRotatedSortedArray/</loc>
+    
+    <lastmod>2018-12-21T05:57:37.652Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2018/12/21/leetcode-LongestValidParentheses/</loc>
     
     <lastmod>2018-12-21T04:01:02.455Z</lastmod>
