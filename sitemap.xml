@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2018/12/21/leetcode-SudokuSolver/</loc>
+    
+    <lastmod>2018-12-24T09:34:56.128Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sara-hy.github.io/2018/12/21/leetcode-ValidSudoku/</loc>
+    
+    <lastmod>2018-12-21T13:44:57.251Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2018/12/21/leetcode-SearchInsertPosition/</loc>
     
     <lastmod>2018-12-21T06:37:52.352Z</lastmod>
