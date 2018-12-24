@@ -108,27 +108,25 @@
 
 
 
-  <meta name="description" content="Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.（字符串中的最大不重复子串）">
-<meta name="keywords" content="medium,string,hash table,dynamic programming">
+  <meta name="description" content="Count and Say读字符串">
+<meta name="keywords" content="easy,string">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Longest Substring Without Repeating Characters">
-<meta property="og:url" content="https://sara-hy.github.io/2018/11/23/leetcode-LongestSubstringWithoutRepeatingCharacters/index.html">
+<meta property="og:title" content="LeetCode_Count and Say">
+<meta property="og:url" content="https://sara-hy.github.io/2018/12/24/leetcode-CountandSay/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.（字符串中的最大不重复子串）">
+<meta property="og:description" content="Count and Say读字符串">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_3.png">
-<meta property="og:updated_time" content="2018-11-27T06:24:48.995Z">
+<meta property="og:updated_time" content="2018-12-24T10:42:33.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.（字符串中的最大不重复子串）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_3.png">
+<meta name="twitter:title" content="LeetCode_Count and Say">
+<meta name="twitter:description" content="Count and Say读字符串">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/11/23/leetcode-LongestSubstringWithoutRepeatingCharacters/">
+  <link rel="canonical" href="https://sara-hy.github.io/2018/12/24/leetcode-CountandSay/">
 
 
 
@@ -138,7 +136,7 @@
   };
 </script>
 
-  <title>LeetCode_Longest Substring Without Repeating Characters | Sara</title>
+  <title>LeetCode_Count and Say | Sara</title>
   
 
 
@@ -301,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/11/23/leetcode-LongestSubstringWithoutRepeatingCharacters/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/12/24/leetcode-CountandSay/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Longest Substring Without Repeating Characters
+          <h1 class="post-title" itemprop="name headline">LeetCode_Count and Say
               
             
           </h1>
@@ -343,24 +341,12 @@
                 
               
 
-              <time title="Created: 2018-11-23 14:33:59" itemprop="dateCreated datePublished" datetime="2018-11-23T14:33:59+08:00">2018-11-23</time>
+              <time title="Created: 2018-12-24 18:15:52 / Modified: 18:42:33" itemprop="dateCreated datePublished" datetime="2018-12-24T18:15:52+08:00">2018-12-24</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-27 14:24:48" itemprop="dateModified" datetime="2018-11-27T14:24:48+08:00">2018-11-27</time>
               
             
           </span>
@@ -418,19 +404,17 @@
       
 
       
-        <h2 id="Longest-Substring-Without-Repeating-Characters"><a href="#Longest-Substring-Without-Repeating-Characters" class="headerlink" title="Longest Substring Without Repeating Characters"></a><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener">Longest Substring Without Repeating Characters</a></h2><p>Given a string, find the length of the longest substring without repeating characters.<br>（字符串中的最大不重复子串）</p>
+        <h2 id="Count-and-Say"><a href="#Count-and-Say" class="headerlink" title="Count and Say"></a><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="noopener">Count and Say</a></h2><p>读字符串</p>
 <a id="more"></a>
-<p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_3.png" width="500" align="center/"><br></div>
-
-
-<h3 id="1-暴力循环"><a href="#1-暴力循环" class="headerlink" title="1. 暴力循环"></a>1. 暴力循环</h3><p>对字符串进行两轮循环，并在循环的过程中判断两个指针之间的字符串是否包含了重复的字符。其时间复杂度为 \(O(n^3)\)。在测试过程中会 Time Limit Exceeded。</p>
-<h3 id="2-移动窗口-动态规划"><a href="#2-移动窗口-动态规划" class="headerlink" title="2. 移动窗口 / 动态规划"></a>2. 移动窗口 / 动态规划</h3><p>这道题是字符串中的很典型的 DP 问题。构建两个指针i和j，当指针j+1所指的元素在[i, j]中没有出现时，这时的字符串为[i, j+1]；当指针j+1所指的元素在[i, j]中有出现时，这时的字符串为[i+1, j]。另外，构建了一个字典来快速判断元素是否在子串中出现。其时间复杂度为 \(O(2n)\)。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        d = &#123;&#125;</span><br><span class="line">        long = <span class="number">0</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(i &lt; len(s) <span class="keyword">and</span> j &lt; len(s)):</span><br><span class="line">            <span class="keyword">if</span> (s[j] <span class="keyword">not</span> <span class="keyword">in</span> d) <span class="keyword">or</span> (d[s[j]] == <span class="number">0</span>):</span><br><span class="line">                d[s[j]] = <span class="number">1</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">                long = max(long, j-i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                d[s[i]] = <span class="number">0</span></span><br><span class="line">                i += <span class="number">1</span> </span><br><span class="line">        <span class="keyword">return</span> long</span><br></pre></td></tr></table></figure>
-<p>上面那个方法需要对整个字符串遍历两次，另外一种思路就是在字典dict中保存的是字符最后一次出现的下一个元素。指针j来遍历整个字符串，指针i来维护[0, j]中所有字符中最后一次出现的下一个元素，于是[i, j]就是最大不重复子串。其时间复杂度为 \(O(n)\)。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        d = &#123;&#125;</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        long = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; len(s) :</span><br><span class="line">            <span class="keyword">if</span> s[j] <span class="keyword">in</span> d <span class="keyword">and</span> d[s[j]] &gt; i:</span><br><span class="line">                i = d[s[j]]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">            	long = max(long, j - i + <span class="number">1</span>)</span><br><span class="line">            d[s[j]] = j + <span class="number">1</span></span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> long</span><br></pre></td></tr></table></figure>
-<p><strong>注</strong>： 测试的时候考虑字符串为空等临界条件。</p>
-
+<p>这个题目 LeetCode 给的解释和实例 really 让人难以理解。简单来说是这样的：</p>
+<ol>
+<li>n = 1时，返回‘1’</li>
+<li>n = 2时，由于 n-1 为1，且其对应的字符串为‘1’，读作 one 1， 则输出 ‘11’</li>
+<li>n = 3时，由于 n-1 为2，且其对应的字符串为‘11’，读作 two 1， 则输出 ‘21’</li>
+<li>n时，对n-1的对应的字符串读取的过程进行输出。</li>
+</ol>
+<p>这很明显是一个递归的问题，先得到n-1对应的字符串，然后遍历字符串得到相应的读法并输出。具体实现过程如下：</p>
+<h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countAndSay</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'1'</span></span><br><span class="line"></span><br><span class="line">        last_string = self.countAndSay(n<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">        match_char = last_string[<span class="number">0</span>]</span><br><span class="line">        match_count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        result_string = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> char <span class="keyword">in</span> last_string:</span><br><span class="line">            <span class="keyword">if</span> char == match_char:</span><br><span class="line">                match_count += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result_string += str(match_count) + match_char</span><br><span class="line">                match_char = char</span><br><span class="line">                match_count = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        result_string += str(match_count) + match_char</span><br><span class="line">        <span class="keyword">return</span> result_string</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -450,13 +434,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/medium/" rel="tag"># medium</a>
+            <a href="/tags/easy/" rel="tag"># easy</a>
           
             <a href="/tags/string/" rel="tag"># string</a>
-          
-            <a href="/tags/hash-table/" rel="tag"># hash table</a>
-          
-            <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
           
         </div>
       
@@ -469,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/23/leetcode-addtwonumbers/" rel="next" title="LeetCode_Add Two Numbers">
-                <i class="fa fa-chevron-left"></i> LeetCode_Add Two Numbers
+              <a href="/2018/12/21/leetcode-SudokuSolver/" rel="next" title="LeetCode_Sudoku Solver">
+                <i class="fa fa-chevron-left"></i> LeetCode_Sudoku Solver
               </a>
             
           </div>
@@ -478,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/23/leetcode-MedianofTwoSortedArrays/" rel="prev" title="LeetCode_Median of Two Sorted Arrays">
-                LeetCode_Median of Two Sorted Arrays <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -665,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Longest-Substring-Without-Repeating-Characters"><span class="nav-number">1.</span> <span class="nav-text">Longest Substring Without Repeating Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-暴力循环"><span class="nav-number">1.1.</span> <span class="nav-text">1. 暴力循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-移动窗口-动态规划"><span class="nav-number">1.2.</span> <span class="nav-text">2. 移动窗口 / 动态规划</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Count-and-Say"><span class="nav-number">1.</span> <span class="nav-text">Count and Say</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-递归"><span class="nav-number">1.1.</span> <span class="nav-text">1. 递归</span></a></li></ol></li></ol></div>
             
 
           </div>
