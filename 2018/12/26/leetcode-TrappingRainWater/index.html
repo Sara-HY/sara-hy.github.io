@@ -108,20 +108,27 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sara">
-<meta property="og:url" content="https://sara-hy.github.io/archives/2018/page/4/index.html">
+  <meta name="description" content="Trapping Rain WaterGiven n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.（收集雨水）">
+<meta name="keywords" content="array,two pointers,hard,stack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode_Trapping Rain Water">
+<meta property="og:url" content="https://sara-hy.github.io/2018/12/26/leetcode-TrappingRainWater/index.html">
 <meta property="og:site_name" content="Sara">
+<meta property="og:description" content="Trapping Rain WaterGiven n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.（收集雨水）">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_42.png">
+<meta property="og:updated_time" content="2019-01-02T12:08:03.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sara">
+<meta name="twitter:title" content="leetcode_Trapping Rain Water">
+<meta name="twitter:description" content="Trapping Rain WaterGiven n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.（收集雨水）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_42.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/archives/2018/page/4/">
+  <link rel="canonical" href="https://sara-hy.github.io/2018/12/26/leetcode-TrappingRainWater/">
 
 
 
@@ -131,7 +138,7 @@
   };
 </script>
 
-  <title>Archive | Sara</title>
+  <title>leetcode_Trapping Rain Water | Sara</title>
   
 
 
@@ -180,7 +187,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -241,7 +248,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
   </li>
@@ -253,25 +260,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -297,396 +285,223 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 46 posts in total. Keep on posting.
-      </span>
-      
+  
 
-      
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/12/26/leetcode-TrappingRainWater/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sara Han">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sara">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">leetcode_Trapping Rain Water
+              
+            
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-26 11:00:07" itemprop="dateCreated datePublished" datetime="2018-12-26T11:00:07+08:00">2018-12-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-02 20:08:03" itemprop="dateModified" datetime="2019-01-02T20:08:03+08:00">2019-01-02</time>
+              
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/29/leetcode-RomantoInteger/" itemprop="url">
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">LeetCode_Roman to Integer</span>
+                <span class="post-meta-item-text">In</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-29T10:29:41+08:00" content="2018-11-29">
-          11-29
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/28/leetcode-IntegertoRoman/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_Integer to Roman</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-28T15:40:20+08:00" content="2018-11-28">
-          11-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/28/leetcode-ContainerWithMostWater/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_Container With Most Water</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-28T11:20:13+08:00" content="2018-11-28">
-          11-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <h2 id="Trapping-Rain-Water"><a href="#Trapping-Rain-Water" class="headerlink" title="Trapping Rain Water"></a><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="noopener">Trapping Rain Water</a></h2><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.<br>（收集雨水）</p>
+<a id="more"></a>
+<p><strong>Example:</strong></p>
+<div align="center"><br>    <img src="/images/leetcode_42.png" width="500" align="center/"><br></div>
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/26/leetcode-RegularExpressionMatching/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_Regular Expression Matching</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-26T22:13:49+08:00" content="2018-11-26">
-          11-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+<p>根据这个例子我们发现途中的蓝色的方块为6个，即最多蓄水位6。</p>
+<h3 id="两个指针"><a href="#两个指针" class="headerlink" title="两个指针"></a>两个指针</h3><p>蓄水实质上是找从左到右或者从右到左高度下降的地方：<br>设定左右指针 left 和 right，max_left, max_right 分别记录从左到右和从右到左的最大值。</p>
+<ol>
+<li>假设 max_left &lt;= max_right，这时我们从左边向右边看，蓄水值为 max_left - height[left]，更新左指针；</li>
+<li>在 max_left &gt; max_right，这时我们从右边向左边看，蓄水值为 max_right - height[right]，更新右指针；</li>
+</ol>
+<p>最终在 left 和 right 指针相遇时，退出循环，返回所有位置存储水的总量。具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, height)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type height: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> height:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">       </span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        max_left, max_right = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        left, right = <span class="number">0</span>, len(height)<span class="number">-1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            max_left = max(height[left], max_left)</span><br><span class="line">            max_right = max(height[right], max_right)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> max_left &lt;= max_right:</span><br><span class="line">                result += (max_left - height[left])</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result += (max_right - height[right])</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/26/leetcode-PalindromeNumber/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_Palindrome Number</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-26T21:56:36+08:00" content="2018-11-26">
-          11-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/26/leetcode-StringtoInteger/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_String to Integer</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-26T16:23:21+08:00" content="2018-11-26">
-          11-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/26/leetcode-ReverseInteger/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_Reverse Integer</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-26T15:26:31+08:00" content="2018-11-26">
-          11-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/26/leetcode-ZigZagConversion/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_Zig Zag Conversion</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-26T14:49:30+08:00" content="2018-11-26">
-          11-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/26/leetcode-LongestPalindromicSubstring/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_Longest Palindromic Substring</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-26T11:28:13+08:00" content="2018-11-26">
-          11-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/23/leetcode-MedianofTwoSortedArrays/" itemprop="url">
-              
-                <span itemprop="name">LeetCode_Median of Two Sorted Arrays</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-23T18:30:10+08:00" content="2018-11-23">
-          11-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/array/" rel="tag"># array</a>
+          
+            <a href="/tags/two-pointers/" rel="tag"># two pointers</a>
+          
+            <a href="/tags/hard/" rel="tag"># hard</a>
+          
+            <a href="/tags/stack/" rel="tag"># stack</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/25/leetcode-FirstMissingPositive/" rel="next" title="LeetCode_First Missing Positive">
+                <i class="fa fa-chevron-left"></i> LeetCode_First Missing Positive
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2018/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2018/page/5/">5</a><a class="extend next" rel="next" href="/archives/2018/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -707,8 +522,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -827,6 +651,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Trapping-Rain-Water"><span class="nav-number">1.</span> <span class="nav-text">Trapping Rain Water</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两个指针"><span class="nav-number">1.1.</span> <span class="nav-text">两个指针</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -975,6 +815,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 
