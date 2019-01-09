@@ -108,19 +108,19 @@
 
 
 
-  <meta name="description" content="Wildcard MatchingGiven an input string (s) and a pattern (p), implement wildcard pattern matching with support for “?” and “*”.(通配符匹配) “?” Matches any single character.“*” Matches any sequence of char">
+  <meta name="description" content="Wildcard MatchingGiven an input string (s) and a pattern (p), implement wildcard pattern matching with support for “?” and “*”.(通配符匹配)">
 <meta name="keywords" content="back tracking,string,hard,dynamic programming,greedy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode_Wildcard Matching">
 <meta property="og:url" content="https://sara-hy.github.io/2019/01/06/leetcode-WildcardMatching/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Wildcard MatchingGiven an input string (s) and a pattern (p), implement wildcard pattern matching with support for “?” and “*”.(通配符匹配) “?” Matches any single character.“*” Matches any sequence of char">
+<meta property="og:description" content="Wildcard MatchingGiven an input string (s) and a pattern (p), implement wildcard pattern matching with support for “?” and “*”.(通配符匹配)">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://sara-hy.github.io/images/leetcode_44.png">
-<meta property="og:updated_time" content="2019-01-09T03:10:32.933Z">
+<meta property="og:updated_time" content="2019-01-09T04:05:37.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_Wildcard Matching">
-<meta name="twitter:description" content="Wildcard MatchingGiven an input string (s) and a pattern (p), implement wildcard pattern matching with support for “?” and “*”.(通配符匹配) “?” Matches any single character.“*” Matches any sequence of char">
+<meta name="twitter:description" content="Wildcard MatchingGiven an input string (s) and a pattern (p), implement wildcard pattern matching with support for “?” and “*”.(通配符匹配)">
 <meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_44.png">
 
 
@@ -360,7 +360,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-09 11:10:32" itemprop="dateModified" datetime="2019-01-09T11:10:32+08:00">2019-01-09</time>
+                <time title="Modified: 2019-01-09 12:05:37" itemprop="dateModified" datetime="2019-01-09T12:05:37+08:00">2019-01-09</time>
               
             
           </span>
@@ -419,11 +419,11 @@
 
       
         <h2 id="Wildcard-Matching"><a href="#Wildcard-Matching" class="headerlink" title="Wildcard Matching"></a><a href="https://leetcode.com/problems/wildcard-matching/" target="_blank" rel="noopener">Wildcard Matching</a></h2><p>Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for “?” and “*”.<br>(通配符匹配)</p>
+<a id="more"></a>
 <p>“?” Matches any single character.<br>“*” Matches any sequence of characters (including the empty sequence).<br>The matching should cover the entire input string (not partial).</p>
 <p><strong>Note:</strong><br> s could be empty and contains only lowercase letters a-z.<br> p could be empty and contains only lowercase letters a-z, and characters like “?” or “*”.</p>
 <p><strong>Example:</strong></p>
 <div align="center"><br>    <img src="/images/leetcode_44.png" width="500" align="center/"><br></div>
-
 
 <h3 id="1-动态规划"><a href="#1-动态规划" class="headerlink" title="1. 动态规划"></a>1. 动态规划</h3><p>这个题跟之前的字符串匹配类似，不同点在于之前 “*” 可以匹配的是零个至多个<strong>连续的字符</strong>，而这道题目中的 “*” 是可以匹配<strong>任意的字符串</strong>。我们还是可以基于动态规划的思想来解决这道题目，具体解法如下。其中在 pattern 中第 j 个元素为 “*” 时，分为两种情况：</p>
 <ol>
@@ -480,6 +480,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/09/leetcode-JumpGameII/" rel="prev" title="LeetCode_Jump Game II">
+                LeetCode_Jump Game II <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -549,7 +553,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
