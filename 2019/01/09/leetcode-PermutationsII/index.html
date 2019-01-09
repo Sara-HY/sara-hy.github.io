@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Jump Game IIGiven an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your">
-<meta name="keywords" content="array,hard,dynamic programming,greedy">
+  <meta name="description" content="Permutations IIGiven a collection of numbers that might contain duplicates, return all possible unique permutations.(含有重复元素的全排列)">
+<meta name="keywords" content="medium,back tracking">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Jump Game II">
-<meta property="og:url" content="https://sara-hy.github.io/2019/01/09/leetcode-JumpGameII/index.html">
+<meta property="og:title" content="LeetCode_Permutations II">
+<meta property="og:url" content="https://sara-hy.github.io/2019/01/09/leetcode-PermutationsII/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Jump Game IIGiven an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your">
+<meta property="og:description" content="Permutations IIGiven a collection of numbers that might contain duplicates, return all possible unique permutations.(含有重复元素的全排列)">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_45.png">
-<meta property="og:updated_time" content="2019-01-09T05:20:04.503Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_47.png">
+<meta property="og:updated_time" content="2019-01-09T06:07:12.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Jump Game II">
-<meta name="twitter:description" content="Jump Game IIGiven an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_45.png">
+<meta name="twitter:title" content="LeetCode_Permutations II">
+<meta name="twitter:description" content="Permutations IIGiven a collection of numbers that might contain duplicates, return all possible unique permutations.(含有重复元素的全排列)">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_47.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/01/09/leetcode-JumpGameII/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/01/09/leetcode-PermutationsII/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Jump Game II | Sara</title>
+  <title>LeetCode_Permutations II | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/01/09/leetcode-JumpGameII/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/01/09/leetcode-PermutationsII/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Jump Game II
+          <h1 class="post-title" itemprop="name headline">LeetCode_Permutations II
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-01-09 11:14:52 / Modified: 13:20:04" itemprop="dateCreated datePublished" datetime="2019-01-09T11:14:52+08:00">2019-01-09</time>
+              <time title="Created: 2019-01-09 13:51:06 / Modified: 14:07:12" itemprop="dateCreated datePublished" datetime="2019-01-09T13:51:06+08:00">2019-01-09</time>
             
 
             
@@ -406,17 +406,14 @@
       
 
       
-        <h2 id="Jump-Game-II"><a href="#Jump-Game-II" class="headerlink" title="Jump Game II"></a><a href="https://leetcode.com/problems/jump-game-ii/" target="_blank" rel="noopener">Jump Game II</a></h2><p>Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps.<br>(跳棋游戏II)</p>
+        <h2 id="Permutations-II"><a href="#Permutations-II" class="headerlink" title="Permutations II"></a><a href="https://leetcode.com/problems/permutations-ii/" target="_blank" rel="noopener">Permutations II</a></h2><p>Given a collection of numbers that might <strong>contain duplicates</strong>, return all possible unique permutations.<br>(含有重复元素的全排列)</p>
 <a id="more"></a>
-<p><strong>Note:</strong><br> You can assume that you can always reach the last index.</p>
 <p><strong>Example:</strong></p>
-<div align="center"><br>    <img src="/images/leetcode_45.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_47.png" width="500" align="center/"><br></div>
 
 
-<h3 id="1-动态规划"><a href="#1-动态规划" class="headerlink" title="1. 动态规划"></a>1. 动态规划</h3><p>从后向前遍历数组，根据 i+1 ~ nums[i]+i 需要跳的步数来得到当前需要跳的最小步数。具体实现如下：<br><strong>Note:</strong> 特别需要注意的是在 nums 数组中为 0 的情况，需要单独考虑，否则上述的数组子集为空。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jump</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        jumps = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[i] == <span class="number">0</span>:</span><br><span class="line">                jumps[i] = n + <span class="number">1</span> </span><br><span class="line">            <span class="keyword">elif</span> nums[i] + i &gt;= n<span class="number">-1</span>:</span><br><span class="line">                jumps[i] = jumps[n<span class="number">-1</span>] + <span class="number">1</span> </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                jumps[i] = min(jumps[i+<span class="number">1</span>: i + nums[i] + <span class="number">1</span>]) + <span class="number">1</span></span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> jumps[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<h3 id="2-贪心算法"><a href="#2-贪心算法" class="headerlink" title="2. 贪心算法"></a>2. 贪心算法</h3><p>题目中说明了所有测试数据都有解，而且不需要知道具体的是如何到达最后一格的。可以通过贪心的思想从左向右遍历，每次都可获得到目前为止可以到达的最远的位置 curr_max_index；在遍历过程中，若当前的位置 i 超过了上一次跳动得到的最远的的位置 last_max_index ，则增加跳动的步数。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jump</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        step = <span class="number">0</span></span><br><span class="line">        last_max_index = <span class="number">0</span></span><br><span class="line">        curr_max_index = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> (i &gt; last_max_index):</span><br><span class="line">                step += <span class="number">1</span></span><br><span class="line">                last_max_index = curr_max_index</span><br><span class="line">            curr_max_index = max(curr_max_index, nums[i] + i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> step</span><br></pre></td></tr></table></figure>
+<h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><p>按照我们平时求全排列的思路，在选取数组中的某个数时，计算剩下的数组的全排列，具体实现方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">permuteUnique</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> len(nums) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> [nums]</span><br><span class="line"></span><br><span class="line">        results = []	</span><br><span class="line">        <span class="keyword">for</span> i, item <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            new_nums = nums[<span class="number">0</span>:i] + nums[i+<span class="number">1</span>:]</span><br><span class="line">            remain_results = self.permuteUnique(new_nums)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> len(remain_results[<span class="number">0</span>]) == <span class="number">1</span>:</span><br><span class="line">                result = [item, remain_results[<span class="number">0</span>][<span class="number">0</span>]]</span><br><span class="line">                <span class="keyword">if</span> result <span class="keyword">not</span> <span class="keyword">in</span> results:</span><br><span class="line">                    results.append(result)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> items <span class="keyword">in</span> remain_results:</span><br><span class="line">                    result = [item] + [data <span class="keyword">for</span> data <span class="keyword">in</span> items]</span><br><span class="line">                    <span class="keyword">if</span> result <span class="keyword">not</span> <span class="keyword">in</span> results:</span><br><span class="line">                        results.append(result)</span><br><span class="line">        <span class="keyword">return</span> results</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -436,13 +433,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/array/" rel="tag"># array</a>
+            <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/hard/" rel="tag"># hard</a>
-          
-            <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
-          
-            <a href="/tags/greedy/" rel="tag"># greedy</a>
+            <a href="/tags/back-tracking/" rel="tag"># back tracking</a>
           
         </div>
       
@@ -455,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/06/leetcode-WildcardMatching/" rel="next" title="LeetCode_Wildcard Matching">
-                <i class="fa fa-chevron-left"></i> LeetCode_Wildcard Matching
+              <a href="/2019/01/09/leetcode-Permutations/" rel="next" title="LeetCode_Permutations">
+                <i class="fa fa-chevron-left"></i> LeetCode_Permutations
               </a>
             
           </div>
@@ -464,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/09/leetcode-Permutations/" rel="prev" title="LeetCode_Permutations">
-                LeetCode_Permutations <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -653,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jump-Game-II"><span class="nav-number">1.</span> <span class="nav-text">Jump Game II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-动态规划"><span class="nav-number">1.1.</span> <span class="nav-text">1. 动态规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-贪心算法"><span class="nav-number">1.2.</span> <span class="nav-text">2. 贪心算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Permutations-II"><span class="nav-number">1.</span> <span class="nav-text">Permutations II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-递归"><span class="nav-number">1.1.</span> <span class="nav-text">1. 递归</span></a></li></ol></li></ol></div>
             
 
           </div>
