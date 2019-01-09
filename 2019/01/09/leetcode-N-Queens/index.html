@@ -108,20 +108,20 @@
 
 
 
-  <meta name="description" content="N-QueensThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题)">
+  <meta name="description" content="N-QueensThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题，求所有解)">
 <meta name="keywords" content="back tracking,hard">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode_N-Queens">
 <meta property="og:url" content="https://sara-hy.github.io/2019/01/09/leetcode-N-Queens/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="N-QueensThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题)">
+<meta property="og:description" content="N-QueensThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题，求所有解)">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://sara-hy.github.io/images/leetcode_51_1.png">
 <meta property="og:image" content="https://sara-hy.github.io/images/leetcode_51.png">
-<meta property="og:updated_time" content="2019-01-09T14:04:10.516Z">
+<meta property="og:updated_time" content="2019-01-09T14:12:45.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_N-Queens">
-<meta name="twitter:description" content="N-QueensThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题)">
+<meta name="twitter:description" content="N-QueensThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题，求所有解)">
 <meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_51_1.png">
 
 
@@ -344,7 +344,7 @@
                 
               
 
-              <time title="Created: 2019-01-09 15:26:07 / Modified: 22:04:10" itemprop="dateCreated datePublished" datetime="2019-01-09T15:26:07+08:00">2019-01-09</time>
+              <time title="Created: 2019-01-09 15:26:07 / Modified: 22:12:45" itemprop="dateCreated datePublished" datetime="2019-01-09T15:26:07+08:00">2019-01-09</time>
             
 
             
@@ -407,7 +407,7 @@
       
 
       
-        <h2 id="N-Queens"><a href="#N-Queens" class="headerlink" title="N-Queens"></a><a href="https://leetcode.com/problems/n-queens/" target="_blank" rel="noopener">N-Queens</a></h2><p>The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.<br>(N皇后的问题)</p>
+        <h2 id="N-Queens"><a href="#N-Queens" class="headerlink" title="N-Queens"></a><a href="https://leetcode.com/problems/n-queens/" target="_blank" rel="noopener">N-Queens</a></h2><p>The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.<br>(N皇后的问题，求所有解)</p>
 <div align="center"><br>    <img src="/images/leetcode_51_1.png" width="200" align="center/"><br></div>
 
 <a id="more"></a>
@@ -417,7 +417,7 @@
 
 
 <h3 id="1-回溯法"><a href="#1-回溯法" class="headerlink" title="1. 回溯法"></a>1. 回溯法</h3><p>类似于这种解空间可以用树表示，且存在某种约束条件的问题可以用回溯法求解。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(self, _i, _j)</span>:</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">			<span class="keyword">for</span> j <span class="keyword">in</span> range(self.n):</span><br><span class="line">				<span class="keyword">if</span> self.matrix[i][j] == <span class="string">'Q'</span>:</span><br><span class="line">					<span class="keyword">if</span> j == _j <span class="keyword">or</span> abs(_i - i) == abs(_j - j):</span><br><span class="line">						<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, i)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> (i == self.n):</span><br><span class="line">			self.count += <span class="number">1</span></span><br><span class="line">			result = []</span><br><span class="line">			<span class="keyword">for</span> row <span class="keyword">in</span> self.matrix:</span><br><span class="line">				result.append(<span class="string">''</span>.join(row))</span><br><span class="line">			self.result.append(result)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">for</span> j <span class="keyword">in</span> range(self.n):</span><br><span class="line">				<span class="keyword">if</span> self.check(i, j):</span><br><span class="line">					self.matrix[i][j] = <span class="string">'Q'</span></span><br><span class="line">					self.dfs(i+<span class="number">1</span>)</span><br><span class="line">					self.matrix[i][j] = <span class="string">'.'</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">solveNQueens</span><span class="params">(self, n)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		:type n: int</span></span><br><span class="line"><span class="string">		:rtype: List[List[str]]</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		self.n = n</span><br><span class="line">		self.result = []</span><br><span class="line">		self.count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">		self.matrix = [[<span class="string">'.'</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.n)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.n)]</span><br><span class="line"></span><br><span class="line">		self.dfs(<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> self.result</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(self, matrix, _i, _j)</span>:</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">			<span class="keyword">for</span> j <span class="keyword">in</span> range(self.n):</span><br><span class="line">				<span class="keyword">if</span> matrix[i][j] == <span class="string">'Q'</span>:</span><br><span class="line">					<span class="keyword">if</span> j == _j <span class="keyword">or</span> abs(_i - i) == abs(_j - j):</span><br><span class="line">						<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, i, matrix)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> (i == self.n):</span><br><span class="line">			result = []</span><br><span class="line">			<span class="keyword">for</span> row <span class="keyword">in</span> matrix:</span><br><span class="line">				result.append(<span class="string">''</span>.join(row))</span><br><span class="line">			self.result.append(result)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">for</span> j <span class="keyword">in</span> range(self.n):</span><br><span class="line">				<span class="keyword">if</span> self.check(matrix, i, j):</span><br><span class="line">					matrix[i][j] = <span class="string">'Q'</span></span><br><span class="line">					self.dfs(i+<span class="number">1</span>, matrix)</span><br><span class="line">					matrix[i][j] = <span class="string">'.'</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">solveNQueens</span><span class="params">(self, n)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		:type n: int</span></span><br><span class="line"><span class="string">		:rtype: List[List[str]]</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		self.n = n</span><br><span class="line">		self.result = []</span><br><span class="line"></span><br><span class="line">		matrix = [[<span class="string">'.'</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.n)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.n)]</span><br><span class="line"></span><br><span class="line">		self.dfs(<span class="number">0</span>, matrix)</span><br><span class="line">		<span class="keyword">return</span> self.result</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -462,6 +462,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/09/leetcode-N-QueensII/" rel="prev" title="LeetCode_N-Queens II">
+                LeetCode_N-Queens II <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,7 +535,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">56</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
