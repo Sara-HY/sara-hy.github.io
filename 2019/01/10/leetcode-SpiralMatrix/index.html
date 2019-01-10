@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.（字符串中的最大不重复子串）">
-<meta name="keywords" content="medium,hash table,string,dynamic programming">
+  <meta name="description" content="Spiral MatrixGiven a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.（螺旋式遍历矩阵）">
+<meta name="keywords" content="medium,array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Longest Substring Without Repeating Characters">
-<meta property="og:url" content="https://sara-hy.github.io/2018/11/23/leetcode-LongestSubstringWithoutRepeatingCharacters/index.html">
+<meta property="og:title" content="LeetCode_Spiral Matrix">
+<meta property="og:url" content="https://sara-hy.github.io/2019/01/10/leetcode-SpiralMatrix/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.（字符串中的最大不重复子串）">
+<meta property="og:description" content="Spiral MatrixGiven a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.（螺旋式遍历矩阵）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_3.png">
-<meta property="og:updated_time" content="2018-11-27T06:24:48.995Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_54.png">
+<meta property="og:updated_time" content="2019-01-10T10:55:17.449Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.（字符串中的最大不重复子串）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_3.png">
+<meta name="twitter:title" content="LeetCode_Spiral Matrix">
+<meta name="twitter:description" content="Spiral MatrixGiven a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.（螺旋式遍历矩阵）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_54.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/11/23/leetcode-LongestSubstringWithoutRepeatingCharacters/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/01/10/leetcode-SpiralMatrix/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Longest Substring Without Repeating Characters | Sara</title>
+  <title>LeetCode_Spiral Matrix | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/11/23/leetcode-LongestSubstringWithoutRepeatingCharacters/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/01/10/leetcode-SpiralMatrix/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Longest Substring Without Repeating Characters
+          <h1 class="post-title" itemprop="name headline">LeetCode_Spiral Matrix
               
             
           </h1>
@@ -343,24 +343,12 @@
                 
               
 
-              <time title="Created: 2018-11-23 14:33:59" itemprop="dateCreated datePublished" datetime="2018-11-23T14:33:59+08:00">2018-11-23</time>
+              <time title="Created: 2019-01-10 18:00:36 / Modified: 18:55:17" itemprop="dateCreated datePublished" datetime="2019-01-10T18:00:36+08:00">2019-01-10</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-27 14:24:48" itemprop="dateModified" datetime="2018-11-27T14:24:48+08:00">2018-11-27</time>
               
             
           </span>
@@ -418,18 +406,15 @@
       
 
       
-        <h2 id="Longest-Substring-Without-Repeating-Characters"><a href="#Longest-Substring-Without-Repeating-Characters" class="headerlink" title="Longest Substring Without Repeating Characters"></a><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener">Longest Substring Without Repeating Characters</a></h2><p>Given a string, find the length of the longest substring without repeating characters.<br>（字符串中的最大不重复子串）</p>
+        <h2 id="Spiral-Matrix"><a href="#Spiral-Matrix" class="headerlink" title="Spiral Matrix"></a><a href="https://leetcode.com/problems/spiral-matrix/" target="_blank" rel="noopener">Spiral Matrix</a></h2><p>Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.<br>（螺旋式遍历矩阵）</p>
 <a id="more"></a>
-<p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_3.png" width="500" align="center/"><br></div>
+<p><strong>Example:</strong></p>
+<div align="center"><br>    <img src="/images/leetcode_54.png" width="500" align="center/"><br></div>
 
-
-<h3 id="1-暴力循环"><a href="#1-暴力循环" class="headerlink" title="1. 暴力循环"></a>1. 暴力循环</h3><p>对字符串进行两轮循环，并在循环的过程中判断两个指针之间的字符串是否包含了重复的字符。其时间复杂度为 \(O(n^3)\)。在测试过程中会 Time Limit Exceeded。</p>
-<h3 id="2-移动窗口-动态规划"><a href="#2-移动窗口-动态规划" class="headerlink" title="2. 移动窗口 / 动态规划"></a>2. 移动窗口 / 动态规划</h3><p>这道题是字符串中的很典型的 DP 问题。构建两个指针i和j，当指针j+1所指的元素在[i, j]中没有出现时，这时的字符串为[i, j+1]；当指针j+1所指的元素在[i, j]中有出现时，这时的字符串为[i+1, j]。另外，构建了一个字典来快速判断元素是否在子串中出现。其时间复杂度为 \(O(2n)\)。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        d = &#123;&#125;</span><br><span class="line">        long = <span class="number">0</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(i &lt; len(s) <span class="keyword">and</span> j &lt; len(s)):</span><br><span class="line">            <span class="keyword">if</span> (s[j] <span class="keyword">not</span> <span class="keyword">in</span> d) <span class="keyword">or</span> (d[s[j]] == <span class="number">0</span>):</span><br><span class="line">                d[s[j]] = <span class="number">1</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">                long = max(long, j-i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                d[s[i]] = <span class="number">0</span></span><br><span class="line">                i += <span class="number">1</span> </span><br><span class="line">        <span class="keyword">return</span> long</span><br></pre></td></tr></table></figure>
-<p>上面那个方法需要对整个字符串遍历两次，另外一种思路就是在字典dict中保存的是字符最后一次出现的下一个元素。指针j来遍历整个字符串，指针i来维护[0, j]中所有字符中最后一次出现的下一个元素，于是[i, j]就是最大不重复子串。其时间复杂度为 \(O(n)\)。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        d = &#123;&#125;</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        long = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; len(s) :</span><br><span class="line">            <span class="keyword">if</span> s[j] <span class="keyword">in</span> d <span class="keyword">and</span> d[s[j]] &gt; i:</span><br><span class="line">                i = d[s[j]]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">            	long = max(long, j - i + <span class="number">1</span>)</span><br><span class="line">            d[s[j]] = j + <span class="number">1</span></span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> long</span><br></pre></td></tr></table></figure>
-<p><strong>注</strong>： 测试的时候考虑字符串为空等临界条件。</p>
+<h3 id="1-方向模拟"><a href="#1-方向模拟" class="headerlink" title="1. 方向模拟"></a>1. 方向模拟</h3><p>实现定义四个方向，按照题中的螺旋式的方向在遍历矩阵过程中遇到边界时不断的修改方向并，修改新的边界。具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spiralOrder</span><span class="params">(self, matrix)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        </span><br><span class="line">        m = len(matrix)</span><br><span class="line">        n = len(matrix[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        direction = &#123;</span><br><span class="line">            <span class="string">'right'</span>: [<span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">            <span class="string">'down'</span>: [<span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">            <span class="string">'left'</span>: [<span class="number">0</span>, <span class="number">-1</span>],</span><br><span class="line">            <span class="string">'up'</span>: [<span class="number">-1</span>, <span class="number">0</span>]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        answer = []</span><br><span class="line">        i, j = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        direct = <span class="string">'right'</span></span><br><span class="line">        left_border, right_border, up_border, down_border = <span class="number">0</span>, n<span class="number">-1</span>, <span class="number">0</span>, m<span class="number">-1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> len(answer) &lt; m * n:</span><br><span class="line">            answer.append(matrix[i][j])</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> i==up_border <span class="keyword">and</span> j==right_border <span class="keyword">and</span> direct==<span class="string">'right'</span>:</span><br><span class="line">                direct = <span class="string">'down'</span></span><br><span class="line">                up_border += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> i==down_border <span class="keyword">and</span> j==right_border <span class="keyword">and</span> direct==<span class="string">'down'</span>:</span><br><span class="line">                direct = <span class="string">'left'</span></span><br><span class="line">                right_border -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> i==down_border <span class="keyword">and</span> j==left_border <span class="keyword">and</span> direct==<span class="string">'left'</span>:</span><br><span class="line">                direct = <span class="string">'up'</span></span><br><span class="line">                down_border -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> i==up_border <span class="keyword">and</span> j==left_border <span class="keyword">and</span> direct==<span class="string">'up'</span>:</span><br><span class="line">                direct = <span class="string">'right'</span></span><br><span class="line">                left_border += <span class="number">1</span> </span><br><span class="line">            i += direction[direct][<span class="number">0</span>]</span><br><span class="line">            j += direction[direct][<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+<h3 id="2-zip函数"><a href="#2-zip函数" class="headerlink" title="2. zip函数"></a>2. zip函数</h3><p>在看别人的简单解法中发现用zip不断地旋转矩阵，每次都获得矩阵的第一行就是螺旋式遍历的结果。具体实现方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spiralOrder</span><span class="params">(self, matrix)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        answer = []</span><br><span class="line">        <span class="keyword">while</span> matrix:</span><br><span class="line">            answer += matrix.pop(<span class="number">0</span>)</span><br><span class="line">            matrix = [*zip(*matrix)][::<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -452,11 +437,7 @@
           
             <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/hash-table/" rel="tag"># hash table</a>
-          
-            <a href="/tags/string/" rel="tag"># string</a>
-          
-            <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
+            <a href="/tags/array/" rel="tag"># array</a>
           
         </div>
       
@@ -469,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/23/leetcode-addtwonumbers/" rel="next" title="LeetCode_Add Two Numbers">
-                <i class="fa fa-chevron-left"></i> LeetCode_Add Two Numbers
+              <a href="/2019/01/09/leetcode-MaximumSubarray/" rel="next" title="LeetCode_Maximum Subarray">
+                <i class="fa fa-chevron-left"></i> LeetCode_Maximum Subarray
               </a>
             
           </div>
@@ -478,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/23/leetcode-MedianofTwoSortedArrays/" rel="prev" title="LeetCode_Median of Two Sorted Arrays">
-                LeetCode_Median of Two Sorted Arrays <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -665,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Longest-Substring-Without-Repeating-Characters"><span class="nav-number">1.</span> <span class="nav-text">Longest Substring Without Repeating Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-暴力循环"><span class="nav-number">1.1.</span> <span class="nav-text">1. 暴力循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-移动窗口-动态规划"><span class="nav-number">1.2.</span> <span class="nav-text">2. 移动窗口 / 动态规划</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spiral-Matrix"><span class="nav-number">1.</span> <span class="nav-text">Spiral Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-方向模拟"><span class="nav-number">1.1.</span> <span class="nav-text">1. 方向模拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-zip函数"><span class="nav-number">1.2.</span> <span class="nav-text">2. zip函数</span></a></li></ol></li></ol></div>
             
 
           </div>
