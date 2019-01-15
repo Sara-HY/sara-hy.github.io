@@ -117,7 +117,7 @@
 <meta property="og:description" content="Rotate ImageYou are given an nxn 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).(顺时针旋转矩阵90度)">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://sara-hy.github.io/images/leetcode_48.png">
-<meta property="og:updated_time" content="2019-01-09T06:46:54.231Z">
+<meta property="og:updated_time" content="2019-01-14T10:53:29.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_Rotate Image">
 <meta name="twitter:description" content="Rotate ImageYou are given an nxn 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).(顺时针旋转矩阵90度)">
@@ -343,12 +343,24 @@
                 
               
 
-              <time title="Created: 2019-01-09 14:08:24 / Modified: 14:46:54" itemprop="dateCreated datePublished" datetime="2019-01-09T14:08:24+08:00">2019-01-09</time>
+              <time title="Created: 2019-01-09 14:08:24" itemprop="dateCreated datePublished" datetime="2019-01-09T14:08:24+08:00">2019-01-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-14 18:53:29" itemprop="dateModified" datetime="2019-01-14T18:53:29+08:00">2019-01-14</time>
               
             
           </span>
@@ -414,7 +426,7 @@
 
 
 <h3 id="1-矩阵转置-翻转行"><a href="#1-矩阵转置-翻转行" class="headerlink" title="1. 矩阵转置 + 翻转行"></a>1. 矩阵转置 + 翻转行</h3><p>为了在不使用额外空间的情况下实现矩阵的顺时针旋转，可将其变化转变为矩阵的转置，然后对每一行进行翻转。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, matrix)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: void Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        n = len(matrix)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, n):</span><br><span class="line">                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n//<span class="number">2</span>):</span><br><span class="line">                matrix[i][j], matrix[i][n<span class="number">-1</span>-j] = matrix[i][n<span class="number">-1</span>-j], matrix[i][j]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, matrix)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type matrix: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: void Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        n = len(matrix)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, n):</span><br><span class="line">                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n//<span class="number">2</span>):</span><br><span class="line">                matrix[i][j], matrix[i][n<span class="number">-1</span>-j] = matrix[i][n<span class="number">-1</span>-j], matrix[i][j]</span><br><span class="line">            <span class="comment"># matrix[i][:] = matrix[i][::-1]</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -531,7 +543,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">65</span>
+                    <span class="site-state-item-count">66</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
