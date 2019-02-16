@@ -108,28 +108,27 @@
 
 
 
-  <meta name="description" content="Valid SudokuDetermine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules.（数独盘有效性判断）">
-<meta name="keywords" content="medium,hashed table">
+  <meta name="description" content="Set Matrix ZeroesGiven a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.（设置矩阵整行&amp;amp;列为0）">
+<meta name="keywords" content="medium,array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Valid Sudoku">
-<meta property="og:url" content="https://sara-hy.github.io/2018/12/21/leetcode-ValidSudoku/index.html">
+<meta property="og:title" content="LeetCode_Set Matrix Zeroes">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/16/leetcode-SetMatrixZeroes/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Valid SudokuDetermine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules.（数独盘有效性判断）">
+<meta property="og:description" content="Set Matrix ZeroesGiven a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.（设置矩阵整行&amp;amp;列为0）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_36_1.png">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_36.png">
-<meta property="og:updated_time" content="2018-12-21T13:44:57.251Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_73.png">
+<meta property="og:updated_time" content="2019-02-16T13:34:02.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Valid Sudoku">
-<meta name="twitter:description" content="Valid SudokuDetermine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules.（数独盘有效性判断）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_36_1.png">
+<meta name="twitter:title" content="LeetCode_Set Matrix Zeroes">
+<meta name="twitter:description" content="Set Matrix ZeroesGiven a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.（设置矩阵整行&amp;amp;列为0）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_73.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/12/21/leetcode-ValidSudoku/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/16/leetcode-SetMatrixZeroes/">
 
 
 
@@ -139,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Valid Sudoku | Sara</title>
+  <title>LeetCode_Set Matrix Zeroes | Sara</title>
   
 
 
@@ -302,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/12/21/leetcode-ValidSudoku/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/16/leetcode-SetMatrixZeroes/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -319,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Valid Sudoku
+          <h1 class="post-title" itemprop="name headline">LeetCode_Set Matrix Zeroes
               
             
           </h1>
@@ -344,7 +343,7 @@
                 
               
 
-              <time title="Created: 2018-12-21 20:56:51 / Modified: 21:44:57" itemprop="dateCreated datePublished" datetime="2018-12-21T20:56:51+08:00">2018-12-21</time>
+              <time title="Created: 2019-02-16 21:13:21 / Modified: 21:34:02" itemprop="dateCreated datePublished" datetime="2019-02-16T21:13:21+08:00">2019-02-16</time>
             
 
             
@@ -407,30 +406,12 @@
       
 
       
-        <h2 id="Valid-Sudoku"><a href="#Valid-Sudoku" class="headerlink" title="Valid Sudoku"></a><a href="https://leetcode.com/problems/valid-sudoku/" target="_blank" rel="noopener">Valid Sudoku</a></h2><p>Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules.<br>（数独盘有效性判断）<br><a id="more"></a></p>
-<ol>
-<li>Each row must contain the digits 1-9 without repetition.</li>
-<li>Each column must contain the digits 1-9 without repetition.</li>
-<li>Each of the 9 <code>3x3</code> sub-boxes of the grid must contain the digits 1-9 without repetition.</li>
-</ol>
-<div align="center"><br>    <img src="/images/leetcode_36_1.png" width="300" align="center/"><br></div>
+        <h2 id="Set-Matrix-Zeroes"><a href="#Set-Matrix-Zeroes" class="headerlink" title="Set Matrix Zeroes"></a><a href="https://leetcode.com/problems/set-matrix-zeroes/" target="_blank" rel="noopener">Set Matrix Zeroes</a></h2><p>Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.<br>（设置矩阵整行&amp;列为0）</p>
+<a id="more"></a>
+<p><strong>Example:</strong></p>
+<div align="center"><br>    <img src="/images/leetcode_73.png" width="500" align="center/"><br></div>
 
-<p><strong>Note:</strong></p>
-<ol>
-<li>A Sudoku board (partially filled) could be valid but is not necessarily solvable.</li>
-<li>Only the filled cells need to be validated according to the mentioned rules.</li>
-<li>The given board contain only digits 1-9 and the character ‘.’.</li>
-<li>The given board size is always 9x9.</li>
-</ol>
-<p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_36.png" width="500" align="center/"><br></div>
-
-
-<h3 id="1-依次check"><a href="#1-依次check" class="headerlink" title="1. 依次check"></a>1. 依次check</h3><p>根据题中设定的要求逐一排查，一旦检测到不符合标准的部分就返回 False。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isListValid</span><span class="params">(self, list)</span>:</span></span><br><span class="line">        clean = [i <span class="keyword">for</span> i <span class="keyword">in</span> list <span class="keyword">if</span> i != <span class="string">'.'</span>]</span><br><span class="line">        s = set(clean)</span><br><span class="line">        <span class="keyword">return</span> len(s) == len(clean)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidSudoku</span><span class="params">(self, board)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type board: List[List[str]]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># row check </span></span><br><span class="line">        <span class="keyword">for</span> list <span class="keyword">in</span> board:</span><br><span class="line">            <span class="keyword">if</span> self.isListValid(list) == <span class="keyword">False</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># column check</span></span><br><span class="line">        <span class="keyword">for</span> list <span class="keyword">in</span> zip(*board):</span><br><span class="line">            <span class="keyword">if</span> self.isListValid(list) == <span class="keyword">False</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            </span><br><span class="line">        <span class="comment"># square check</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">9</span>, <span class="number">3</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">9</span>, <span class="number">3</span>):</span><br><span class="line">                list = [board[x][y] <span class="keyword">for</span> x <span class="keyword">in</span> range(i, i + <span class="number">3</span>) <span class="keyword">for</span> y <span class="keyword">in</span> range(j, j + <span class="number">3</span>)]</span><br><span class="line">                <span class="keyword">if</span> self.isListValid(list) == <span class="keyword">False</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-使用Hash-Map"><a href="#2-使用Hash-Map" class="headerlink" title="2. 使用Hash Map"></a>2. 使用Hash Map</h3><p>只需要遍历一次矩阵，在遍历过程中保存每个的数值的行、列的index，并保存数值属于9个正方形中的哪一个（i//3, j//3）。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidSudoku</span><span class="params">(self, board)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type board: List[List[str]]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        </span><br><span class="line">        dict = &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i, row <span class="keyword">in</span> enumerate(board):</span><br><span class="line">            <span class="keyword">for</span> j, ch <span class="keyword">in</span> enumerate(row):</span><br><span class="line">                <span class="keyword">if</span> ch == <span class="string">'.'</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">if</span> ch <span class="keyword">in</span> dict:</span><br><span class="line">                    result_index = dict[ch]</span><br><span class="line">                    <span class="keyword">for</span> index <span class="keyword">in</span> result_index:</span><br><span class="line">                        <span class="keyword">if</span> index[<span class="number">0</span>] == i <span class="keyword">or</span> index[<span class="number">1</span>] == j <span class="keyword">or</span> index[<span class="number">2</span>] == (i//<span class="number">3</span>, j//<span class="number">3</span>):</span><br><span class="line">                            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">                    dict[ch].append([i, j, (i//<span class="number">3</span>, j//<span class="number">3</span>)])</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dict[ch] = [[i, j, (i//<span class="number">3</span>, j//<span class="number">3</span>)]]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="1-遍历矩阵，集合维护“0”的行列号"><a href="#1-遍历矩阵，集合维护“0”的行列号" class="headerlink" title="1. 遍历矩阵，集合维护“0”的行列号"></a>1. 遍历矩阵，集合维护“0”的行列号</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setZeroes</span><span class="params">(self, matrix: <span class="string">'List[List[int]]'</span>)</span> -&gt; '<span class="keyword">None</span>':</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        m, n = len(matrix), len(matrix[<span class="number">0</span>])</span><br><span class="line">        </span><br><span class="line">        columns = set()</span><br><span class="line">        rows = set()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j] == <span class="number">0</span>:</span><br><span class="line">                    columns.add(j)</span><br><span class="line">                    rows.add(i)</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> rows:</span><br><span class="line">            <span class="comment"># matrix[i] = [0]*n</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                matrix[i][j] = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> columns:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">                matrix[i][j] = <span class="number">0</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -452,7 +433,7 @@
           
             <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/hashed-table/" rel="tag"># hashed table</a>
+            <a href="/tags/array/" rel="tag"># array</a>
           
         </div>
       
@@ -465,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/21/leetcode-SearchInsertPosition/" rel="next" title="LeetCode_Search Insert Position">
-                <i class="fa fa-chevron-left"></i> LeetCode_Search Insert Position
+              <a href="/2019/02/16/leetcode-SimplifyPath/" rel="next" title="LeetCode_Simplify Path">
+                <i class="fa fa-chevron-left"></i> LeetCode_Simplify Path
               </a>
             
           </div>
@@ -474,10 +455,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/21/leetcode-SudokuSolver/" rel="prev" title="LeetCode_Sudoku Solver">
-                LeetCode_Sudoku Solver <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -661,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Valid-Sudoku"><span class="nav-number">1.</span> <span class="nav-text">Valid Sudoku</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-依次check"><span class="nav-number">1.1.</span> <span class="nav-text">1. 依次check</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用Hash-Map"><span class="nav-number">1.2.</span> <span class="nav-text">2. 使用Hash Map</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-Matrix-Zeroes"><span class="nav-number">1.</span> <span class="nav-text">Set Matrix Zeroes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-遍历矩阵，集合维护“0”的行列号"><span class="nav-number">1.1.</span> <span class="nav-text">1. 遍历矩阵，集合维护“0”的行列号</span></a></li></ol></li></ol></div>
             
 
           </div>
