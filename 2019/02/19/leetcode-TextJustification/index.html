@@ -108,28 +108,27 @@
 
 
 
-  <meta name="description" content="N-Queens IIThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题，求解个数)">
-<meta name="keywords" content="back tracking,hard">
+  <meta name="description" content="Text JustificationGiven a linked list, swap every two adjacent nodes and return its head.（文本左右对齐）">
+<meta name="keywords" content="string,hard">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_N-Queens II">
-<meta property="og:url" content="https://sara-hy.github.io/2019/01/09/leetcode-N-QueensII/index.html">
+<meta property="og:title" content="LeetCode_Text Justification">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/19/leetcode-TextJustification/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="N-Queens IIThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题，求解个数)">
+<meta property="og:description" content="Text JustificationGiven a linked list, swap every two adjacent nodes and return its head.（文本左右对齐）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_51_1.png">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_52.png">
-<meta property="og:updated_time" content="2019-01-09T14:21:07.444Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_68.png">
+<meta property="og:updated_time" content="2019-02-19T09:30:02.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_N-Queens II">
-<meta name="twitter:description" content="N-Queens IIThe n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.(N皇后的问题，求解个数)">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_51_1.png">
+<meta name="twitter:title" content="LeetCode_Text Justification">
+<meta name="twitter:description" content="Text JustificationGiven a linked list, swap every two adjacent nodes and return its head.（文本左右对齐）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_68.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/01/09/leetcode-N-QueensII/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/19/leetcode-TextJustification/">
 
 
 
@@ -139,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_N-Queens II | Sara</title>
+  <title>LeetCode_Text Justification | Sara</title>
   
 
 
@@ -302,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/01/09/leetcode-N-QueensII/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/19/leetcode-TextJustification/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -319,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_N-Queens II
+          <h1 class="post-title" itemprop="name headline">LeetCode_Text Justification
               
             
           </h1>
@@ -344,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-01-09 22:06:26 / Modified: 22:21:07" itemprop="dateCreated datePublished" datetime="2019-01-09T22:06:26+08:00">2019-01-09</time>
+              <time title="Created: 2019-02-19 14:46:55 / Modified: 17:30:02" itemprop="dateCreated datePublished" datetime="2019-02-19T14:46:55+08:00">2019-02-19</time>
             
 
             
@@ -407,16 +406,21 @@
       
 
       
-        <h2 id="N-Queens-II"><a href="#N-Queens-II" class="headerlink" title="N-Queens II"></a><a href="https://leetcode.com/problems/n-queens-ii/" target="_blank" rel="noopener">N-Queens II</a></h2><p>The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.<br>(N皇后的问题，求解个数)</p>
-<div align="center"><br>    <img src="/images/leetcode_51_1.png" width="200" align="center/"><br></div>
-
+        <h2 id="Text-Justification"><a href="#Text-Justification" class="headerlink" title="Text Justification"></a><a href="https://leetcode.com/problems/text-justification/" target="_blank" rel="noopener">Text Justification</a></h2><p>Given a linked list, swap every two adjacent nodes and return its head.<br>（文本左右对齐）</p>
 <a id="more"></a>
-<p>Given an integer n, return all distinct solutions to the n-queens puzzle. Each solution contains a distinct board configuration of the n-queens’ placement, where ‘Q’ and ‘.’ both indicate a queen and an empty space respectively.</p>
 <p><strong>Example:</strong></p>
-<div align="center"><br>    <img src="/images/leetcode_52.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_68.png" width="500" align="center/"><br></div>
 
-<h3 id="1-回溯法"><a href="#1-回溯法" class="headerlink" title="1. 回溯法"></a>1. 回溯法</h3><p>与前一题方法相同，只需将具体的解法保存。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(self, matrix, _i, _j)</span>:</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">			<span class="keyword">for</span> j <span class="keyword">in</span> range(self.n):</span><br><span class="line">				<span class="keyword">if</span> matrix[i][j] == <span class="string">'Q'</span>:</span><br><span class="line">					<span class="keyword">if</span> j == _j <span class="keyword">or</span> abs(_i - i) == abs(_j - j):</span><br><span class="line">						<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, i, matrix)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> (i == self.n):</span><br><span class="line">			self.count += <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">for</span> j <span class="keyword">in</span> range(self.n):</span><br><span class="line">				<span class="keyword">if</span> self.check(matrix, i, j):</span><br><span class="line">					matrix[i][j] = <span class="string">'Q'</span></span><br><span class="line">					self.dfs(i+<span class="number">1</span>, matrix)</span><br><span class="line">					matrix[i][j] = <span class="string">'.'</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">totalNQueens</span><span class="params">(self, n)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		:type n: int</span></span><br><span class="line"><span class="string">		:rtype: List[List[str]]</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		self.n = n</span><br><span class="line">		self.count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">		matrix = [[<span class="string">'.'</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.n)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.n)]</span><br><span class="line"></span><br><span class="line">		self.dfs(<span class="number">0</span>, matrix)</span><br><span class="line">		<span class="keyword">return</span> self.count</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串遍历"><a href="#字符串遍历" class="headerlink" title="字符串遍历"></a>字符串遍历</h3><p>具体考虑分析需要分为以下几步：</p>
+<ol>
+<li>计算每行最多显示单词的数量，记录起始单词位置（结束指针单词不包含在内），这里要注意，单词与单词之间的都要求有空格，所以除了开始的单词，每个单词的长度还要加1 </li>
+<li>计算显示每句话需要的空格的数量 </li>
+<li>计算每句话中单词之间需要均匀填充的空格数量。这里要注意最后一行不需要进行均匀填充，不能均匀填充的空格数量要记录下来，优先分给左边的单词间空格 </li>
+<li>按照之前计算好的空格数量将单词连接成语句。 </li>
+<li>要考虑到最后一句是在最右端填充所有的空格</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fullJustify</span><span class="params">(self, words, maxWidth)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type words: List[str]</span></span><br><span class="line"><span class="string">        :type maxWidth: int</span></span><br><span class="line"><span class="string">        :rtype: List[str]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        ans = []</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; len(words):</span><br><span class="line">            size = <span class="number">0</span></span><br><span class="line">            begin = i</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 确定每行的单词数</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; len(words):</span><br><span class="line">                newsize = len(words[i]) <span class="keyword">if</span> size == <span class="number">0</span> <span class="keyword">else</span> size + len(words[i]) + <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> newsize &lt;= maxWidth: </span><br><span class="line">                    size = newsize</span><br><span class="line">                    i += <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 计算需要的剩余的空格数</span></span><br><span class="line">            spaceCount = maxWidth - size</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 计算每个单词需要的分配的单词数</span></span><br><span class="line">            <span class="keyword">if</span> i - <span class="number">1</span> - begin &gt; <span class="number">0</span> <span class="keyword">and</span> i &lt; len(words):</span><br><span class="line">            	<span class="comment"># 不是最后一行</span></span><br><span class="line">                everyCount = spaceCount // (i - <span class="number">1</span> - begin)</span><br><span class="line">                spaceCount %= (i - <span class="number">1</span> - begin)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">            	<span class="comment"># 最后一行</span></span><br><span class="line">                everyCount = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 根据空格数重新构建输出</span></span><br><span class="line">            j = begin</span><br><span class="line">            s = <span class="string">''</span></span><br><span class="line">            <span class="keyword">while</span> j &lt; i:</span><br><span class="line">                <span class="keyword">if</span> j &gt; begin:</span><br><span class="line">                    s += <span class="string">' '</span> * (everyCount + <span class="number">1</span>)</span><br><span class="line">                    <span class="comment"># 无法均匀分配的空格优先分配给左边</span></span><br><span class="line">                    <span class="keyword">if</span> spaceCount &gt; <span class="number">0</span> <span class="keyword">and</span> i &lt; len(words):</span><br><span class="line">                        s += <span class="string">' '</span></span><br><span class="line">                        spaceCount -= <span class="number">1</span></span><br><span class="line">                s += words[j]</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            s += <span class="string">' '</span> * spaceCount</span><br><span class="line">            </span><br><span class="line">            ans.append(s)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -436,7 +440,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/back-tracking/" rel="tag"># back tracking</a>
+            <a href="/tags/string/" rel="tag"># string</a>
           
             <a href="/tags/hard/" rel="tag"># hard</a>
           
@@ -451,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/09/leetcode-N-Queens/" rel="next" title="LeetCode_N-Queens">
-                <i class="fa fa-chevron-left"></i> LeetCode_N-Queens
+              <a href="/2019/02/16/leetcode-SetMatrixZeroes/" rel="next" title="LeetCode_Set Matrix Zeroes">
+                <i class="fa fa-chevron-left"></i> LeetCode_Set Matrix Zeroes
               </a>
             
           </div>
@@ -460,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/09/leetcode-MaximumSubarray/" rel="prev" title="LeetCode_Maximum Subarray">
-                LeetCode_Maximum Subarray <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -647,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#N-Queens-II"><span class="nav-number">1.</span> <span class="nav-text">N-Queens II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-回溯法"><span class="nav-number">1.1.</span> <span class="nav-text">1. 回溯法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-Justification"><span class="nav-number">1.</span> <span class="nav-text">Text Justification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串遍历"><span class="nav-number">1.1.</span> <span class="nav-text">字符串遍历</span></a></li></ol></li></ol></div>
             
 
           </div>
