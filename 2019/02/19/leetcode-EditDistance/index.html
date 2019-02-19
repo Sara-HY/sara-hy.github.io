@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="ZigZag ConversionThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:123P   A   H   NA P L S I I GY   I   R And then read line by line: “PAHNAPLSIIGYIR”.（字符串">
-<meta name="keywords" content="medium,string">
+  <meta name="description" content="Edit DistanceGiven two words word1 and word2, find the minimum number of operations required to convert word1 to word2.（计算编辑距离）">
+<meta name="keywords" content="string,dynamic programming,hard">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Zig Zag Conversion">
-<meta property="og:url" content="https://sara-hy.github.io/2018/11/26/leetcode-ZigZagConversion/index.html">
+<meta property="og:title" content="LeetCode_Edit Distance">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/19/leetcode-EditDistance/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="ZigZag ConversionThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:123P   A   H   NA P L S I I GY   I   R And then read line by line: “PAHNAPLSIIGYIR”.（字符串">
+<meta property="og:description" content="Edit DistanceGiven two words word1 and word2, find the minimum number of operations required to convert word1 to word2.（计算编辑距离）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_6.png">
-<meta property="og:updated_time" content="2018-11-27T06:25:29.850Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_72.png">
+<meta property="og:updated_time" content="2019-02-19T16:16:18.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Zig Zag Conversion">
-<meta name="twitter:description" content="ZigZag ConversionThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:123P   A   H   NA P L S I I GY   I   R And then read line by line: “PAHNAPLSIIGYIR”.（字符串">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_6.png">
+<meta name="twitter:title" content="LeetCode_Edit Distance">
+<meta name="twitter:description" content="Edit DistanceGiven two words word1 and word2, find the minimum number of operations required to convert word1 to word2.（计算编辑距离）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_72.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/11/26/leetcode-ZigZagConversion/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/19/leetcode-EditDistance/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Zig Zag Conversion | Sara</title>
+  <title>LeetCode_Edit Distance | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/11/26/leetcode-ZigZagConversion/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/19/leetcode-EditDistance/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Zig Zag Conversion
+          <h1 class="post-title" itemprop="name headline">LeetCode_Edit Distance
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2018-11-26 14:49:30" itemprop="dateCreated datePublished" datetime="2018-11-26T14:49:30+08:00">2018-11-26</time>
+              <time title="Created: 2019-02-19 17:31:37" itemprop="dateCreated datePublished" datetime="2019-02-19T17:31:37+08:00">2019-02-19</time>
             
 
             
@@ -360,7 +360,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-27 14:25:29" itemprop="dateModified" datetime="2018-11-27T14:25:29+08:00">2018-11-27</time>
+                <time title="Modified: 2019-02-20 00:16:18" itemprop="dateModified" datetime="2019-02-20T00:16:18+08:00">2019-02-20</time>
               
             
           </span>
@@ -418,21 +418,20 @@
       
 
       
-        <h2 id="ZigZag-Conversion"><a href="#ZigZag-Conversion" class="headerlink" title="ZigZag Conversion"></a><a href="https://leetcode.com/problems/zigzag-conversion/" target="_blank" rel="noopener">ZigZag Conversion</a></h2><p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P   A   H   N</span><br><span class="line">A P L S I I G</span><br><span class="line">Y   I   R</span><br></pre></td></tr></table></figure></p>
-<p>And then read line by line: “PAHNAPLSIIGYIR”.<br>（字符串ZIGZAG之后按行输出）</p>
+        <h2 id="Edit-Distance"><a href="#Edit-Distance" class="headerlink" title="Edit Distance"></a><a href="https://leetcode.com/problems/edit-distance/" target="_blank" rel="noopener">Edit Distance</a></h2><p>Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.<br>（计算编辑距离）</p>
 <a id="more"></a>
-<p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_6.png" width="500" align="center/"><br></div>
+<p>You have the following 3 operations permitted on a word:</p>
+<ol>
+<li>Insert a character</li>
+<li>Delete a character</li>
+<li>Replace a character</li>
+</ol>
+<p><strong>Example:</strong></p>
+<div align="center"><br>    <img src="/images/leetcode_72.png" width="500" align="center/"><br></div>
 
-<h3 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h3><p>根据ZigZag的规律，当行数为 numRows 时：</p>
-<ul>
-<li>ZigZag的第 i 行字符的序号为 \(k * (2 * numRows - 2) + i \) ；</li>
-<li>ZigZag的非第一行和最后一行的第 i 行的偶数个字符的序号是 \((k + 1) * (2 * numRows - 2) - i \)；<br>其时间复杂度为 \(O(n)\)，具体实现过程如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">convert</span><span class="params">(self, s, numRows)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type numRows: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> numRows == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        </span><br><span class="line">        result = <span class="string">""</span></span><br><span class="line">        n = len(s)</span><br><span class="line">        add = <span class="number">2</span> * numRows - <span class="number">2</span> </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(numRows):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, n-i, add):</span><br><span class="line">                result += s[i+j]</span><br><span class="line">                <span class="keyword">if</span> (i != <span class="number">0</span> <span class="keyword">and</span> i != numRows<span class="number">-1</span> <span class="keyword">and</span> j+add-i&lt;n):</span><br><span class="line">                    result += s[j+add-i]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>注</strong>：这里需要特别注意的是保证 \(add = 2 * numRows - 2\) 的有效性，因此需要单独考虑 numRows 为1时的情况。</p>
-<h3 id="变步长遍历字符串"><a href="#变步长遍历字符串" class="headerlink" title="变步长遍历字符串"></a>变步长遍历字符串</h3><p>这是一个十分巧妙的思路，仅仅只需要遍历一次字符串。题目的本质可以理解为将字符串分成 numRows 组，然后再连接起来。但是在遍历字符串时，需要根据 ZigZag 的形式来回的遍历，但实质也只遍历了一次。其时间复杂度为 \(O(n)\)，具体实现过程如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">convert</span><span class="params">(self, s, numRows)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type numRows: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        n = len(s)</span><br><span class="line">        <span class="keyword">if</span> numRows == <span class="number">1</span> <span class="keyword">or</span> numRows &gt;= n:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        </span><br><span class="line">        group_list = [<span class="string">""</span>] * numRows</span><br><span class="line"></span><br><span class="line">        index = <span class="number">0</span></span><br><span class="line">        step = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> char <span class="keyword">in</span> s:</span><br><span class="line">            group_list[index] += char</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> index == <span class="number">0</span>:</span><br><span class="line">                step = <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> index == numRows - <span class="number">1</span>:</span><br><span class="line">                step = <span class="number">-1</span></span><br><span class="line">            index += step</span><br><span class="line">           </span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>.join(group_list)</span><br></pre></td></tr></table></figure></p>
 
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>很明显的动态规划的题目，问题就在于需要分类讨论。具体的讨论情况在code的注释部分有详细解释。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minDistance</span><span class="params">(self, word1: <span class="string">'str'</span>, word2: <span class="string">'str'</span>)</span> -&gt; 'int':</span></span><br><span class="line">        len1 = len(word1)</span><br><span class="line">        len2 = len(word2)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Create a table to store results of subproblems </span></span><br><span class="line">        dp = [[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(len1 + <span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(len2 + <span class="number">1</span>)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len2 + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len1 + <span class="number">1</span>):</span><br><span class="line">            	<span class="comment"># word1 is empty, insert all chars</span></span><br><span class="line">                <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">                    dp[i][j] = j</span><br><span class="line">                <span class="comment"># word2 is empty, remove all chars</span></span><br><span class="line">                <span class="keyword">elif</span> j == <span class="number">0</span>:</span><br><span class="line">                    dp[i][j] = i</span><br><span class="line">                <span class="comment"># last chars are same</span></span><br><span class="line">                <span class="keyword">elif</span> word2[i<span class="number">-1</span>] == word1[j<span class="number">-1</span>]:</span><br><span class="line">                    dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>]</span><br><span class="line">                <span class="comment"># last chars are different, min(insert, remove, replace)</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] = <span class="number">1</span> + min(dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j], dp[i<span class="number">-1</span>][j<span class="number">-1</span>])</span><br><span class="line">                </span><br><span class="line">        <span class="comment"># return dp[len2][len1]</span></span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -452,9 +451,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/medium/" rel="tag"># medium</a>
-          
             <a href="/tags/string/" rel="tag"># string</a>
+          
+            <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
+          
+            <a href="/tags/hard/" rel="tag"># hard</a>
           
         </div>
       
@@ -467,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/26/leetcode-LongestPalindromicSubstring/" rel="next" title="LeetCode_Longest Palindromic Substring">
-                <i class="fa fa-chevron-left"></i> LeetCode_Longest Palindromic Substring
+              <a href="/2019/02/19/leetcode-TextJustification/" rel="next" title="LeetCode_Text Justification">
+                <i class="fa fa-chevron-left"></i> LeetCode_Text Justification
               </a>
             
           </div>
@@ -476,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/26/leetcode-ReverseInteger/" rel="prev" title="LeetCode_Reverse Integer">
-                LeetCode_Reverse Integer <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -663,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ZigZag-Conversion"><span class="nav-number">1.</span> <span class="nav-text">ZigZag Conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#规律"><span class="nav-number">1.1.</span> <span class="nav-text">规律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变步长遍历字符串"><span class="nav-number">1.2.</span> <span class="nav-text">变步长遍历字符串</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Edit-Distance"><span class="nav-number">1.</span> <span class="nav-text">Edit Distance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态规划"><span class="nav-number">1.1.</span> <span class="nav-text">动态规划</span></a></li></ol></li></ol></div>
             
 
           </div>
