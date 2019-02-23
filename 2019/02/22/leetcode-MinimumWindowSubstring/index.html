@@ -108,28 +108,27 @@
 
 
 
-  <meta name="description" content="Sudoku SolverWrite a program to solve a Sudoku puzzle by filling the empty cells.（求解数独盘）">
-<meta name="keywords" content="back tracking,hard,hashed table">
+  <meta name="description" content="Minimum Window SubstringGiven a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).（包含字符串的最小窗口）">
+<meta name="keywords" content="two pointers,hash table,string,hard">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Sudoku Solver">
-<meta property="og:url" content="https://sara-hy.github.io/2018/12/21/leetcode-SudokuSolver/index.html">
+<meta property="og:title" content="LeetCode_Minimum Window Substring">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/22/leetcode-MinimumWindowSubstring/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Sudoku SolverWrite a program to solve a Sudoku puzzle by filling the empty cells.（求解数独盘）">
+<meta property="og:description" content="Minimum Window SubstringGiven a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).（包含字符串的最小窗口）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_36_1.png">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_37.png">
-<meta property="og:updated_time" content="2018-12-24T09:34:56.128Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_76.png">
+<meta property="og:updated_time" content="2019-02-23T05:56:18.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Sudoku Solver">
-<meta name="twitter:description" content="Sudoku SolverWrite a program to solve a Sudoku puzzle by filling the empty cells.（求解数独盘）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_36_1.png">
+<meta name="twitter:title" content="LeetCode_Minimum Window Substring">
+<meta name="twitter:description" content="Minimum Window SubstringGiven a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).（包含字符串的最小窗口）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_76.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/12/21/leetcode-SudokuSolver/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/22/leetcode-MinimumWindowSubstring/">
 
 
 
@@ -139,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Sudoku Solver | Sara</title>
+  <title>LeetCode_Minimum Window Substring | Sara</title>
   
 
 
@@ -302,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/12/21/leetcode-SudokuSolver/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/22/leetcode-MinimumWindowSubstring/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -319,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Sudoku Solver
+          <h1 class="post-title" itemprop="name headline">LeetCode_Minimum Window Substring
               
             
           </h1>
@@ -344,7 +343,7 @@
                 
               
 
-              <time title="Created: 2018-12-21 21:42:03" itemprop="dateCreated datePublished" datetime="2018-12-21T21:42:03+08:00">2018-12-21</time>
+              <time title="Created: 2019-02-22 18:31:19" itemprop="dateCreated datePublished" datetime="2019-02-22T18:31:19+08:00">2019-02-22</time>
             
 
             
@@ -361,7 +360,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-24 17:34:56" itemprop="dateModified" datetime="2018-12-24T17:34:56+08:00">2018-12-24</time>
+                <time title="Modified: 2019-02-23 13:56:18" itemprop="dateModified" datetime="2019-02-23T13:56:18+08:00">2019-02-23</time>
               
             
           </span>
@@ -419,34 +418,18 @@
       
 
       
-        <h2 id="Sudoku-Solver"><a href="#Sudoku-Solver" class="headerlink" title="Sudoku Solver"></a><a href="https://leetcode.com/problems/sudoku-solver/" target="_blank" rel="noopener">Sudoku Solver</a></h2><p>Write a program to solve a Sudoku puzzle by filling the empty cells.<br>（求解数独盘）</p>
+        <h2 id="Minimum-Window-Substring"><a href="#Minimum-Window-Substring" class="headerlink" title="Minimum Window Substring"></a><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank" rel="noopener">Minimum Window Substring</a></h2><p>Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).<br>（包含字符串的最小窗口）</p>
 <a id="more"></a>
-<p>A sudoku solution must satisfy all of the following rules:</p>
+<p><strong>Note:</strong> </p>
 <ol>
-<li>Each of the digits 1-9 must occur exactly once in each row.</li>
-<li>Each of the digits 1-9 must occur exactly once in each column.</li>
-<li>Each of the the digits 1-9 must occur exactly once in each of the 9 <code>3x3</code> sub-boxes of the grid.</li>
-<li>Empty cells are indicated by the character ‘.’.</li>
-</ol>
-<p><strong>Note:</strong></p>
-<ol>
-<li>The given board contain only digits 1-9 and the character ‘.’.</li>
-<li>You may assume that the given Sudoku puzzle will have a single unique solution.</li>
-<li>The given board size is always 9x9.</li>
+<li>If there is no such window in S that covers all characters in T, return the empty string “”.</li>
+<li>If there is such window, you are guaranteed that there will always be only one unique minimum window in S.</li>
 </ol>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_36_1.png" width="300" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_76.png" width="500" align="center/"><br></div>
 
-<div align="center"><br>    <img src="/images/leetcode_37.png" width="300" align="center/"><br></div>
-
-
-<h3 id="1-回溯法-Back-Tracking"><a href="#1-回溯法-Back-Tracking" class="headerlink" title="1. 回溯法 Back Tracking"></a>1. 回溯法 Back Tracking</h3><p>求解数独、八皇后等等都是一个很经典的应用回溯法（深度优先搜索 + 剪枝）的例子。主要分为三个部分：</p>
-<ol>
-<li>寻找下一层节点，此处为find_next_empty()。</li>
-<li>判断限制条件，此处为check_constraint()。</li>
-<li>针对找到的节点继续进行 DFS, 如果已经满足要求则返回True，否则继续判断并不满足要求则回溯，此处为back_track()。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">	<span class="comment"># find the next entry need to fill</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">find_next_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">for</span> row <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">9</span>):</span><br><span class="line">			<span class="keyword">for</span> col <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">9</span>):</span><br><span class="line">				<span class="keyword">if</span> self.board[row][col] == <span class="string">'.'</span>:</span><br><span class="line">					<span class="keyword">return</span> [row, col]</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># check the constraint </span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">check_constraint</span><span class="params">(self, x, y, num)</span>:</span></span><br><span class="line">		<span class="comment"># check row</span></span><br><span class="line">		<span class="keyword">for</span> data <span class="keyword">in</span> self.board[x]:</span><br><span class="line">			<span class="keyword">if</span> data == num:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">		<span class="comment"># check col</span></span><br><span class="line">		<span class="keyword">for</span> data <span class="keyword">in</span> list(zip(*self.board))[y]:</span><br><span class="line">			<span class="keyword">if</span> data == num:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">		<span class="comment"># check square</span></span><br><span class="line">		square_row = x // <span class="number">3</span> * <span class="number">3</span></span><br><span class="line">		square_col = y // <span class="number">3</span> * <span class="number">3</span></span><br><span class="line">		datas = []</span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">			datas += self.board[square_row + i][square_col: square_col + <span class="number">3</span>]</span><br><span class="line">		<span class="keyword">for</span> data <span class="keyword">in</span> datas:</span><br><span class="line">			<span class="keyword">if</span> data  == num:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">back_track</span><span class="params">(self)</span>:</span></span><br><span class="line">		entry = self.find_next_empty()</span><br><span class="line">		<span class="keyword">if</span> entry == <span class="keyword">False</span>:</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			[row, col] = entry</span><br><span class="line">			<span class="comment"># DFS</span></span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">				check = self.check_constraint(row, col, str(i))</span><br><span class="line">				<span class="comment"># pruning</span></span><br><span class="line">				<span class="keyword">if</span> check:</span><br><span class="line">					self.board[row][col] = str(i)</span><br><span class="line">					re = self.back_track()</span><br><span class="line">					<span class="comment"># back tracking</span></span><br><span class="line">					<span class="keyword">if</span> <span class="keyword">not</span> re:</span><br><span class="line">						self.board[row][col] = <span class="string">'.'</span></span><br><span class="line">					<span class="keyword">else</span>:</span><br><span class="line">						<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">						</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">False</span>	</span><br><span class="line">						</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">solveSudoku</span><span class="params">(self, board)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		:type board: List[List[str]]</span></span><br><span class="line"><span class="string">		:rtype: void Do not return anything, modify board in-place instead.</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		self.board = board</span><br><span class="line">		self.back_track()</span><br></pre></td></tr></table></figure>
+<h3 id="1-哈希表-amp-双指针"><a href="#1-哈希表-amp-双指针" class="headerlink" title="1. 哈希表 &amp; 双指针"></a>1. 哈希表 &amp; 双指针</h3><p>很直观，这题需要用到 HashMap 来存储目标字符串。用 left，right 两个指针指向 S，在遍历 S 的过程中，right 不断地右移来找到复合要求的字符串，也就是 required_char == 0 的时候，考虑向右移动 left，直到发现了当前的 S[left: right+1] 不符合要求的时候，重新向右移动 right。具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minWindow</span><span class="params">(self, s: <span class="string">'str'</span>, t: <span class="string">'str'</span>)</span> -&gt; 'str':</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">or</span> <span class="keyword">not</span> t:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line"></span><br><span class="line">        t_dict = collections.Counter(t)</span><br><span class="line">        required_char = len(t_dict)</span><br><span class="line"></span><br><span class="line">        len_s = len(s)</span><br><span class="line">        re_len, re = len_s + <span class="number">1</span>, <span class="string">""</span></span><br><span class="line">        left, right = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> right &lt; len_s:</span><br><span class="line">            <span class="keyword">if</span> s[right] <span class="keyword">not</span> <span class="keyword">in</span> t_dict:</span><br><span class="line">                right += <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            t_dict[s[right]] -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> t_dict[s[right]] == <span class="number">0</span>:</span><br><span class="line">                required_char -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> required_char == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> right - left + <span class="number">1</span> &lt; re_len:</span><br><span class="line">                    re = s[left: right + <span class="number">1</span>]</span><br><span class="line">                    re_len = right - left + <span class="number">1</span> </span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> s[left] <span class="keyword">not</span> <span class="keyword">in</span> t_dict:</span><br><span class="line">                    left += <span class="number">1</span></span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                </span><br><span class="line">                t_dict[s[left]] += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> t_dict[s[left]] == <span class="number">1</span>:</span><br><span class="line">                    required_char += <span class="number">1</span></span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            right += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> re_len == len_s + <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">        <span class="keyword">return</span> re</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -466,11 +449,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/back-tracking/" rel="tag"># back tracking</a>
+            <a href="/tags/two-pointers/" rel="tag"># two pointers</a>
+          
+            <a href="/tags/hash-table/" rel="tag"># hash table</a>
+          
+            <a href="/tags/string/" rel="tag"># string</a>
           
             <a href="/tags/hard/" rel="tag"># hard</a>
-          
-            <a href="/tags/hashed-table/" rel="tag"># hashed table</a>
           
         </div>
       
@@ -483,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/21/leetcode-ValidSudoku/" rel="next" title="LeetCode_Valid Sudoku">
-                <i class="fa fa-chevron-left"></i> LeetCode_Valid Sudoku
+              <a href="/2019/02/21/leetcode-SortColors/" rel="next" title="LeetCode_Sort Colors">
+                <i class="fa fa-chevron-left"></i> LeetCode_Sort Colors
               </a>
             
           </div>
@@ -492,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/24/leetcode-CountandSay/" rel="prev" title="LeetCode_Count and Say">
-                LeetCode_Count and Say <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -679,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sudoku-Solver"><span class="nav-number">1.</span> <span class="nav-text">Sudoku Solver</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-回溯法-Back-Tracking"><span class="nav-number">1.1.</span> <span class="nav-text">1. 回溯法 Back Tracking</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-Window-Substring"><span class="nav-number">1.</span> <span class="nav-text">Minimum Window Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-哈希表-amp-双指针"><span class="nav-number">1.1.</span> <span class="nav-text">1. 哈希表 &amp; 双指针</span></a></li></ol></li></ol></div>
             
 
           </div>
