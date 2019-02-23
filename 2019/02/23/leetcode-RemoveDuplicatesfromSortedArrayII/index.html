@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Jump GameGiven an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Determin">
-<meta name="keywords" content="medium,array,greedy">
+  <meta name="description" content="Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length. Do not allocate extra space for a">
+<meta name="keywords" content="array,two pointers,easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Jump Game">
-<meta property="og:url" content="https://sara-hy.github.io/2019/01/10/leetcode-JumpGame/index.html">
+<meta property="og:title" content="LeetCode_Remove Duplicates from Sorted Array II">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedArrayII/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Jump GameGiven an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Determin">
+<meta property="og:description" content="Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length. Do not allocate extra space for a">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_55.png">
-<meta property="og:updated_time" content="2019-01-10T13:35:54.852Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_80.png">
+<meta property="og:updated_time" content="2019-02-23T07:45:20.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Jump Game">
-<meta name="twitter:description" content="Jump GameGiven an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Determin">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_55.png">
+<meta name="twitter:title" content="LeetCode_Remove Duplicates from Sorted Array II">
+<meta name="twitter:description" content="Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length. Do not allocate extra space for a">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_80.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/01/10/leetcode-JumpGame/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedArrayII/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Jump Game | Sara</title>
+  <title>LeetCode_Remove Duplicates from Sorted Array II | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/01/10/leetcode-JumpGame/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedArrayII/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Jump Game
+          <h1 class="post-title" itemprop="name headline">LeetCode_Remove Duplicates from Sorted Array II
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-01-10 21:15:56 / Modified: 21:35:54" itemprop="dateCreated datePublished" datetime="2019-01-10T21:15:56+08:00">2019-01-10</time>
+              <time title="Created: 2019-02-23 15:20:08 / Modified: 15:45:20" itemprop="dateCreated datePublished" datetime="2019-02-23T15:20:08+08:00">2019-02-23</time>
             
 
             
@@ -406,14 +406,14 @@
       
 
       
-        <h2 id="Jump-Game"><a href="#Jump-Game" class="headerlink" title="Jump Game"></a><a href="https://leetcode.com/problems/jump-game/" target="_blank" rel="noopener">Jump Game</a></h2><p>Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Determine if you are able to reach the last index.<br>(跳棋游戏，确定能否到达队尾)</p>
+        <h2 id="Remove-Duplicates-from-Sorted-Array-II"><a href="#Remove-Duplicates-from-Sorted-Array-II" class="headerlink" title="Remove Duplicates from Sorted Array II"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/" target="_blank" rel="noopener">Remove Duplicates from Sorted Array II</a></h2><p>Given a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.<br>（删除数组中超过两次的元素，in-place, 限制空间复杂度）</p>
 <a id="more"></a>
-<p><strong>Example:</strong></p>
-<div align="center"><br>    <img src="/images/leetcode_55.png" width="500" align="center/"><br></div>
+<p><strong>Example:</strong> </p>
+<div align="center"><br>    <img src="/images/leetcode_80.png" width="500" align="center/"><br></div>
 
 
-<h3 id="1-贪心算法"><a href="#1-贪心算法" class="headerlink" title="1. 贪心算法"></a>1. 贪心算法</h3><p>遍历数组，求得可到达的最远 index。若index &gt; n-1，则可以到达最后。具体实现方法如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canJump</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        max_index = <span class="number">0</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> max_index &gt;= i:</span><br><span class="line">                max_index = max(max_index, i + nums[i])</span><br><span class="line">            <span class="keyword">if</span> max_index &gt;= n<span class="number">-1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span> </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-重复元素个数"><a href="#1-重复元素个数" class="headerlink" title="1. 重复元素个数"></a>1. 重复元素个数</h3><p>需要维护一个变量来记录在遍历过程中数字是重复次数k，以及元素需要前移的步数move_before。具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeDuplicates</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span>        </span><br><span class="line">        <span class="keyword">if</span> len(nums) &lt;= <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        k, move_before = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        now = <span class="keyword">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            <span class="keyword">if</span> num != now:</span><br><span class="line">                now = num</span><br><span class="line">                <span class="keyword">if</span> k &gt; <span class="number">2</span>:</span><br><span class="line">                    move_before += k<span class="number">-2</span></span><br><span class="line">                k = <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                k += <span class="number">1</span></span><br><span class="line">            nums[i-move_before] = num</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># last item</span></span><br><span class="line">        <span class="keyword">if</span> k &gt; <span class="number">2</span>:</span><br><span class="line">            move_before += k<span class="number">-2</span></span><br><span class="line">        nums[i-move_before] = num</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> len(nums) - move_before</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -433,11 +433,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/medium/" rel="tag"># medium</a>
-          
             <a href="/tags/array/" rel="tag"># array</a>
           
-            <a href="/tags/greedy/" rel="tag"># greedy</a>
+            <a href="/tags/two-pointers/" rel="tag"># two pointers</a>
+          
+            <a href="/tags/easy/" rel="tag"># easy</a>
           
         </div>
       
@@ -450,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/10/leetcode-SpiralMatrix/" rel="next" title="LeetCode_Spiral Matrix">
-                <i class="fa fa-chevron-left"></i> LeetCode_Spiral Matrix
+              <a href="/2019/02/23/leetcode-WordSearch/" rel="next" title="LeetCode_Word Search">
+                <i class="fa fa-chevron-left"></i> LeetCode_Word Search
               </a>
             
           </div>
@@ -459,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/10/leetcode-MergeIntervals/" rel="prev" title="LeetCode_Merge Intervals">
-                LeetCode_Merge Intervals <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -648,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jump-Game"><span class="nav-number">1.</span> <span class="nav-text">Jump Game</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-贪心算法"><span class="nav-number">1.1.</span> <span class="nav-text">1. 贪心算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates-from-Sorted-Array-II"><span class="nav-number">1.</span> <span class="nav-text">Remove Duplicates from Sorted Array II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-重复元素个数"><span class="nav-number">1.1.</span> <span class="nav-text">1. 重复元素个数</span></a></li></ol></li></ol></div>
             
 
           </div>
