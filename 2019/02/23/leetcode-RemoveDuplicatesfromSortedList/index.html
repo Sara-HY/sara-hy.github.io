@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Merge IntervalsGiven a collection of intervals, merge all overlapping intervals.(合并间隔区间)">
-<meta name="keywords" content="medium,array,sort">
+  <meta name="description" content="Remove Duplicates from Sorted ListGiven a sorted linked list, delete all duplicates such that each element appear only once.（移除链表中的重复元素（所有元素只出现一次））">
+<meta name="keywords" content="easy,linked list">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Merge Intervals">
-<meta property="og:url" content="https://sara-hy.github.io/2019/01/10/leetcode-MergeIntervals/index.html">
+<meta property="og:title" content="LeetCode_Remove Duplicates from Sorted List">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedList/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Merge IntervalsGiven a collection of intervals, merge all overlapping intervals.(合并间隔区间)">
+<meta property="og:description" content="Remove Duplicates from Sorted ListGiven a sorted linked list, delete all duplicates such that each element appear only once.（移除链表中的重复元素（所有元素只出现一次））">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_56.png">
-<meta property="og:updated_time" content="2019-01-10T14:16:04.232Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_83.png">
+<meta property="og:updated_time" content="2019-02-23T08:48:04.258Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Merge Intervals">
-<meta name="twitter:description" content="Merge IntervalsGiven a collection of intervals, merge all overlapping intervals.(合并间隔区间)">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_56.png">
+<meta name="twitter:title" content="LeetCode_Remove Duplicates from Sorted List">
+<meta name="twitter:description" content="Remove Duplicates from Sorted ListGiven a sorted linked list, delete all duplicates such that each element appear only once.（移除链表中的重复元素（所有元素只出现一次））">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_83.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/01/10/leetcode-MergeIntervals/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedList/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Merge Intervals | Sara</title>
+  <title>LeetCode_Remove Duplicates from Sorted List | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/01/10/leetcode-MergeIntervals/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedList/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Merge Intervals
+          <h1 class="post-title" itemprop="name headline">LeetCode_Remove Duplicates from Sorted List
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-01-10 21:39:48 / Modified: 22:16:04" itemprop="dateCreated datePublished" datetime="2019-01-10T21:39:48+08:00">2019-01-10</time>
+              <time title="Created: 2019-02-23 16:45:56 / Modified: 16:48:04" itemprop="dateCreated datePublished" datetime="2019-02-23T16:45:56+08:00">2019-02-23</time>
             
 
             
@@ -406,18 +406,13 @@
       
 
       
-        <h2 id="Merge-Intervals"><a href="#Merge-Intervals" class="headerlink" title="Merge Intervals"></a><a href="https://leetcode.com/problems/merge-intervals/" target="_blank" rel="noopener">Merge Intervals</a></h2><p>Given a collection of intervals, merge all overlapping intervals.<br>(合并间隔区间)</p>
+        <h2 id="Remove-Duplicates-from-Sorted-List"><a href="#Remove-Duplicates-from-Sorted-List" class="headerlink" title="Remove Duplicates from Sorted List"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="noopener">Remove Duplicates from Sorted List</a></h2><p>Given a sorted linked list, delete all duplicates such that each element appear only once.<br>（移除链表中的重复元素（所有元素只出现一次））</p>
 <a id="more"></a>
-<p><strong>Example:</strong></p>
-<div align="center"><br>    <img src="/images/leetcode_56.png" width="500" align="center/"><br></div>
+<p><strong>Example:</strong> </p>
+<div align="center"><br>    <img src="/images/leetcode_83.png" width="500" align="center/"><br></div>
 
-
-<h3 id="1-贪心算法"><a href="#1-贪心算法" class="headerlink" title="1. 贪心算法"></a>1. 贪心算法</h3><p>类似于教室安排问题，根据每个间隔区间的 start 排序，然后遍历所有的间隔区间：</p>
-<ol>
-<li>当前间隔区间的 start 位置大于之前所有合并的区间的 end 时，加入新的间隔区间；</li>
-<li>更新合并区间的 end 为之前合并区间的 end 和当前间隔区间 end 的最大值。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, intervals)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type intervals: List[Interval]</span></span><br><span class="line"><span class="string">        :rtype: List[Interval]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        </span><br><span class="line">        intervals.sort(key=<span class="keyword">lambda</span> x: x.start)</span><br><span class="line">        </span><br><span class="line">        result = []</span><br><span class="line">        <span class="keyword">for</span> interval <span class="keyword">in</span> intervals:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> result <span class="keyword">or</span> result[<span class="number">-1</span>].end &lt; interval.start:</span><br><span class="line">                result.append(interval)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result[<span class="number">-1</span>].end = max(result[<span class="number">-1</span>].end, interval.end)</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<h3 id="1-指针遍历"><a href="#1-指针遍历" class="headerlink" title="1. 指针遍历"></a>1. 指针遍历</h3><p>在遍历过程中维护一个 p_pre 来记录重复元素之前的位置。具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deleteDuplicates</span><span class="params">(self, head: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        new_head = ListNode(<span class="number">0</span>)</span><br><span class="line">        new_head.next = head</span><br><span class="line">            </span><br><span class="line">        p_pre = new_head   </span><br><span class="line">        p_cur = new_head.next</span><br><span class="line">        <span class="keyword">while</span> p_cur != <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">while</span> p_cur.next <span class="keyword">and</span> p_cur.val == p_cur.next.val:</span><br><span class="line">                p_cur = p_cur.next</span><br><span class="line">            p_pre.next = p_cur</span><br><span class="line">            p_pre = p_cur</span><br><span class="line">            p_cur = p_cur.next </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> new_head.next</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -437,11 +432,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/medium/" rel="tag"># medium</a>
+            <a href="/tags/easy/" rel="tag"># easy</a>
           
-            <a href="/tags/array/" rel="tag"># array</a>
-          
-            <a href="/tags/sort/" rel="tag"># sort</a>
+            <a href="/tags/linked-list/" rel="tag"># linked list</a>
           
         </div>
       
@@ -454,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/10/leetcode-JumpGame/" rel="next" title="LeetCode_Jump Game">
-                <i class="fa fa-chevron-left"></i> LeetCode_Jump Game
+              <a href="/2019/02/23/leetcode-RemoveDuplicatesfromSortedListII/" rel="next" title="LeetCode_Remove Duplicates from Sorted List II">
+                <i class="fa fa-chevron-left"></i> LeetCode_Remove Duplicates from Sorted List II
               </a>
             
           </div>
@@ -463,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/12/leetcode-InsertInterval/" rel="prev" title="LeetCode_Insert Interval">
-                LeetCode_Insert Interval <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -652,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-Intervals"><span class="nav-number">1.</span> <span class="nav-text">Merge Intervals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-贪心算法"><span class="nav-number">1.1.</span> <span class="nav-text">1. 贪心算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates-from-Sorted-List"><span class="nav-number">1.</span> <span class="nav-text">Remove Duplicates from Sorted List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-指针遍历"><span class="nav-number">1.1.</span> <span class="nav-text">1. 指针遍历</span></a></li></ol></li></ol></div>
             
 
           </div>
