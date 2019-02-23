@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="3Sum ClosestGiven an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each">
-<meta name="keywords" content="medium,array,two pointers">
+  <meta name="description" content="Remove Duplicates from Sorted List IIGiven a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.（移除链表中的重复元素（删除出现2次以上的元素））">
+<meta name="keywords" content="medium,linked list">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_3Sum Closest">
-<meta property="og:url" content="https://sara-hy.github.io/2018/11/29/leetcode-3SumClosest/index.html">
+<meta property="og:title" content="LeetCode_Remove Duplicates from Sorted List II">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedListII/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="3Sum ClosestGiven an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each">
+<meta property="og:description" content="Remove Duplicates from Sorted List IIGiven a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.（移除链表中的重复元素（删除出现2次以上的元素））">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_16.png">
-<meta property="og:updated_time" content="2018-11-29T05:53:13.165Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_82.png">
+<meta property="og:updated_time" content="2019-02-23T08:39:24.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_3Sum Closest">
-<meta name="twitter:description" content="3Sum ClosestGiven an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_16.png">
+<meta name="twitter:title" content="LeetCode_Remove Duplicates from Sorted List II">
+<meta name="twitter:description" content="Remove Duplicates from Sorted List IIGiven a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.（移除链表中的重复元素（删除出现2次以上的元素））">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_82.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/11/29/leetcode-3SumClosest/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedListII/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_3Sum Closest | Sara</title>
+  <title>LeetCode_Remove Duplicates from Sorted List II | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/11/29/leetcode-3SumClosest/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedListII/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_3Sum Closest
+          <h1 class="post-title" itemprop="name headline">LeetCode_Remove Duplicates from Sorted List II
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2018-11-29 12:11:39 / Modified: 13:53:13" itemprop="dateCreated datePublished" datetime="2018-11-29T12:11:39+08:00">2018-11-29</time>
+              <time title="Created: 2019-02-23 16:10:50 / Modified: 16:39:24" itemprop="dateCreated datePublished" datetime="2019-02-23T16:10:50+08:00">2019-02-23</time>
             
 
             
@@ -406,12 +406,13 @@
       
 
       
-        <h2 id="3Sum-Closest"><a href="#3Sum-Closest" class="headerlink" title="3Sum Closest"></a><a href="https://leetcode.com/problems/3sum-closest/" target="_blank" rel="noopener">3Sum Closest</a></h2><p>Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.<br>（寻找数组中三个数的和为target的一个组合）</p>
+        <h2 id="Remove-Duplicates-from-Sorted-List-II"><a href="#Remove-Duplicates-from-Sorted-List-II" class="headerlink" title="Remove Duplicates from Sorted List II"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/" target="_blank" rel="noopener">Remove Duplicates from Sorted List II</a></h2><p>Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.<br>（移除链表中的重复元素（删除出现2次以上的元素））</p>
 <a id="more"></a>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_16.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_82.png" width="500" align="center/"><br></div>
 
-<h3 id="1-三个指针"><a href="#1-三个指针" class="headerlink" title="1. 三个指针"></a>1. 三个指针</h3><p>排序后三个指针遍历数组。其时间复杂度为 \(O(n^2)\)。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">threeSumClosest</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        n = len(nums)</span><br><span class="line">        result = nums[<span class="number">0</span>] + nums[<span class="number">1</span>] + nums[<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>):</span><br><span class="line">            l = i + <span class="number">1</span></span><br><span class="line">            r = n - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> l &lt; r:</span><br><span class="line">                threesum = nums[l] + nums[r] + nums[i]</span><br><span class="line">                <span class="keyword">if</span> threesum == target :</span><br><span class="line">                    <span class="keyword">return</span> threesum</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> abs(threesum - target) &lt; abs(result - target):</span><br><span class="line">                	result = threesum</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> threesum &gt; target:</span><br><span class="line">                	r -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                	l += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-指针遍历"><a href="#1-指针遍历" class="headerlink" title="1. 指针遍历"></a>1. 指针遍历</h3><p>在遍历过程中维护一个 p_pre 来记录重复元素之前的位置。具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deleteDuplicates</span><span class="params">(self, head: ListNode)</span> -&gt; ListNode:</span></span><br><span class="line">        new_head = ListNode(<span class="number">0</span>)</span><br><span class="line">        new_head.next = head</span><br><span class="line">        </span><br><span class="line">        p_pre = new_head   </span><br><span class="line">        p_cur = new_head.next</span><br><span class="line">        <span class="keyword">while</span> p_cur != <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">while</span> p_cur.next <span class="keyword">and</span> p_cur.val == p_cur.next.val:</span><br><span class="line">                p_cur = p_cur.next</span><br><span class="line">            <span class="keyword">if</span> p_pre.next == p_cur:</span><br><span class="line">                p_pre = p_cur   </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                p_pre.next = p_cur.next</span><br><span class="line">            p_cur = p_cur.next </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> new_head.next</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -434,9 +435,7 @@
           
             <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/array/" rel="tag"># array</a>
-          
-            <a href="/tags/two-pointers/" rel="tag"># two pointers</a>
+            <a href="/tags/linked-list/" rel="tag"># linked list</a>
           
         </div>
       
@@ -449,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/29/leetcode-3Sum/" rel="next" title="LeetCode_3Sum">
-                <i class="fa fa-chevron-left"></i> LeetCode_3Sum
+              <a href="/2019/02/23/leetcode-SearchinRotatedSortedArrayII/" rel="next" title="LeetCode_Search in Rotated Sorted Array II">
+                <i class="fa fa-chevron-left"></i> LeetCode_Search in Rotated Sorted Array II
               </a>
             
           </div>
@@ -458,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/30/leetcode-LetterCombinationsofaPhoneNumber/" rel="prev" title="LeetCode_Letter Combinations of a Phone Number">
-                LeetCode_Letter Combinations of a Phone Number <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -647,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3Sum-Closest"><span class="nav-number">1.</span> <span class="nav-text">3Sum Closest</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-三个指针"><span class="nav-number">1.1.</span> <span class="nav-text">1. 三个指针</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates-from-Sorted-List-II"><span class="nav-number">1.</span> <span class="nav-text">Remove Duplicates from Sorted List II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-指针遍历"><span class="nav-number">1.1.</span> <span class="nav-text">1. 指针遍历</span></a></li></ol></li></ol></div>
             
 
           </div>
