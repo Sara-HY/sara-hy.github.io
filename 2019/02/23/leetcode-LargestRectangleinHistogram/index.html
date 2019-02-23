@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Divide Two IntegersGiven two integers dividend and divisor, divide two integers without using multiplication, division and mod operator. Return the quotient after dividing dividend by divisor. The int">
-<meta name="keywords" content="medium,binary search,math">
+  <meta name="description" content="Largest Rectangle in HistogramGiven n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.（在条形图中取最大矩形面积）">
+<meta name="keywords" content="array,hard,stack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Divide Two Integers">
-<meta property="og:url" content="https://sara-hy.github.io/2018/12/18/leetcode-DivideTwoIntegers/index.html">
+<meta property="og:title" content="LeetCode_Largest Rectangle in Histogram">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/23/leetcode-LargestRectangleinHistogram/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Divide Two IntegersGiven two integers dividend and divisor, divide two integers without using multiplication, division and mod operator. Return the quotient after dividing dividend by divisor. The int">
+<meta property="og:description" content="Largest Rectangle in HistogramGiven n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.（在条形图中取最大矩形面积）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_29.png">
-<meta property="og:updated_time" content="2018-12-18T10:20:29.003Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_83.png">
+<meta property="og:updated_time" content="2019-02-23T09:50:17.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Divide Two Integers">
-<meta name="twitter:description" content="Divide Two IntegersGiven two integers dividend and divisor, divide two integers without using multiplication, division and mod operator. Return the quotient after dividing dividend by divisor. The int">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_29.png">
+<meta name="twitter:title" content="LeetCode_Largest Rectangle in Histogram">
+<meta name="twitter:description" content="Largest Rectangle in HistogramGiven n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.（在条形图中取最大矩形面积）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_83.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/12/18/leetcode-DivideTwoIntegers/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/23/leetcode-LargestRectangleinHistogram/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Divide Two Integers | Sara</title>
+  <title>LeetCode_Largest Rectangle in Histogram | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/12/18/leetcode-DivideTwoIntegers/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/23/leetcode-LargestRectangleinHistogram/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Divide Two Integers
+          <h1 class="post-title" itemprop="name headline">LeetCode_Largest Rectangle in Histogram
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2018-12-18 16:41:42 / Modified: 18:20:29" itemprop="dateCreated datePublished" datetime="2018-12-18T16:41:42+08:00">2018-12-18</time>
+              <time title="Created: 2019-02-23 16:51:00 / Modified: 17:50:17" itemprop="dateCreated datePublished" datetime="2019-02-23T16:51:00+08:00">2019-02-23</time>
             
 
             
@@ -406,20 +406,18 @@
       
 
       
-        <h2 id="Divide-Two-Integers"><a href="#Divide-Two-Integers" class="headerlink" title="Divide Two Integers"></a><a href="https://leetcode.com/problems/divide-two-integers/" target="_blank" rel="noopener">Divide Two Integers</a></h2><p>Given two integers dividend and divisor, divide two integers without using multiplication, division and mod operator. Return the quotient after dividing dividend by divisor. The integer division should truncate toward zero.<br>（非乘 除 取模 方法实现除法）</p>
+        <h2 id="Largest-Rectangle-in-Histogram"><a href="#Largest-Rectangle-in-Histogram" class="headerlink" title="Largest Rectangle in Histogram"></a><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">Largest Rectangle in Histogram</a></h2><p>Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.<br>（在条形图中取最大矩形面积）</p>
 <a id="more"></a>
-<p>Note:</p>
-<ul>
-<li>Both dividend and divisor will be 32-bit signed integers.</li>
-<li>The divisor will never be 0.</li>
-<li>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1]. For the purpose of this problem, assume that your function returns 2^31 − 1 when the division result overflows.</li>
-</ul>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_29.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_83.png" width="500" align="center/"><br></div>
 
-
-<h3 id="1-减法实现除法"><a href="#1-减法实现除法" class="headerlink" title="1. 减法实现除法"></a>1. 减法实现除法</h3><p>这个题目很直观的就是将被除数不断地减去除数得到最终的商，但是会存在 Time Limit Exceeded 的问题。 因此需要在过程中不断地<strong>加大除数</strong>来加快得到最终结果。其中存在溢出的情况为被除数为-2^31, 除数为-1，得到的商为2^31，因此需要单独考虑。具体实现如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">divide</span><span class="params">(self, dividend, divisor)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type dividend: int</span></span><br><span class="line"><span class="string">        :type divisor: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> (dividend &lt; <span class="number">0</span> <span class="keyword">and</span> divisor &lt; <span class="number">0</span>) <span class="keyword">or</span> (dividend &gt; <span class="number">0</span> <span class="keyword">and</span> divisor &gt; <span class="number">0</span>):</span><br><span class="line">            flag = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            flag = <span class="number">-1</span></span><br><span class="line">        </span><br><span class="line">        dividend = abs(dividend)</span><br><span class="line">        divisor = abs(divisor)</span><br><span class="line">        </span><br><span class="line">        re = <span class="number">0</span></span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        new_divisor = divisor</span><br><span class="line">        <span class="keyword">while</span> dividend &gt;= new_divisor:</span><br><span class="line">            re += i</span><br><span class="line">            dividend -= new_divisor</span><br><span class="line">            </span><br><span class="line">            new_divisor += new_divisor</span><br><span class="line">            i += i</span><br><span class="line">            <span class="keyword">if</span> dividend &lt; new_divisor:</span><br><span class="line">                new_divisor = divisor</span><br><span class="line">                i = <span class="number">1</span></span><br><span class="line">         </span><br><span class="line">        <span class="keyword">if</span> flag &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> -re</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            MAX = pow(<span class="number">2</span>, <span class="number">31</span>) - <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> min(re, MAX)</span><br></pre></td></tr></table></figure>
+<h3 id="1-堆栈"><a href="#1-堆栈" class="headerlink" title="1. 堆栈"></a>1. 堆栈</h3><p>维护一个栈来存储升序序列，当遇到当前 height 小于栈顶 height 时，考虑计算。以栈顶的高度为高，栈顶 index 到 i-1 为宽的矩形。其中在pop过程中栈顶为空时，则需要将其维护为 “-1”，因为当 stack 为空时，说明数组中的最小值（所有高度中的最小值已经pop出来了，因此前面的所有都可以算作面积）。其时间复杂度为O(n)，空间复杂度为O(n)。具体实现过程如下：</p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>在 heights 尾部增加一个 “0” 是为了防止在数组尾部的最后一个升序序列没有计算，如[3, 4, 1, 3, 5, 7]。</li>
+<li>stack 存储的是 index 是为了方便计算矩形的 width。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        stack = []</span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        heights.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">for</span> i, height <span class="keyword">in</span> enumerate(heights):</span><br><span class="line">            <span class="keyword">while</span> len(stack) &gt; <span class="number">0</span> <span class="keyword">and</span> height &lt; heights[stack[<span class="number">-1</span>]]:</span><br><span class="line">                top = stack.pop()</span><br><span class="line">                <span class="keyword">if</span> len(stack) == <span class="number">0</span>:</span><br><span class="line">                    start = <span class="number">-1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    start = stack[<span class="number">-1</span>]</span><br><span class="line">                result = max(result, heights[top] * (i<span class="number">-1</span>-start))</span><br><span class="line">            stack.append(i)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -439,11 +437,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/medium/" rel="tag"># medium</a>
+            <a href="/tags/array/" rel="tag"># array</a>
           
-            <a href="/tags/binary-search/" rel="tag"># binary search</a>
+            <a href="/tags/hard/" rel="tag"># hard</a>
           
-            <a href="/tags/math/" rel="tag"># math</a>
+            <a href="/tags/stack/" rel="tag"># stack</a>
           
         </div>
       
@@ -456,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/18/leetcode-ImplementstrStr/" rel="next" title="LeetCode_Implement strStr()">
-                <i class="fa fa-chevron-left"></i> LeetCode_Implement strStr()
+              <a href="/2019/02/23/leetcode-RemoveDuplicatesfromSortedList/" rel="next" title="LeetCode_Remove Duplicates from Sorted List">
+                <i class="fa fa-chevron-left"></i> LeetCode_Remove Duplicates from Sorted List
               </a>
             
           </div>
@@ -465,10 +463,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/18/leetcode-SubstringwithConcatenationofAllWords/" rel="prev" title="LeetCode_Substring with Concatenation of All Words">
-                LeetCode_Substring with Concatenation of All Words <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Divide-Two-Integers"><span class="nav-number">1.</span> <span class="nav-text">Divide Two Integers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-减法实现除法"><span class="nav-number">1.1.</span> <span class="nav-text">1. 减法实现除法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Largest-Rectangle-in-Histogram"><span class="nav-number">1.</span> <span class="nav-text">Largest Rectangle in Histogram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-堆栈"><span class="nav-number">1.1.</span> <span class="nav-text">1. 堆栈</span></a></li></ol></li></ol></div>
             
 
           </div>
