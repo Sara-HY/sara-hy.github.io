@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length. Do not allocate extra space for a">
-<meta name="keywords" content="array,two pointers,easy">
+  <meta name="description" content="Same TreeGiven two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.（判">
+<meta name="keywords" content="easy,tree,dfs,recursion">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Remove Duplicates from Sorted Array II">
-<meta property="og:url" content="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedArrayII/index.html">
+<meta property="og:title" content="LeetCode_Same Tree">
+<meta property="og:url" content="https://sara-hy.github.io/2019/02/27/leetcode-SameTree/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length. Do not allocate extra space for a">
+<meta property="og:description" content="Same TreeGiven two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.（判">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_80.png">
-<meta property="og:updated_time" content="2019-02-23T07:45:20.582Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_100.png">
+<meta property="og:updated_time" content="2019-02-27T15:13:52.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Remove Duplicates from Sorted Array II">
-<meta name="twitter:description" content="Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length. Do not allocate extra space for a">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_80.png">
+<meta name="twitter:title" content="LeetCode_Same Tree">
+<meta name="twitter:description" content="Same TreeGiven two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.（判">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_100.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedArrayII/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/02/27/leetcode-SameTree/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Remove Duplicates from Sorted Array II | Sara</title>
+  <title>LeetCode_Same Tree | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/23/leetcode-RemoveDuplicatesfromSortedArrayII/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/27/leetcode-SameTree/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Remove Duplicates from Sorted Array II
+          <h1 class="post-title" itemprop="name headline">LeetCode_Same Tree
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-02-23 15:20:08 / Modified: 15:45:20" itemprop="dateCreated datePublished" datetime="2019-02-23T15:20:08+08:00">2019-02-23</time>
+              <time title="Created: 2019-02-27 23:09:12 / Modified: 23:13:52" itemprop="dateCreated datePublished" datetime="2019-02-27T23:09:12+08:00">2019-02-27</time>
             
 
             
@@ -406,14 +406,13 @@
       
 
       
-        <h2 id="Remove-Duplicates-from-Sorted-Array-II"><a href="#Remove-Duplicates-from-Sorted-Array-II" class="headerlink" title="Remove Duplicates from Sorted Array II"></a><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/" target="_blank" rel="noopener">Remove Duplicates from Sorted Array II</a></h2><p>Given a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.<br>（删除数组中超过两次的元素，in-place, 限制空间复杂度）</p>
+        <h2 id="Same-Tree"><a href="#Same-Tree" class="headerlink" title="Same Tree"></a><a href="hhttps://leetcode.com/problems/same-tree/" target="_blank" rel="noopener">Same Tree</a></h2><p>Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.<br>（判断二叉树是否相同）</p>
 <a id="more"></a>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_80.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_100.png" width="500" align="center/"><br></div>
 
-
-<h3 id="1-重复元素个数"><a href="#1-重复元素个数" class="headerlink" title="1. 重复元素个数"></a>1. 重复元素个数</h3><p>需要维护一个变量来记录在遍历过程中数字是重复次数k，以及元素需要前移的步数move_before。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeDuplicates</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span>        </span><br><span class="line">        <span class="keyword">if</span> len(nums) &lt;= <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        k, move_before = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        now = <span class="keyword">None</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            <span class="keyword">if</span> num != now:</span><br><span class="line">                now = num</span><br><span class="line">                <span class="keyword">if</span> k &gt; <span class="number">2</span>:</span><br><span class="line">                    move_before += k<span class="number">-2</span></span><br><span class="line">                k = <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                k += <span class="number">1</span></span><br><span class="line">            nums[i-move_before] = num</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># last item</span></span><br><span class="line">        <span class="keyword">if</span> k &gt; <span class="number">2</span>:</span><br><span class="line">            move_before += k<span class="number">-2</span></span><br><span class="line">        nums[i-move_before] = num</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> len(nums) - move_before</span><br></pre></td></tr></table></figure>
+<h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><p>判断节点值，左子树，右子树是否一致，具体实现方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSameTree</span><span class="params">(self, p: TreeNode, q: TreeNode)</span> -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> p <span class="keyword">and</span> <span class="keyword">not</span> q:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> p <span class="keyword">or</span> <span class="keyword">not</span> q:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> p.val != q.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> self.isSameTree(p.left, q.left) <span class="keyword">and</span> self.isSameTree(p.right, q.right)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -433,11 +432,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/array/" rel="tag"># array</a>
-          
-            <a href="/tags/two-pointers/" rel="tag"># two pointers</a>
-          
             <a href="/tags/easy/" rel="tag"># easy</a>
+          
+            <a href="/tags/tree/" rel="tag"># tree</a>
+          
+            <a href="/tags/dfs/" rel="tag"># dfs</a>
+          
+            <a href="/tags/recursion/" rel="tag"># recursion</a>
           
         </div>
       
@@ -450,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/23/leetcode-WordSearch/" rel="next" title="LeetCode_Word Search">
-                <i class="fa fa-chevron-left"></i> LeetCode_Word Search
+              <a href="/2019/02/27/leetcode-RecoverBinarySearchTree/" rel="next" title="LeetCode_Recover Binary Search Tree">
+                <i class="fa fa-chevron-left"></i> LeetCode_Recover Binary Search Tree
               </a>
             
           </div>
@@ -459,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/23/leetcode-SearchinRotatedSortedArrayII/" rel="prev" title="LeetCode_Search in Rotated Sorted Array II">
-                LeetCode_Search in Rotated Sorted Array II <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -656,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates-from-Sorted-Array-II"><span class="nav-number">1.</span> <span class="nav-text">Remove Duplicates from Sorted Array II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-重复元素个数"><span class="nav-number">1.1.</span> <span class="nav-text">1. 重复元素个数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Same-Tree"><span class="nav-number">1.</span> <span class="nav-text">Same Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-递归"><span class="nav-number">1.1.</span> <span class="nav-text">1. 递归</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2019/02/27/leetcode-SameTree/</loc>
+    
+    <lastmod>2019-02-27T15:13:52.096Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2019/02/27/leetcode-RecoverBinarySearchTree/</loc>
     
     <lastmod>2019-02-27T15:08:01.730Z</lastmod>
