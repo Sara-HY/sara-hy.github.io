@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Combination SumGiven a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. T">
-<meta name="keywords" content="medium,array,back tracking">
+  <meta name="description" content="Balanced Binary TreeGiven a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the depth of the two subtrees of ever">
+<meta name="keywords" content="easy,tree,dfs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Combination Sum">
-<meta property="og:url" content="https://sara-hy.github.io/2018/12/25/leetcode-CombinationSum/index.html">
+<meta property="og:title" content="LeetCode_Balanced Binary Tree">
+<meta property="og:url" content="https://sara-hy.github.io/2019/03/04/leetcode-BalancedBinaryTree/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Combination SumGiven a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. T">
+<meta property="og:description" content="Balanced Binary TreeGiven a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the depth of the two subtrees of ever">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_39.png">
-<meta property="og:updated_time" content="2018-12-25T10:20:54.807Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_110.png">
+<meta property="og:updated_time" content="2019-03-04T13:39:49.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Combination Sum">
-<meta name="twitter:description" content="Combination SumGiven a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. T">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_39.png">
+<meta name="twitter:title" content="LeetCode_Balanced Binary Tree">
+<meta name="twitter:description" content="Balanced Binary TreeGiven a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the depth of the two subtrees of ever">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_110.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/12/25/leetcode-CombinationSum/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/03/04/leetcode-BalancedBinaryTree/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Combination Sum | Sara</title>
+  <title>LeetCode_Balanced Binary Tree | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/12/25/leetcode-CombinationSum/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/04/leetcode-BalancedBinaryTree/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Combination Sum
+          <h1 class="post-title" itemprop="name headline">LeetCode_Balanced Binary Tree
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2018-12-25 17:15:38 / Modified: 18:20:54" itemprop="dateCreated datePublished" datetime="2018-12-25T17:15:38+08:00">2018-12-25</time>
+              <time title="Created: 2019-03-04 21:16:49 / Modified: 21:39:49" itemprop="dateCreated datePublished" datetime="2019-03-04T21:16:49+08:00">2019-03-04</time>
             
 
             
@@ -406,20 +406,12 @@
       
 
       
-        <h1 id="Combination-Sum"><a href="#Combination-Sum" class="headerlink" title="Combination Sum"></a><a href="https://leetcode.com/problems/combination-sum/" target="_blank" rel="noopener">Combination Sum</a></h1><p>Given a <strong>set</strong> of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. The same repeated number may be chosen from candidates <strong>unlimited</strong> number of times.<br>（从集合中挑选和为特定值的数字组合，同一元素可选多次）</p>
+        <h2 id="Balanced-Binary-Tree"><a href="#Balanced-Binary-Tree" class="headerlink" title="Balanced Binary Tree"></a><a href="https://leetcode.com/problems/balanced-binary-tree/" target="_blank" rel="noopener">Balanced Binary Tree</a></h2><p>Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the depth of the two subtrees of every node never differ by more than 1.<br>（判断是否是平衡二叉树）</p>
 <a id="more"></a>
-<p><strong>Note:</strong></p>
-<ul>
-<li>All numbers (including target) will be positive integers.</li>
-<li>The solution set must not contain duplicate combinations.</li>
-</ul>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_39.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_110.png" width="500" align="center/"><br></div>
 
-
-<h3 id="1-回溯法"><a href="#1-回溯法" class="headerlink" title="1. 回溯法"></a>1. 回溯法</h3><p>在构建回溯法的过程中，需要注意的是及时更新 target 来更新回溯限制条件。另外也可以事先对 candidates 排序来减少遍历的次数来节省时间。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, re, candidates, target)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> target == <span class="number">0</span>:</span><br><span class="line">        	self.result.append(list(re))</span><br><span class="line">        	</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">        	<span class="keyword">for</span> i <span class="keyword">in</span> range(len(candidates)):</span><br><span class="line">        		<span class="keyword">if</span> target &lt; candidates[i]:</span><br><span class="line">        			<span class="keyword">continue</span></span><br><span class="line">        		re.append(candidates[i])</span><br><span class="line">        		self.backtracking(re, candidates[i:], target - candidates[i])</span><br><span class="line">        		re.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum</span><span class="params">(self, candidates, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type candidates: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">       	self.result = []</span><br><span class="line">        self.backtracking([], candidates, target)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.result</span><br></pre></td></tr></table></figure>
-
+<h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isBalanced</span><span class="params">(self, root: TreeNode)</span> -&gt; bool:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">depth</span><span class="params">(root)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> + max(depth(root.left), depth(root.right))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> abs(depth(root.left) - depth(root.right)) &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.isBalanced(root.left) <span class="keyword">and</span> self.isBalanced(root.right)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -439,11 +431,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/medium/" rel="tag"># medium</a>
+            <a href="/tags/easy/" rel="tag"># easy</a>
           
-            <a href="/tags/array/" rel="tag"># array</a>
+            <a href="/tags/tree/" rel="tag"># tree</a>
           
-            <a href="/tags/back-tracking/" rel="tag"># back tracking</a>
+            <a href="/tags/dfs/" rel="tag"># dfs</a>
           
         </div>
       
@@ -456,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/24/leetcode-CountandSay/" rel="next" title="LeetCode_Count and Say">
-                <i class="fa fa-chevron-left"></i> LeetCode_Count and Say
+              <a href="/2019/03/04/leetcode-ConvertSortedListtoBinarySearchTree/" rel="next" title="LeetCode_Convert Sorted List to Binary Search Tree">
+                <i class="fa fa-chevron-left"></i> LeetCode_Convert Sorted List to Binary Search Tree
               </a>
             
           </div>
@@ -465,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/25/leetcode-CombinationSumII/" rel="prev" title="LeetCode_Combination Sum II">
-                LeetCode_Combination Sum II <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -664,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Combination-Sum"><span class="nav-number">1.</span> <span class="nav-text">Combination Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-回溯法"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 回溯法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Balanced-Binary-Tree"><span class="nav-number">1.</span> <span class="nav-text">Balanced Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-递归"><span class="nav-number">1.1.</span> <span class="nav-text">1. 递归</span></a></li></ol></li></ol></div>
             
 
           </div>
