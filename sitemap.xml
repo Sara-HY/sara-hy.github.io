@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2019/03/04/leetcode-ConvertSortedListtoBinarySearchTree/</loc>
+    
+    <lastmod>2019-03-04T13:15:40.027Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2019/03/04/leetcode-ConvertSortedArraytoBinarySearchTree/</loc>
     
     <lastmod>2019-03-04T10:55:06.823Z</lastmod>
