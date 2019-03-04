@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2019/03/04/leetcode-BinaryTreeLevelOrderTraversal/</loc>
+    
+    <lastmod>2019-03-04T07:46:03.214Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2019/03/04/leetcode-SymmetricTree/</loc>
     
     <lastmod>2019-03-04T06:08:40.403Z</lastmod>
