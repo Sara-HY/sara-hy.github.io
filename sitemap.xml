@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2019/03/05/leetcode-MinimumDepthofBinaryTree/</loc>
+    
+    <lastmod>2019-03-05T02:14:52.178Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2019/03/04/leetcode-BalancedBinaryTree/</loc>
     
     <lastmod>2019-03-04T13:39:49.551Z</lastmod>
