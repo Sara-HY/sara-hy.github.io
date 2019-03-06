@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2019/03/05/leetcode-PopulatingNextRightPointersinEachNode/</loc>
+    
+    <lastmod>2019-03-06T07:16:45.233Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2019/03/05/leetcode-DistinctSubsequences/</loc>
     
-    <lastmod>2019-03-05T08:52:26.613Z</lastmod>
+    <lastmod>2019-03-05T09:00:29.140Z</lastmod>
     
   </url>
   
@@ -828,13 +835,6 @@
   </url>
   
   <url>
-    <loc>https://sara-hy.github.io/2018/11/15/task-oriented-dialog-systems/</loc>
-    
-    <lastmod>2018-11-27T03:23:40.030Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://sara-hy.github.io/google10bb50e0b38f396b.html</loc>
     
     <lastmod>2018-11-27T03:23:40.030Z</lastmod>
@@ -843,6 +843,13 @@
   
   <url>
     <loc>https://sara-hy.github.io/categories/index.html</loc>
+    
+    <lastmod>2018-11-27T03:23:40.030Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sara-hy.github.io/2018/11/15/task-oriented-dialog-systems/</loc>
     
     <lastmod>2018-11-27T03:23:40.030Z</lastmod>
     
