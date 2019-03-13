@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Median of Two Sorted ArraysThere are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). Y">
-<meta name="keywords" content="array,binary search,hard,divide and conquer">
+  <meta name="description" content="Sum Root to Leaf NumbersGiven a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number. An example is the root-to-leaf path 1-&amp;gt;2-&amp;gt;3 which represents the num">
+<meta name="keywords" content="medium,tree,dfs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Median of Two Sorted Arrays">
-<meta property="og:url" content="https://sara-hy.github.io/2018/11/23/leetcode-MedianofTwoSortedArrays/index.html">
+<meta property="og:title" content="LeetCode_Sum Root to Leaf Numbers">
+<meta property="og:url" content="https://sara-hy.github.io/2019/03/13/leetcode-SumRoottoLeafNumbers/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Median of Two Sorted ArraysThere are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). Y">
+<meta property="og:description" content="Sum Root to Leaf NumbersGiven a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number. An example is the root-to-leaf path 1-&amp;gt;2-&amp;gt;3 which represents the num">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_4.png">
-<meta property="og:updated_time" content="2018-11-29T03:23:37.414Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_129.png">
+<meta property="og:updated_time" content="2019-03-13T14:14:41.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Median of Two Sorted Arrays">
-<meta name="twitter:description" content="Median of Two Sorted ArraysThere are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). Y">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_4.png">
+<meta name="twitter:title" content="LeetCode_Sum Root to Leaf Numbers">
+<meta name="twitter:description" content="Sum Root to Leaf NumbersGiven a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number. An example is the root-to-leaf path 1-&amp;gt;2-&amp;gt;3 which represents the num">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_129.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/11/23/leetcode-MedianofTwoSortedArrays/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/03/13/leetcode-SumRoottoLeafNumbers/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Median of Two Sorted Arrays | Sara</title>
+  <title>LeetCode_Sum Root to Leaf Numbers | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/11/23/leetcode-MedianofTwoSortedArrays/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/13/leetcode-SumRoottoLeafNumbers/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Median of Two Sorted Arrays
+          <h1 class="post-title" itemprop="name headline">LeetCode_Sum Root to Leaf Numbers
               
             
           </h1>
@@ -343,24 +343,12 @@
                 
               
 
-              <time title="Created: 2018-11-23 18:30:10" itemprop="dateCreated datePublished" datetime="2018-11-23T18:30:10+08:00">2018-11-23</time>
+              <time title="Created: 2019-03-13 22:12:21 / Modified: 22:14:41" itemprop="dateCreated datePublished" datetime="2019-03-13T22:12:21+08:00">2019-03-13</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-29 11:23:37" itemprop="dateModified" datetime="2018-11-29T11:23:37+08:00">2018-11-29</time>
               
             
           </span>
@@ -418,14 +406,14 @@
       
 
       
-        <h2 id="Median-of-Two-Sorted-Arrays"><a href="#Median-of-Two-Sorted-Arrays" class="headerlink" title="Median of Two Sorted Arrays"></a><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="noopener">Median of Two Sorted Arrays</a></h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be <strong>O(log (m+n))</strong>. You may assume nums1 and nums2 cannot be both empty.<br>（两个有序数组的中位数）</p>
+        <h2 id="Sum-Root-to-Leaf-Numbers"><a href="#Sum-Root-to-Leaf-Numbers" class="headerlink" title="Sum Root to Leaf Numbers"></a><a href="https://leetcode.com/problems/sum-root-to-leaf-numbers/" target="_blank" rel="noopener">Sum Root to Leaf Numbers</a></h2><p>Given a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number. An example is the root-to-leaf path 1-&gt;2-&gt;3 which represents the number 123. Find the total sum of all root-to-leaf numbers.<br>（树型数值之和）</p>
+<p><strong>Note:</strong> A leaf is a node with no children.</p>
 <a id="more"></a>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_4.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_129.png" width="500" align="center/"><br></div>
 
-<h3 id="1-分治法-1"><a href="#1-分治法-1" class="headerlink" title="1. 分治法_1"></a>1. 分治法_1</h3><p>我们可以将中位数简单的理解成将数组分成两个部分，一部分中的数值总是大于另一部分。因此，我们可以看做是找\((m+n)\)个数中的第\((m+n)/2\)数值的大小（需要单独考虑\((m+n)\)的奇偶性）。其时间复杂度为 \(O(log(m+n))\)。具体实现过程如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKth</span><span class="params">(self, nums1, nums2, k)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums1:</span><br><span class="line">            <span class="keyword">return</span> nums2[k]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums2:</span><br><span class="line">            <span class="keyword">return</span> nums1[k]</span><br><span class="line">        </span><br><span class="line">        len1 = len(nums1)</span><br><span class="line">        len2 = len(nums2)</span><br><span class="line">        </span><br><span class="line">        i, j = len1 // <span class="number">2</span>, len2 // <span class="number">2</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> i + j &lt; k:</span><br><span class="line">            <span class="keyword">if</span> nums1[i] &gt; nums2[j]:</span><br><span class="line">                <span class="keyword">return</span> self.findKth(nums1, nums2[j+<span class="number">1</span>:], k-j<span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> self.findKth(nums1[i+<span class="number">1</span>: ], nums2, k-i<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> nums1[i] &gt; nums2[j]:</span><br><span class="line">                <span class="keyword">return</span> self.findKth(nums1[:i], nums2, k)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> self.findKth(nums1, nums2[:j], k)</span><br><span class="line">                </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMedianSortedArrays</span><span class="params">(self, nums1, nums2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums1: List[int]</span></span><br><span class="line"><span class="string">        :type nums2: List[int]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        length = len(nums1) + len(nums2)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> length % <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> self.findKth(nums1, nums2, length//<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (self.findKth(nums1, nums2, length//<span class="number">2</span>) + self.findKth(nums1, nums2, length//<span class="number">2</span><span class="number">-1</span>))/<span class="number">2</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="2-分治法-2"><a href="#2-分治法-2" class="headerlink" title="2. 分治法_2"></a>2. 分治法_2</h3><p>与上面的思路相同，但是不同的是找第 \(k\) 个值时，并不是直接将两个数组混合一起找第 \(k\) 个，而是以比较短的数组 A 为基准，找到符合条件的 \(i\)，使得 \(A[i]\) 和 \(B[k-i]\) 刚好满足其中一个是第\(k\)个数。其时间复杂度为 \(O(log(min(m, n)))\)。具体实现过程如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findKth</span><span class="params">(self, nums1, nums2, k)</span>:</span></span><br><span class="line">        len1 = len(nums1)</span><br><span class="line">        len2 = len(nums2)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> len1 &gt; len2:</span><br><span class="line">            len1, len2, nums1, nums2 = len2, len1, nums2, nums1</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums1:</span><br><span class="line">            <span class="keyword">return</span> nums2[k]</span><br><span class="line">        <span class="keyword">if</span> k == len1 + len2 - <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> max(nums1[<span class="number">-1</span>], nums2[<span class="number">-1</span>])</span><br><span class="line">        </span><br><span class="line">        i = len1 // <span class="number">2</span></span><br><span class="line">        j = k - i</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> nums1[i] &gt; nums2[j]:</span><br><span class="line">            <span class="comment"># Assume it is O(1) to get A[:i] and B[j:]. In python, it's not but in cpp it is.</span></span><br><span class="line">            <span class="keyword">return</span> self.findKth(nums1[:i], nums2[j:], i)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> self.findKth(nums1[i:], nums2[:j], j)</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-Sort-函数"><a href="#3-Sort-函数" class="headerlink" title="3. Sort()函数"></a>3. Sort()函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMedianSortedArrays</span><span class="params">(self, nums1, nums2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums1: List[int]</span></span><br><span class="line"><span class="string">        :type nums2: List[int]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        num = sorted(nums1 + nums2)</span><br><span class="line">        l = len(num)</span><br><span class="line">        <span class="keyword">if</span> l%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span>((num[l//<span class="number">2</span>] + num[l//<span class="number">2</span><span class="number">-1</span>])/<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> l%<span class="number">2</span> != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span>(num[l//<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="1-DFS"><a href="#1-DFS" class="headerlink" title="1. DFS"></a>1. DFS</h3><p>常规的 DFS 算法，具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        left = self.dfs(root.left)</span><br><span class="line">        right = self.dfs(root.right)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> left <span class="keyword">and</span> <span class="keyword">not</span> right:</span><br><span class="line">            <span class="keyword">return</span> str(root.val)</span><br><span class="line">        </span><br><span class="line">        result = []</span><br><span class="line">        <span class="keyword">if</span> left:</span><br><span class="line">            <span class="keyword">for</span> num <span class="keyword">in</span> left:</span><br><span class="line">                result.append(str(root.val)+str(num)) </span><br><span class="line">        <span class="keyword">if</span> right:</span><br><span class="line">            <span class="keyword">for</span> num <span class="keyword">in</span> right:</span><br><span class="line">                result.append(str(root.val)+str(num))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sumNumbers</span><span class="params">(self, root: TreeNode)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        nums = self.dfs(root)</span><br><span class="line">        <span class="keyword">return</span>  sum(int(num) <span class="keyword">for</span> num <span class="keyword">in</span> nums)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -445,13 +433,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/array/" rel="tag"># array</a>
+            <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/binary-search/" rel="tag"># binary search</a>
+            <a href="/tags/tree/" rel="tag"># tree</a>
           
-            <a href="/tags/hard/" rel="tag"># hard</a>
-          
-            <a href="/tags/divide-and-conquer/" rel="tag"># divide and conquer</a>
+            <a href="/tags/dfs/" rel="tag"># dfs</a>
           
         </div>
       
@@ -464,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/23/leetcode-LongestSubstringWithoutRepeatingCharacters/" rel="next" title="LeetCode_Longest Substring Without Repeating Characters">
-                <i class="fa fa-chevron-left"></i> LeetCode_Longest Substring Without Repeating Characters
+              <a href="/2019/03/13/leetcode-LongestConsecutiveSequence/" rel="next" title="LeetCode_Longest Consecutive Sequence">
+                <i class="fa fa-chevron-left"></i> LeetCode_Longest Consecutive Sequence
               </a>
             
           </div>
@@ -473,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/26/leetcode-LongestPalindromicSubstring/" rel="prev" title="LeetCode_Longest Palindromic Substring">
-                LeetCode_Longest Palindromic Substring <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -672,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Median-of-Two-Sorted-Arrays"><span class="nav-number">1.</span> <span class="nav-text">Median of Two Sorted Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-分治法-1"><span class="nav-number">1.1.</span> <span class="nav-text">1. 分治法_1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-分治法-2"><span class="nav-number">1.2.</span> <span class="nav-text">2. 分治法_2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Sort-函数"><span class="nav-number">1.3.</span> <span class="nav-text">3. Sort()函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sum-Root-to-Leaf-Numbers"><span class="nav-number">1.</span> <span class="nav-text">Sum Root to Leaf Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-DFS"><span class="nav-number">1.1.</span> <span class="nav-text">1. DFS</span></a></li></ol></li></ol></div>
             
 
           </div>
