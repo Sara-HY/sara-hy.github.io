@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2019/03/13/leetcode-ValidPalindrome/</loc>
+    
+    <lastmod>2019-03-13T07:16:56.894Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2019/03/13/leetcode-BinaryTreeMaximumPathSum/</loc>
     
     <lastmod>2019-03-13T07:01:16.041Z</lastmod>
