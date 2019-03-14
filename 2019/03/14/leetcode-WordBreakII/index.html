@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Binary Tree Level Order Traversal IIGiven a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).（从底向上按层遍历二叉树）">
-<meta name="keywords" content="easy,tree,bfs">
+  <meta name="description" content="Word Break IIGiven a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all s">
+<meta name="keywords" content="hash table,dynamic programming,hard,back tracking">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Binary Tree Level Order Traversal II">
-<meta property="og:url" content="https://sara-hy.github.io/2019/03/04/leetcode-BinaryTreeLevelOrderTraversalII/index.html">
+<meta property="og:title" content="LeetCode_Word Break II">
+<meta property="og:url" content="https://sara-hy.github.io/2019/03/14/leetcode-WordBreakII/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Binary Tree Level Order Traversal IIGiven a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).（从底向上按层遍历二叉树）">
+<meta property="og:description" content="Word Break IIGiven a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all s">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_107.png">
-<meta property="og:updated_time" content="2019-03-04T10:49:53.483Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_140.png">
+<meta property="og:updated_time" content="2019-03-14T14:34:55.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Binary Tree Level Order Traversal II">
-<meta name="twitter:description" content="Binary Tree Level Order Traversal IIGiven a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).（从底向上按层遍历二叉树）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_107.png">
+<meta name="twitter:title" content="LeetCode_Word Break II">
+<meta name="twitter:description" content="Word Break IIGiven a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all s">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_140.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/03/04/leetcode-BinaryTreeLevelOrderTraversalII/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/03/14/leetcode-WordBreakII/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Binary Tree Level Order Traversal II | Sara</title>
+  <title>LeetCode_Word Break II | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/04/leetcode-BinaryTreeLevelOrderTraversalII/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/14/leetcode-WordBreakII/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Binary Tree Level Order Traversal II
+          <h1 class="post-title" itemprop="name headline">LeetCode_Word Break II
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-03-04 17:44:11 / Modified: 18:49:53" itemprop="dateCreated datePublished" datetime="2019-03-04T17:44:11+08:00">2019-03-04</time>
+              <time title="Created: 2019-03-14 21:48:44 / Modified: 22:34:55" itemprop="dateCreated datePublished" datetime="2019-03-14T21:48:44+08:00">2019-03-14</time>
             
 
             
@@ -406,13 +406,21 @@
       
 
       
-        <h2 id="Binary-Tree-Level-Order-Traversal-II"><a href="#Binary-Tree-Level-Order-Traversal-II" class="headerlink" title="Binary Tree Level Order Traversal II"></a><a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/" target="_blank" rel="noopener">Binary Tree Level Order Traversal II</a></h2><p>Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).<br>（从底向上按层遍历二叉树）</p>
+        <h2 id="Word-Break-II"><a href="#Word-Break-II" class="headerlink" title="Word Break II"></a><a href="https://leetcode.com/problems/word-break-ii/" target="_blank" rel="noopener">Word Break II</a></h2><p>Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.<br>（字符串有效分词）</p>
 <a id="more"></a>
+<p><strong>Note:</strong> </p>
+<ol>
+<li>The same word in the dictionary may be reused multiple times in the segmentation.</li>
+<li>You may assume the dictionary does not contain duplicate words.</li>
+</ol>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_107.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_140.png" width="500" align="center/"><br></div>
 
-<h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><p>按层遍历，每次都把同层的树节点 Node 组合成一个 List 输入到队列。（变形之后的BFS）。(只需要把Binary Tree Level Order Traversal结果倒叙存储即可) 具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">levelOrderBottom</span><span class="params">(self, root: TreeNode)</span> -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        </span><br><span class="line">        results = [[root.val]]</span><br><span class="line">        </span><br><span class="line">        queue = []</span><br><span class="line">        queue.append([root])</span><br><span class="line">        <span class="keyword">while</span> len(queue):</span><br><span class="line">            top = queue.pop()</span><br><span class="line">            </span><br><span class="line">            result = []</span><br><span class="line">            level_node = []</span><br><span class="line">            <span class="keyword">for</span> node <span class="keyword">in</span> top:</span><br><span class="line">                <span class="keyword">if</span> node.left:</span><br><span class="line">                    level_node.append(node.left)</span><br><span class="line">                    result.append(node.left.val)</span><br><span class="line">                <span class="keyword">if</span> node.right:</span><br><span class="line">                    level_node.append(node.right)</span><br><span class="line">                    result.append(node.right.val)</span><br><span class="line">            <span class="keyword">if</span> result:</span><br><span class="line">                queue.insert(<span class="number">0</span>, level_node)</span><br><span class="line">                results.insert(<span class="number">0</span>, result)</span><br><span class="line">           </span><br><span class="line">        <span class="keyword">return</span> results</span><br></pre></td></tr></table></figure>
+<h3 id="1-动态规划-回溯法"><a href="#1-动态规划-回溯法" class="headerlink" title="1. 动态规划 + 回溯法"></a>1. 动态规划 + 回溯法</h3><p>下面这种解法只使用了回溯，最终会导致 Time Limit Exceeded。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time Limit Exceeded</span></span><br><span class="line"><span class="comment"># s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"</span></span><br><span class="line"><span class="comment"># wordDict = ["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, s, res, start)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> s[start:] <span class="keyword">in</span> self.wordDict:</span><br><span class="line">            self.results.append(<span class="string">" "</span>.join(res + [s[start:]]))</span><br><span class="line">           </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(start+<span class="number">1</span>, len(s)):</span><br><span class="line">            <span class="keyword">if</span> s[start:i] <span class="keyword">in</span> self.wordDict:</span><br><span class="line">                self.backtracking(s, res+[s[start:i]], i)</span><br><span class="line">                </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordBreak</span><span class="params">(self, s: str, wordDict: List[str])</span> -&gt; List[str]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        </span><br><span class="line">        self.results = []</span><br><span class="line">        self.wordDict = wordDict</span><br><span class="line">        self.backtracking(s, [], <span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.results</span><br></pre></td></tr></table></figure>
+<p>因此需要结合动态规划首先进行判断再回溯，最终具体解法如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordBreak_check</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> s <span class="keyword">in</span> self.wordDict:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        </span><br><span class="line">        dp = [<span class="keyword">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(s) +<span class="number">1</span>)]</span><br><span class="line">        dp[<span class="number">0</span>] = [<span class="keyword">True</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(s)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">                <span class="keyword">if</span> s[j:i] <span class="keyword">in</span> self.wordDict <span class="keyword">and</span> dp[j]:</span><br><span class="line">                    dp[i] = <span class="keyword">True</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backtracking</span><span class="params">(self, s, res, start)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> s[start:] <span class="keyword">in</span> self.wordDict:</span><br><span class="line">            self.results.append(<span class="string">" "</span>.join(res + [s[start:]]))</span><br><span class="line">           </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(start+<span class="number">1</span>, len(s)):</span><br><span class="line">            <span class="keyword">if</span> s[start:i] <span class="keyword">in</span> self.wordDict:</span><br><span class="line">                self.backtracking(s, res+[s[start:i]], i)</span><br><span class="line">                </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordBreak</span><span class="params">(self, s: str, wordDict: List[str])</span> -&gt; List[str]:</span></span><br><span class="line">        self.wordDict = wordDict</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">or</span> <span class="keyword">not</span> self.wordBreak_check(s):</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">    </span><br><span class="line">        self.results = [] </span><br><span class="line">        self.backtracking(s, [], <span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.results</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-哈希表-回溯法"><a href="#1-哈希表-回溯法" class="headerlink" title="1. 哈希表 + 回溯法"></a>1. 哈希表 + 回溯法</h3><p>这里维护了一个哈希表保存之前对字符串已经处理过的映射关系，例如memo[‘sanddog’] = ‘sand dog’这样就避免了重复多次计算。不会Time Limit Exceeded，具体实现方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(self, s: str, wordDict: [str], memo: dict)</span> -&gt; [str]:</span></span><br><span class="line">        <span class="keyword">if</span> s <span class="keyword">in</span> memo:</span><br><span class="line">            <span class="keyword">return</span> memo[s]</span><br><span class="line">        res =[]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> wordDict:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> s.startswith(word):</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> len(s) == len(word):</span><br><span class="line">                res.append(word)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                rest = self.helper(s[len(word):], wordDict, memo)</span><br><span class="line">                <span class="keyword">for</span> tmp <span class="keyword">in</span> rest:</span><br><span class="line">                    tmp = word + <span class="string">' '</span> + tmp</span><br><span class="line">                    res.append(tmp)</span><br><span class="line">        memo[s] = res</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordBreak</span><span class="params">(self, s: str, wordDict: [str])</span> -&gt;[str]:</span></span><br><span class="line">        memo = &#123;&#125;</span><br><span class="line">        <span class="keyword">return</span> self.helper(s, wordDict, memo)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -432,11 +440,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/easy/" rel="tag"># easy</a>
+            <a href="/tags/hash-table/" rel="tag"># hash table</a>
           
-            <a href="/tags/tree/" rel="tag"># tree</a>
+            <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
           
-            <a href="/tags/bfs/" rel="tag"># bfs</a>
+            <a href="/tags/hard/" rel="tag"># hard</a>
+          
+            <a href="/tags/back-tracking/" rel="tag"># back tracking</a>
           
         </div>
       
@@ -449,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/04/leetcode-ConstructBinaryTreefromInorderandPostorderTraversal/" rel="next" title="LeetCode_Construct Binary Tree from Inorder and Postorder Traversal">
-                <i class="fa fa-chevron-left"></i> LeetCode_Construct Binary Tree from Inorder and Postorder Traversal
+              <a href="/2019/03/14/leetcode-WordBreak/" rel="next" title="LeetCode_Word Break">
+                <i class="fa fa-chevron-left"></i> LeetCode_Word Break
               </a>
             
           </div>
@@ -458,10 +468,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/04/leetcode-ConvertSortedArraytoBinarySearchTree/" rel="prev" title="LeetCode_Convert Sorted Array to Binary Search Tree">
-                LeetCode_Convert Sorted Array to Binary Search Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -659,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Tree-Level-Order-Traversal-II"><span class="nav-number">1.</span> <span class="nav-text">Binary Tree Level Order Traversal II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-递归"><span class="nav-number">1.1.</span> <span class="nav-text">1. 递归</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Word-Break-II"><span class="nav-number">1.</span> <span class="nav-text">Word Break II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-动态规划-回溯法"><span class="nav-number">1.1.</span> <span class="nav-text">1. 动态规划 + 回溯法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-哈希表-回溯法"><span class="nav-number">1.2.</span> <span class="nav-text">1. 哈希表 + 回溯法</span></a></li></ol></li></ol></div>
             
 
           </div>
