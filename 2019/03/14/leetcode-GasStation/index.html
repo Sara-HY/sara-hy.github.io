@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Search in Rotated Sorted Array IISuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., [0,0,1,2,2,5,6] might become [2,5,6,0,0,1,2]). You are given a ta">
-<meta name="keywords" content="medium,array,binary search">
+  <meta name="description" content="Gas StationThere are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station">
+<meta name="keywords" content="medium,greedy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Search in Rotated Sorted Array II">
-<meta property="og:url" content="https://sara-hy.github.io/2019/02/23/leetcode-SearchinRotatedSortedArrayII/index.html">
+<meta property="og:title" content="LeetCode_Gas Station">
+<meta property="og:url" content="https://sara-hy.github.io/2019/03/14/leetcode-GasStation/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Search in Rotated Sorted Array IISuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., [0,0,1,2,2,5,6] might become [2,5,6,0,0,1,2]). You are given a ta">
+<meta property="og:description" content="Gas StationThere are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_81.png">
-<meta property="og:updated_time" content="2019-02-23T08:05:03.520Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_134.png">
+<meta property="og:updated_time" content="2019-03-14T09:54:38.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Search in Rotated Sorted Array II">
-<meta name="twitter:description" content="Search in Rotated Sorted Array IISuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., [0,0,1,2,2,5,6] might become [2,5,6,0,0,1,2]). You are given a ta">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_81.png">
+<meta name="twitter:title" content="LeetCode_Gas Station">
+<meta name="twitter:description" content="Gas StationThere are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_134.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/02/23/leetcode-SearchinRotatedSortedArrayII/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/03/14/leetcode-GasStation/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Search in Rotated Sorted Array II | Sara</title>
+  <title>LeetCode_Gas Station | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/23/leetcode-SearchinRotatedSortedArrayII/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/14/leetcode-GasStation/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Search in Rotated Sorted Array II
+          <h1 class="post-title" itemprop="name headline">LeetCode_Gas Station
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-02-23 15:46:52 / Modified: 16:05:03" itemprop="dateCreated datePublished" datetime="2019-02-23T15:46:52+08:00">2019-02-23</time>
+              <time title="Created: 2019-03-14 15:52:22 / Modified: 17:54:38" itemprop="dateCreated datePublished" datetime="2019-03-14T15:52:22+08:00">2019-03-14</time>
             
 
             
@@ -406,13 +406,20 @@
       
 
       
-        <h2 id="Search-in-Rotated-Sorted-Array-II"><a href="#Search-in-Rotated-Sorted-Array-II" class="headerlink" title="Search in Rotated Sorted Array II"></a><a href="https://leetcode.com/problems/search-in-rotated-sorted-array-ii/" target="_blank" rel="noopener">Search in Rotated Sorted Array II</a></h2><p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., [0,0,1,2,2,5,6] might become [2,5,6,0,0,1,2]). You are given a target value to search. If found in the array return true, otherwise return false.<br>（在时间复杂度为O(log n)的前提下在经旋转的有序数组中检索(数组中含有重复元素)）</p>
+        <h2 id="Gas-Station"><a href="#Gas-Station" class="headerlink" title="Gas Station"></a><a href="https://leetcode.com/problems/gas-station/" target="_blank" rel="noopener">Gas Station</a></h2><p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations. Return the starting gas station’s index if you can travel around the circuit once in the clockwise direction, otherwise return -1.<br>（加油站问题）</p>
 <a id="more"></a>
+<p><strong>Note:</strong></p>
+<ol>
+<li>If there exists a solution, it is guaranteed to be unique.</li>
+<li>Both input arrays are non-empty and have the same length.</li>
+<li>Each element in the input arrays is a non-negative integer.</li>
+</ol>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_81.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_134.png" width="500" align="center/"><br></div>
 
-<h3 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1. 二分查找"></a>1. 二分查找</h3><p>定义首尾指针，在每次循环的过程中将 target 和 首尾指针的序列的中间值进行比较。其中在更新首尾指针的过程中需要讨论当前的[left, middle]数组是有序还是无序两种情况讨论。其中由于可能含有重复元素，需要跳过。具体实现如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; bool:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        </span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = len(nums)<span class="number">-1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            middle = (left + right) // <span class="number">2</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> target == nums[middle]:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> left &lt; middle <span class="keyword">and</span> nums[left] == nums[middle]:</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> right &gt; middle <span class="keyword">and</span> nums[right] == nums[middle]:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> nums[left] &lt;= nums[middle]:</span><br><span class="line">                <span class="keyword">if</span> target &lt; nums[middle] <span class="keyword">and</span> target &gt;= nums[left]:</span><br><span class="line">                    right = middle - <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    left = middle + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> target &gt; nums[middle] <span class="keyword">and</span> target &lt;= nums[right]:</span><br><span class="line">                    left = middle + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    right = middle - <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-贪心算法"><a href="#1-贪心算法" class="headerlink" title="1. 贪心算法"></a>1. 贪心算法</h3><p>这是一道很直接的贪心的题目，题中要求在一个环形的轨道中选择一个出发点，使得在路途中的经历耗油、加油可以成功的会到出发点。起点 start 将路径分为前后两段，前段总的余量为负，即油不够用，要想有解，那么后段油量应该为正，此时才可能有解，我们要做的就是找到这个分割点作为起点，然后再验证一下；反之，如果前段就为正了，那么显然可以直接选择前面的点为起点；如果整段加起来都是负的，那么无解。具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canCompleteCircuit</span><span class="params">(self, gas: List[int], cost: List[int])</span> -&gt; int:</span></span><br><span class="line">        total, remain, start = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(gas)):</span><br><span class="line">            remain += gas[i] - cost[i]</span><br><span class="line">            total += gas[i] - cost[i]</span><br><span class="line">            <span class="keyword">if</span> remain &lt; <span class="number">0</span>:</span><br><span class="line">                start = i + <span class="number">1</span></span><br><span class="line">                remain = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> total &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        <span class="keyword">return</span> start</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -434,9 +441,7 @@
           
             <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/array/" rel="tag"># array</a>
-          
-            <a href="/tags/binary-search/" rel="tag"># binary search</a>
+            <a href="/tags/greedy/" rel="tag"># greedy</a>
           
         </div>
       
@@ -449,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/23/leetcode-RemoveDuplicatesfromSortedArrayII/" rel="next" title="LeetCode_Remove Duplicates from Sorted Array II">
-                <i class="fa fa-chevron-left"></i> LeetCode_Remove Duplicates from Sorted Array II
+              <a href="/2019/03/14/leetcode-CloneGraph/" rel="next" title="LeetCode_Clone Graph">
+                <i class="fa fa-chevron-left"></i> LeetCode_Clone Graph
               </a>
             
           </div>
@@ -458,10 +463,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/23/leetcode-RemoveDuplicatesfromSortedListII/" rel="prev" title="LeetCode_Remove Duplicates from Sorted List II">
-                LeetCode_Remove Duplicates from Sorted List II <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -661,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-in-Rotated-Sorted-Array-II"><span class="nav-number">1.</span> <span class="nav-text">Search in Rotated Sorted Array II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-二分查找"><span class="nav-number">1.1.</span> <span class="nav-text">1. 二分查找</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Gas-Station"><span class="nav-number">1.</span> <span class="nav-text">Gas Station</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-贪心算法"><span class="nav-number">1.1.</span> <span class="nav-text">1. 贪心算法</span></a></li></ol></li></ol></div>
             
 
           </div>
