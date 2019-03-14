@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Next PermutationImplement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lo">
-<meta name="keywords" content="medium,array">
+  <meta name="description" content="Copy List with Random PointerA linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. Return a deep copy of the list.（深拷贝链表）">
+<meta name="keywords" content="medium,hash table,linked list">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Next Permutation">
-<meta property="og:url" content="https://sara-hy.github.io/2018/12/21/leetcode-NextPermutation/index.html">
+<meta property="og:title" content="LeetCode_Copy List with Random Pointer">
+<meta property="og:url" content="https://sara-hy.github.io/2019/03/14/leetcode-CopyListwithRandomPointer/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Next PermutationImplement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lo">
+<meta property="og:description" content="Copy List with Random PointerA linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. Return a deep copy of the list.（深拷贝链表）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_31.png">
-<meta property="og:updated_time" content="2018-12-21T02:54:15.745Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_138.png">
+<meta property="og:updated_time" content="2019-03-14T13:08:23.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Next Permutation">
-<meta name="twitter:description" content="Next PermutationImplement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lo">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_31.png">
+<meta name="twitter:title" content="LeetCode_Copy List with Random Pointer">
+<meta name="twitter:description" content="Copy List with Random PointerA linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. Return a deep copy of the list.（深拷贝链表）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_138.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2018/12/21/leetcode-NextPermutation/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/03/14/leetcode-CopyListwithRandomPointer/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Next Permutation | Sara</title>
+  <title>LeetCode_Copy List with Random Pointer | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2018/12/21/leetcode-NextPermutation/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/14/leetcode-CopyListwithRandomPointer/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Next Permutation
+          <h1 class="post-title" itemprop="name headline">LeetCode_Copy List with Random Pointer
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2018-12-21 10:13:55 / Modified: 10:54:15" itemprop="dateCreated datePublished" datetime="2018-12-21T10:13:55+08:00">2018-12-21</time>
+              <time title="Created: 2019-03-14 20:51:20 / Modified: 21:08:23" itemprop="dateCreated datePublished" datetime="2019-03-14T20:51:20+08:00">2019-03-14</time>
             
 
             
@@ -406,20 +406,14 @@
       
 
       
-        <h2 id="Next-Permutation"><a href="#Next-Permutation" class="headerlink" title="Next Permutation"></a><a href="https://leetcode.com/problems/next-permutation/" target="_blank" rel="noopener">Next Permutation</a></h2><p>Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order). The replacement must be in-place and use only constant extra memory.<br>（从小到大全排列的下一个）</p>
+        <h2 id="Copy-List-with-Random-Pointer"><a href="#Copy-List-with-Random-Pointer" class="headerlink" title="Copy List with Random Pointer"></a><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank" rel="noopener">Copy List with Random Pointer</a></h2><p>A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. Return a <strong>deep copy</strong> of the list.<br>（深拷贝链表）</p>
 <a id="more"></a>
+<p><strong>Note:</strong> You must return the copy of the given head as a reference to the cloned list.</p>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_31.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_138.png" width="500" align="center/"><br></div>
 
-<h3 id="1-后向遍历"><a href="#1-后向遍历" class="headerlink" title="1. 后向遍历"></a>1. 后向遍历</h3><p>整体的思路就是从后向前遍历：</p>
-<ol>
-<li>当遇到第一个数值大于其前面的数值，记录下这个数值，如 [1, 3, 5, 4, 2], 则此时的 i 为2。</li>
-<li>将数组中从i到最后的部分倒序，即变为 [1, 3, 2, 4, 5]。</li>
-<li>再次遍历从i到最后的部分，找到第一个大于 nums[i-1]（此处为3） 的值并交换即可，即为 [1, 4, 2, 3, 5]。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nextPermutation</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: void Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        </span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">                nums.reverse()</span><br><span class="line">                <span class="keyword">return</span> </span><br><span class="line">            <span class="keyword">if</span> nums[i] &gt; nums[i<span class="number">-1</span>]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        j, k = i, n<span class="number">-1</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; k:</span><br><span class="line">            nums[j], nums[k] = nums[k], nums[j]</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">            k -= <span class="number">1</span></span><br><span class="line">      </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i, n):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &gt; nums[i<span class="number">-1</span>]:</span><br><span class="line">                nums[i<span class="number">-1</span>], nums[j] = nums[j], nums[i<span class="number">-1</span>]</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-后向遍历"><a href="#2-后向遍历" class="headerlink" title="2. 后向遍历"></a>2. 后向遍历</h2><p>另一种思路与上述一致，只是交换步骤2和步骤3的顺序。即先找到位置i，并同时找到后续数组中最小的值j，交换值后再倒序。</p>
-
+<h3 id="1-哈希表"><a href="#1-哈希表" class="headerlink" title="1. 哈希表"></a>1. 哈希表</h3><p>首先忽略 random 遍历链表，构建链表节点到拷贝后节点之间的映射，然后考虑 random 重新遍历链表，根据映射关系维护新链表的链接关系，具体实现方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string"># Definition for a Node.</span></span><br><span class="line"><span class="string">class Node:</span></span><br><span class="line"><span class="string">    def __init__(self, val, next, random):</span></span><br><span class="line"><span class="string">        self.val = val</span></span><br><span class="line"><span class="string">        self.next = next</span></span><br><span class="line"><span class="string">        self.random = random</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">copyRandomList</span><span class="params">(self, head: <span class="string">'Node'</span>)</span> -&gt; 'Node':</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        </span><br><span class="line">        node_map = &#123;&#125;</span><br><span class="line">        p = head</span><br><span class="line">        <span class="keyword">while</span> p:</span><br><span class="line">            new_node = Node(p.val, <span class="keyword">None</span>, <span class="keyword">None</span>)</span><br><span class="line">            node_map[p] = new_node</span><br><span class="line">            p = p.next</span><br><span class="line">        </span><br><span class="line">        p = head</span><br><span class="line">        q = copy_head = Node(<span class="number">0</span>, <span class="keyword">None</span>, <span class="keyword">None</span>)</span><br><span class="line">        <span class="keyword">while</span> p:</span><br><span class="line">            q.next = node_map[p]</span><br><span class="line">            <span class="keyword">if</span> p.random:</span><br><span class="line">                q.next.random = node_map[p.random]</span><br><span class="line">            p = p.next</span><br><span class="line">            q = q.next</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> copy_head.next</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -441,7 +435,9 @@
           
             <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/array/" rel="tag"># array</a>
+            <a href="/tags/hash-table/" rel="tag"># hash table</a>
+          
+            <a href="/tags/linked-list/" rel="tag"># linked list</a>
           
         </div>
       
@@ -454,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/18/leetcode-SubstringwithConcatenationofAllWords/" rel="next" title="LeetCode_Substring with Concatenation of All Words">
-                <i class="fa fa-chevron-left"></i> LeetCode_Substring with Concatenation of All Words
+              <a href="/2019/03/14/leetcode-SingleNumberII/" rel="next" title="LeetCode_Single Number II">
+                <i class="fa fa-chevron-left"></i> LeetCode_Single Number II
               </a>
             
           </div>
@@ -463,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/21/leetcode-LongestValidParentheses/" rel="prev" title="LeetCode_Longest Valid Parentheses">
-                LeetCode_Longest Valid Parentheses <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -664,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-Permutation"><span class="nav-number">1.</span> <span class="nav-text">Next Permutation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-后向遍历"><span class="nav-number">1.1.</span> <span class="nav-text">1. 后向遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-后向遍历"><span class="nav-number">2.</span> <span class="nav-text">2. 后向遍历</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Copy-List-with-Random-Pointer"><span class="nav-number">1.</span> <span class="nav-text">Copy List with Random Pointer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-哈希表"><span class="nav-number">1.1.</span> <span class="nav-text">1. 哈希表</span></a></li></ol></li></ol></div>
             
 
           </div>
