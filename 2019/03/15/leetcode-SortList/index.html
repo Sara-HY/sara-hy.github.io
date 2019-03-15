@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Group AnagramsGiven an array of strings, group anagrams together.(将使用相同字符构成的不同排列的单词合并)">
-<meta name="keywords" content="medium,hash table,string">
+  <meta name="description" content="Sort ListSort a linked list in O(n log n) time using constant space complexity.（实现实现复杂度为O(nlog(n))的链表排序）">
+<meta name="keywords" content="medium,linked list,sort">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Group Anagrams">
-<meta property="og:url" content="https://sara-hy.github.io/2019/01/09/leetcode-GroupAnagrams/index.html">
+<meta property="og:title" content="LeetCode_Sort List">
+<meta property="og:url" content="https://sara-hy.github.io/2019/03/15/leetcode-SortList/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Group AnagramsGiven an array of strings, group anagrams together.(将使用相同字符构成的不同排列的单词合并)">
+<meta property="og:description" content="Sort ListSort a linked list in O(n log n) time using constant space complexity.（实现实现复杂度为O(nlog(n))的链表排序）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_49.png">
-<meta property="og:updated_time" content="2019-01-09T07:00:46.778Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_148.png">
+<meta property="og:updated_time" content="2019-03-15T10:55:35.012Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Group Anagrams">
-<meta name="twitter:description" content="Group AnagramsGiven an array of strings, group anagrams together.(将使用相同字符构成的不同排列的单词合并)">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_49.png">
+<meta name="twitter:title" content="LeetCode_Sort List">
+<meta name="twitter:description" content="Sort ListSort a linked list in O(n log n) time using constant space complexity.（实现实现复杂度为O(nlog(n))的链表排序）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_148.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/01/09/leetcode-GroupAnagrams/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/03/15/leetcode-SortList/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Group Anagrams | Sara</title>
+  <title>LeetCode_Sort List | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/01/09/leetcode-GroupAnagrams/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/15/leetcode-SortList/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Group Anagrams
+          <h1 class="post-title" itemprop="name headline">LeetCode_Sort List
               
             
           </h1>
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-01-09 14:48:18 / Modified: 15:00:46" itemprop="dateCreated datePublished" datetime="2019-01-09T14:48:18+08:00">2019-01-09</time>
+              <time title="Created: 2019-03-15 18:30:34 / Modified: 18:55:35" itemprop="dateCreated datePublished" datetime="2019-03-15T18:30:34+08:00">2019-03-15</time>
             
 
             
@@ -406,20 +406,12 @@
       
 
       
-        <h2 id="Group-Anagrams"><a href="#Group-Anagrams" class="headerlink" title="Group Anagrams"></a><a href="https://leetcode.com/problems/group-anagrams/" target="_blank" rel="noopener">Group Anagrams</a></h2><p>Given an array of strings, group anagrams together.<br>(将使用相同字符构成的不同排列的单词合并)</p>
+        <h2 id="Sort-List"><a href="#Sort-List" class="headerlink" title="Sort List"></a><a href="https://leetcode.com/problems/sort-list/" target="_blank" rel="noopener">Sort List</a></h2><p>Sort a linked list in O(n log n) time using constant space complexity.<br>（实现实现复杂度为O(nlog(n))的链表排序）</p>
 <a id="more"></a>
-<p><strong>Note:</strong> </p>
-<ol>
-<li>All inputs will be in lowercase.</li>
-<li>The order of your output does not matter.</li>
-</ol>
-<p><strong>Example:</strong></p>
-<div align="center"><br>    <img src="/images/leetcode_49.png" width="500" align="center/"><br></div>
+<p><strong>Example:</strong> </p>
+<div align="center"><br>    <img src="/images/leetcode_148.png" width="500" align="center/"><br></div>
 
-
-<h3 id="1-哈希表-Dict"><a href="#1-哈希表-Dict" class="headerlink" title="1. 哈希表 / Dict"></a>1. 哈希表 / Dict</h3><p>遍历数组中的每一个单词，将每个单词根据所组成的字符排序从而得到哈希表的key。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">groupAnagrams</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type strs: List[str]</span></span><br><span class="line"><span class="string">        :rtype: List[List[str]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        </span><br><span class="line">        word_map = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> strs:</span><br><span class="line">            items = list(word)</span><br><span class="line">            items.sort()</span><br><span class="line">            items = <span class="string">''</span>.join(items)</span><br><span class="line">            <span class="keyword">if</span> items <span class="keyword">not</span> <span class="keyword">in</span> word_map:</span><br><span class="line">                word_map[items] = [word]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                word_map[items].append(word)</span><br><span class="line"></span><br><span class="line">        result = []</span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> word_map:</span><br><span class="line">            result.append(word_map[key])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-
+<h3 id="1-归并排序"><a href="#1-归并排序" class="headerlink" title="1. 归并排序"></a>1. 归并排序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, left, right)</span>:</span></span><br><span class="line">        new_head = ListNode(<span class="number">0</span>)</span><br><span class="line">        cur, left_i, right_i = new_head, left, right</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> left_i <span class="keyword">and</span> right_i:</span><br><span class="line">            <span class="keyword">if</span> left_i.val &lt; right_i.val:</span><br><span class="line">                cur.next = left_i</span><br><span class="line">                left_i = left_i.next</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur.next = right_i</span><br><span class="line">                right_i = right_i.next</span><br><span class="line">            cur = cur.next</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> left_i:</span><br><span class="line">            cur.next = left_i</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur.next = right_i</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> new_head.next</span><br><span class="line">           </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 定位到链表的中部</span></span><br><span class="line">        slow, fast = head, head.next</span><br><span class="line">        <span class="keyword">while</span> fast <span class="keyword">and</span> fast.next:</span><br><span class="line">            slow = slow.next</span><br><span class="line">            fast = fast.next.next</span><br><span class="line">        middle = slow.next</span><br><span class="line">        slow.next = <span class="keyword">None</span></span><br><span class="line">        </span><br><span class="line">        left = self.sortList(head)</span><br><span class="line">        right = self.sortList(middle)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.merge(left, right)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -441,9 +433,9 @@
           
             <a href="/tags/medium/" rel="tag"># medium</a>
           
-            <a href="/tags/hash-table/" rel="tag"># hash table</a>
+            <a href="/tags/linked-list/" rel="tag"># linked list</a>
           
-            <a href="/tags/string/" rel="tag"># string</a>
+            <a href="/tags/sort/" rel="tag"># sort</a>
           
         </div>
       
@@ -456,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/09/leetcode-RotateImage/" rel="next" title="LeetCode_Rotate Image">
-                <i class="fa fa-chevron-left"></i> LeetCode_Rotate Image
+              <a href="/2019/03/15/leetcode-InsertionSortList/" rel="next" title="LeetCode_Insert in Sort List">
+                <i class="fa fa-chevron-left"></i> LeetCode_Insert in Sort List
               </a>
             
           </div>
@@ -465,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/09/leetcode-Pow-x-n/" rel="prev" title="LeetCode_Pow(x, n)">
-                LeetCode_Pow(x, n) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -668,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-Anagrams"><span class="nav-number">1.</span> <span class="nav-text">Group Anagrams</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-哈希表-Dict"><span class="nav-number">1.1.</span> <span class="nav-text">1. 哈希表 / Dict</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sort-List"><span class="nav-number">1.</span> <span class="nav-text">Sort List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-归并排序"><span class="nav-number">1.1.</span> <span class="nav-text">1. 归并排序</span></a></li></ol></li></ol></div>
             
 
           </div>

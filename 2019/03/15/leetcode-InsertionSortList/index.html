@@ -117,7 +117,7 @@
 <meta property="og:description" content="Insert in Sort ListSort a linked list using insertion sort.（基于链表的插入排序）">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://sara-hy.github.io/images/leetcode_147.png">
-<meta property="og:updated_time" content="2019-03-15T10:03:30.449Z">
+<meta property="og:updated_time" content="2019-03-15T10:05:58.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_Insert in Sort List">
 <meta name="twitter:description" content="Insert in Sort ListSort a linked list using insertion sort.（基于链表的插入排序）">
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-03-15 17:20:58 / Modified: 18:03:30" itemprop="dateCreated datePublished" datetime="2019-03-15T17:20:58+08:00">2019-03-15</time>
+              <time title="Created: 2019-03-15 17:20:58 / Modified: 18:05:58" itemprop="dateCreated datePublished" datetime="2019-03-15T17:20:58+08:00">2019-03-15</time>
             
 
             
@@ -412,7 +412,7 @@
 <div align="center"><br>    <img src="/images/leetcode_147.png" width="500" align="center/"><br></div>
 
 <h3 id="1-头指针"><a href="#1-头指针" class="headerlink" title="1. 头指针"></a>1. 头指针</h3><p>维护一个含头指针的链表 j 来存储排序之后的结果，在遍历链表 i 的过程中，不断地扫描定位到链表 j 的位置，然后插入。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insertionSortList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        </span><br><span class="line">        new_head = ListNode(<span class="number">-1</span>)</span><br><span class="line">    </span><br><span class="line">        cur_i = head</span><br><span class="line">        <span class="keyword">while</span> cur_i:</span><br><span class="line">            temp = cur_i.next</span><br><span class="line">            cur_j = new_head</span><br><span class="line">            <span class="keyword">while</span> cur_j.next <span class="keyword">and</span> cur_j.next.val &lt;= cur_i.val:</span><br><span class="line">                cur_j = cur_j.next</span><br><span class="line">            cur_i.next = cur_j.next</span><br><span class="line">            cur_j.next = cur_i</span><br><span class="line">            cur_i = temp</span><br><span class="line">            </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> new_head.next</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insertionSortList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        </span><br><span class="line">        new_head = ListNode(<span class="number">-1</span>)</span><br><span class="line">    </span><br><span class="line">        cur_i = head</span><br><span class="line">        <span class="keyword">while</span> cur_i:</span><br><span class="line">            temp = cur_i.next</span><br><span class="line">            cur_j = new_head</span><br><span class="line">            <span class="keyword">while</span> cur_j.next <span class="keyword">and</span> cur_j.next.val &lt;= cur_i.val:</span><br><span class="line">                cur_j = cur_j.next</span><br><span class="line">            cur_i.next = cur_j.next</span><br><span class="line">            cur_j.next = cur_i</span><br><span class="line">            cur_i = temp</span><br><span class="line">            </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> new_head.next</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -458,6 +458,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/15/leetcode-SortList/" rel="prev" title="LeetCode_Sort List">
+                LeetCode_Sort List <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -527,7 +531,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">151</span>
+                    <span class="site-state-item-count">152</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
