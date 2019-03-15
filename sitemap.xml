@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2019/02/27/leetcode-BinaryTreeInorderTraversal/</loc>
+    
+    <lastmod>2019-03-15T06:49:44.850Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sara-hy.github.io/2019/03/15/leetcode-BinaryTreePreorderTraversal/</loc>
+    
+    <lastmod>2019-03-15T06:49:20.240Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2019/03/15/leetcode-ReorderList/</loc>
     
     <lastmod>2019-03-15T06:18:46.912Z</lastmod>
@@ -187,13 +201,6 @@
     <loc>https://sara-hy.github.io/2019/03/06/leetcode-PopulatingNextRightPointersinEachNodeII/</loc>
     
     <lastmod>2019-03-09T09:50:58.976Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sara-hy.github.io/2019/02/27/leetcode-BinaryTreeInorderTraversal/</loc>
-    
-    <lastmod>2019-03-09T09:26:38.937Z</lastmod>
     
   </url>
   
