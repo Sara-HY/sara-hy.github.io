@@ -116,12 +116,12 @@
 <meta property="og:site_name" content="Sara">
 <meta property="og:description" content="Binary Tree Preorder TraversalGiven a binary tree, return the preorder traversal of its nodes’ values.（先序遍历二叉树）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_94.png">
-<meta property="og:updated_time" content="2019-03-15T06:49:20.240Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_144.png">
+<meta property="og:updated_time" content="2019-03-15T06:54:00.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_Binary Tree Preorder Traversal">
 <meta name="twitter:description" content="Binary Tree Preorder TraversalGiven a binary tree, return the preorder traversal of its nodes’ values.（先序遍历二叉树）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_94.png">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_144.png">
 
 
 
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-03-15 14:22:32 / Modified: 14:49:20" itemprop="dateCreated datePublished" datetime="2019-03-15T14:22:32+08:00">2019-03-15</time>
+              <time title="Created: 2019-03-15 14:22:32 / Modified: 14:54:00" itemprop="dateCreated datePublished" datetime="2019-03-15T14:22:32+08:00">2019-03-15</time>
             
 
             
@@ -410,7 +410,7 @@
 <a id="more"></a>
 <p><strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</p>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_94.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_144.png" width="500" align="center/"><br></div>
 
 <h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><p>具体实现方法如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(self, root, res)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        res.append(root.val)</span><br><span class="line">        self.helper(root.left, res)</span><br><span class="line">        self.helper(root.right, res)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">preorderTraversal</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        </span><br><span class="line">        result = []</span><br><span class="line">        self.helper(root, result)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
@@ -462,6 +462,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/15/leetcode-BinaryTreePostorderTraversal/" rel="prev" title="LeetCode_Binary Tree Postorder Traversal">
+                LeetCode_Binary Tree Postorder Traversal <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,7 +535,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">148</span>
+                    <span class="site-state-item-count">149</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
