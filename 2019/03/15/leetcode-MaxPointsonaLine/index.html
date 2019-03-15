@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Edit DistanceGiven two words word1 and word2, find the minimum number of operations required to convert word1 to word2.（计算编辑距离）">
-<meta name="keywords" content="dynamic programming,hard,string">
+  <meta name="description" content="Max Points on a LineGiven n points on a 2D plane, find the maximum number of points that lie on the same straight line.（坐标系中共线最多的点数）">
+<meta name="keywords" content="hash table,hard,math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Edit Distance">
-<meta property="og:url" content="https://sara-hy.github.io/2019/02/19/leetcode-EditDistance/index.html">
+<meta property="og:title" content="LeetCode_Max Points on a Line">
+<meta property="og:url" content="https://sara-hy.github.io/2019/03/15/leetcode-MaxPointsonaLine/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Edit DistanceGiven two words word1 and word2, find the minimum number of operations required to convert word1 to word2.（计算编辑距离）">
+<meta property="og:description" content="Max Points on a LineGiven n points on a 2D plane, find the maximum number of points that lie on the same straight line.（坐标系中共线最多的点数）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_72.png">
-<meta property="og:updated_time" content="2019-02-19T16:16:18.125Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_149.png">
+<meta property="og:updated_time" content="2019-03-15T13:11:06.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Edit Distance">
-<meta name="twitter:description" content="Edit DistanceGiven two words word1 and word2, find the minimum number of operations required to convert word1 to word2.（计算编辑距离）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_72.png">
+<meta name="twitter:title" content="LeetCode_Max Points on a Line">
+<meta name="twitter:description" content="Max Points on a LineGiven n points on a 2D plane, find the maximum number of points that lie on the same straight line.（坐标系中共线最多的点数）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_149.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/02/19/leetcode-EditDistance/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/03/15/leetcode-MaxPointsonaLine/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Edit Distance | Sara</title>
+  <title>LeetCode_Max Points on a Line | Sara</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/19/leetcode-EditDistance/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/15/leetcode-MaxPointsonaLine/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Edit Distance
+          <h1 class="post-title" itemprop="name headline">LeetCode_Max Points on a Line
               
             
           </h1>
@@ -343,24 +343,12 @@
                 
               
 
-              <time title="Created: 2019-02-19 17:31:37" itemprop="dateCreated datePublished" datetime="2019-02-19T17:31:37+08:00">2019-02-19</time>
+              <time title="Created: 2019-03-15 20:27:00 / Modified: 21:11:06" itemprop="dateCreated datePublished" datetime="2019-03-15T20:27:00+08:00">2019-03-15</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-02-20 00:16:18" itemprop="dateModified" datetime="2019-02-20T00:16:18+08:00">2019-02-20</time>
               
             
           </span>
@@ -418,20 +406,14 @@
       
 
       
-        <h2 id="Edit-Distance"><a href="#Edit-Distance" class="headerlink" title="Edit Distance"></a><a href="https://leetcode.com/problems/edit-distance/" target="_blank" rel="noopener">Edit Distance</a></h2><p>Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.<br>（计算编辑距离）</p>
+        <h2 id="Max-Points-on-a-Line"><a href="#Max-Points-on-a-Line" class="headerlink" title="Max Points on a Line"></a><a href="https://leetcode.com/problems/max-points-on-a-line/" target="_blank" rel="noopener">Max Points on a Line</a></h2><p>Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.<br>（坐标系中共线最多的点数）</p>
 <a id="more"></a>
-<p>You have the following 3 operations permitted on a word:</p>
-<ol>
-<li>Insert a character</li>
-<li>Delete a character</li>
-<li>Replace a character</li>
-</ol>
-<p><strong>Example:</strong></p>
-<div align="center"><br>    <img src="/images/leetcode_72.png" width="500" align="center/"><br></div>
+<p><strong>Example:</strong> </p>
+<div align="center"><br>    <img src="/images/leetcode_149.png" width="500" align="center/"><br></div>
 
+<h3 id="1-哈希表-穷举"><a href="#1-哈希表-穷举" class="headerlink" title="1. 哈希表 + 穷举"></a>1. 哈希表 + 穷举</h3><p>对每个点都计算一下该点和其他点连线的斜率，这样对于这个点来说，相同斜率的直线有多少条，就意味着有多少个点在同一条直线上。用哈希表，以斜率为key，记录有多少重复直线。但是通过斜率来判断共线需要用到除法，而用double表示的双精度小数在有的系统里不一定准确，为了更加精确无误的计算共线，我们应当避免除法，而使用约分之后的分数表示（记录分子分母）。具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a point.</span></span><br><span class="line"><span class="comment"># class Point(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, a=0, b=0):</span></span><br><span class="line"><span class="comment">#         self.x = a</span></span><br><span class="line"><span class="comment">#         self.y = b</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxPoints</span><span class="params">(self, points)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type points: List[Point]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># 最大公约数</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">gcd</span><span class="params">(a, b)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> a</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> gcd(b, a % b)</span><br><span class="line">            </span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(points)):</span><br><span class="line">            k_map = defaultdict(int)</span><br><span class="line">            duplicate_point = <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(points)):</span><br><span class="line">                <span class="keyword">if</span> points[i].x == points[j].x <span class="keyword">and</span> points[i].y == points[j].y:</span><br><span class="line">                    duplicate_point += <span class="number">1</span></span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                dx = points[j].x - points[i].x</span><br><span class="line">                dy = points[j].y - points[i].y</span><br><span class="line">                d = gcd(dx, dy)</span><br><span class="line">                k_map[(dx/d, dy/d)] += <span class="number">1</span></span><br><span class="line">            result = max(result, duplicate_point)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> k_map:</span><br><span class="line">                result = max(result, k_map[k] + duplicate_point)</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
-<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>很明显的动态规划的题目，问题就在于需要分类讨论。具体的讨论情况在code的注释部分有详细解释。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minDistance</span><span class="params">(self, word1: <span class="string">'str'</span>, word2: <span class="string">'str'</span>)</span> -&gt; 'int':</span></span><br><span class="line">        len1 = len(word1)</span><br><span class="line">        len2 = len(word2)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Create a table to store results of subproblems </span></span><br><span class="line">        dp = [[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(len1 + <span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(len2 + <span class="number">1</span>)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len2 + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len1 + <span class="number">1</span>):</span><br><span class="line">            	<span class="comment"># word1 is empty, insert all chars</span></span><br><span class="line">                <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">                    dp[i][j] = j</span><br><span class="line">                <span class="comment"># word2 is empty, remove all chars</span></span><br><span class="line">                <span class="keyword">elif</span> j == <span class="number">0</span>:</span><br><span class="line">                    dp[i][j] = i</span><br><span class="line">                <span class="comment"># last chars are same</span></span><br><span class="line">                <span class="keyword">elif</span> word2[i<span class="number">-1</span>] == word1[j<span class="number">-1</span>]:</span><br><span class="line">                    dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>]</span><br><span class="line">                <span class="comment"># last chars are different, min(insert, remove, replace)</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dp[i][j] = <span class="number">1</span> + min(dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j], dp[i<span class="number">-1</span>][j<span class="number">-1</span>])</span><br><span class="line">                </span><br><span class="line">        <span class="comment"># return dp[len2][len1]</span></span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -451,11 +433,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
+            <a href="/tags/hash-table/" rel="tag"># hash table</a>
           
             <a href="/tags/hard/" rel="tag"># hard</a>
           
-            <a href="/tags/string/" rel="tag"># string</a>
+            <a href="/tags/math/" rel="tag"># math</a>
           
         </div>
       
@@ -468,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/19/leetcode-TextJustification/" rel="next" title="LeetCode_Text Justification">
-                <i class="fa fa-chevron-left"></i> LeetCode_Text Justification
+              <a href="/2019/03/15/leetcode-SortList/" rel="next" title="LeetCode_Sort List">
+                <i class="fa fa-chevron-left"></i> LeetCode_Sort List
               </a>
             
           </div>
@@ -477,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/21/leetcode-SearchA2dMatrix/" rel="prev" title="LeetCode_Search A 2D Matrix">
-                LeetCode_Search A 2D Matrix <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -680,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Edit-Distance"><span class="nav-number">1.</span> <span class="nav-text">Edit Distance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态规划"><span class="nav-number">1.1.</span> <span class="nav-text">动态规划</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Max-Points-on-a-Line"><span class="nav-number">1.</span> <span class="nav-text">Max Points on a Line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-哈希表-穷举"><span class="nav-number">1.1.</span> <span class="nav-text">1. 哈希表 + 穷举</span></a></li></ol></li></ol></div>
             
 
           </div>
