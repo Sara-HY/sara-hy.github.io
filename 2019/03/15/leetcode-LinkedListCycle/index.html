@@ -117,7 +117,7 @@
 <meta property="og:description" content="Linked List CycleGiven a linked list, determine if it has a cycle in it. To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked li">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://sara-hy.github.io/images/leetcode_141.png">
-<meta property="og:updated_time" content="2019-03-15T03:54:28.549Z">
+<meta property="og:updated_time" content="2019-03-15T03:59:43.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_Linked List Cycle">
 <meta name="twitter:description" content="Linked List CycleGiven a linked list, determine if it has a cycle in it. To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked li">
@@ -343,7 +343,7 @@
                 
               
 
-              <time title="Created: 2019-03-15 10:50:11 / Modified: 11:54:28" itemprop="dateCreated datePublished" datetime="2019-03-15T10:50:11+08:00">2019-03-15</time>
+              <time title="Created: 2019-03-15 10:50:11 / Modified: 11:59:43" itemprop="dateCreated datePublished" datetime="2019-03-15T10:50:11+08:00">2019-03-15</time>
             
 
             
@@ -414,7 +414,7 @@
 
 <h3 id="1-哈希表"><a href="#1-哈希表" class="headerlink" title="1. 哈希表"></a>1. 哈希表</h3><p>使用哈希表存储已经遍历过的结点，时间复杂度为 O(n)，空间复杂度为 O(n)。具体实现过程如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasCycle</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        </span><br><span class="line">        node_set = set()</span><br><span class="line">        </span><br><span class="line">        p = head</span><br><span class="line">        <span class="keyword">while</span> p:</span><br><span class="line">            <span class="keyword">if</span> p <span class="keyword">in</span> node_set:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                node_set.add(p)</span><br><span class="line">            p = p.next</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-双指针"><a href="#2-双指针" class="headerlink" title="2. 双指针"></a>2. 双指针</h3><p>使用两个指针 slow 和 fast，在遍历链表的过程中，slow 移动一步，fast 移动两步。若存在环，两者一定会在某处相遇，具体实现过程如下：</p>
+<h3 id="2-双指针"><a href="#2-双指针" class="headerlink" title="2. 双指针"></a>2. 双指针</h3><p>使用两个指针 slow 和 fast，在遍历链表的过程中，slow 移动一步，fast 移动两步。若存在环，两者一定会在某处相遇（在两者都进入环之后，fast一定会追赶上slow）。时间复杂度为 O(n)，空间复杂度为 O(1)。具体实现过程如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasCycle</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        </span><br><span class="line">        slow, fast = head, head.next</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> slow != fast:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> fast <span class="keyword">or</span> <span class="keyword">not</span> fast.next:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            slow = slow.next</span><br><span class="line">            fast = fast.next.next</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
       
     </div>
@@ -461,6 +461,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/15/leetcode-LinkedListCycleII/" rel="prev" title="LeetCode_Linked List Cycle II">
+                LeetCode_Linked List Cycle II <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +534,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">145</span>
+                    <span class="site-state-item-count">146</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
