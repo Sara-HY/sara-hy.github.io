@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Find Minimum in Rotated Sorted Array]]></title>
+    <url>%2F2019%2F03%2F17%2Fleetcode-FindMinimuminRotatedSortedArray%2F</url>
+    <content type="text"><![CDATA[Find Minimum in Rotated Sorted ArraySuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]). Find the minimum element. You may assume no duplicate exists in the array.（确定一个升序序列经过某个位置翻转后的数组的最小值） Example: 1. 二分查找二分查找： 在 nums[middle] &gt; nums[right]，如[3, 4, 5, 1, 2]，说明最小值必然在右边，因此left = middle + 1； 在 nums[middle] &lt;= nums[right]，如[5, 1, 2, 3, 4]，说明最小的必然在左边，因此right = middle；具体实现过程如下： 1234567891011121314class Solution: def findMin(self, nums: List[int]) -&gt; int: n = len(nums) if n == 1: return nums[0] left, right = 0, n-1 while left &lt; right: middle = (left + right) // 2 if nums[middle] &gt; nums[right]: left = middle + 1 else: right = middle return nums[left]]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>array</tag>
+        <tag>binary search</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Maximum Product Subarray]]></title>
     <url>%2F2019%2F03%2F17%2Fleetcode-MaximumProductSubarray%2F</url>
     <content type="text"><![CDATA[Maximum Product SubarrayGiven an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.（最大子串乘积） Example: 1. 动态规划根据题意，需要找到数组中的某一个连续子数组，使得改部分的乘积最大，很明显的动规题目。具体实现过程如下： Note: 其中需要特别注意的是数组中存在负数，因此需要在遍历过程中考虑乘积最小的部分，这样通过符号的翻转反而可以得到最大值。 123456789101112131415161718192021class Solution: def maxProduct(self, nums: List[int]) -&gt; int: if not nums: return 0 n = len(nums) # 实际上可以不用维护一个数组，简单的变量即可。 dp_max = [0 for _ in range(n)] dp_min = [0 for _ in range(n)] dp_max[0] = nums[0] dp_min[0] = nums[0] for i in range(1, n): if nums[i] &gt;= 0: dp_max[i] = max(dp_max[i-1] * nums[i], nums[i]) dp_min[i] = min(dp_min[i-1] * nums[i], nums[i]) else: dp_max[i] = max(dp_min[i-1] * nums[i], nums[i]) dp_min[i] = min(dp_max[i-1] * nums[i], nums[i]) return max(dp_max) 降低空间复杂度的情况如下：12345678910111213class Solution: def maxProduct(self, nums: List[int]) -&gt; int: if not nums: return 0 dp_max, dp_min, result = nums[0], nums[0], nums[0] for i in range(1, len(nums)): temp1, temp2 = dp_min * nums[i], dp_max * nums[i] dp_max = max(temp1, temp2, nums[i]) dp_min = min(temp1, temp2, nums[i]) result = max(dp_max, result) return result]]></content>
@@ -97,8 +110,8 @@
       </categories>
       <tags>
         <tag>tree</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -481,8 +494,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -642,8 +655,8 @@
       <tags>
         <tag>medium</tag>
         <tag>tree</tag>
-        <tag>stack</tag>
         <tag>bfs</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -722,8 +735,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -801,8 +814,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -852,8 +865,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
         <tag>recursion</tag>
       </tags>
@@ -882,8 +895,8 @@
         <tag>array</tag>
         <tag>hash table</tag>
         <tag>dynamic programming</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -895,8 +908,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -993,8 +1006,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
         <tag>string</tag>
         <tag>hard</tag>
       </tags>
@@ -1034,8 +1047,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1401,8 +1414,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>greedy</tag>
         <tag>hard</tag>
         <tag>back tracking</tag>
@@ -1431,8 +1444,8 @@
       <tags>
         <tag>array</tag>
         <tag>two pointers</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -1557,8 +1570,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1582,8 +1595,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
         <tag>string</tag>
         <tag>hard</tag>
       </tags>
@@ -1738,8 +1751,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>binary search</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1752,8 +1765,8 @@
       <tags>
         <tag>medium</tag>
         <tag>array</tag>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1854,8 +1867,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
@@ -1919,8 +1932,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -1947,8 +1960,8 @@
       <tags>
         <tag>medium</tag>
         <tag>hash table</tag>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
