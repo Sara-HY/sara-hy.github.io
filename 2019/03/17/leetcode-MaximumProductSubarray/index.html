@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="SubsetsGiven a set of distinct integers, nums, return all possible subsets (the power set).（列举所有子集）">
-<meta name="keywords" content="medium,array,back tracking,bit manipulation">
+  <meta name="description" content="Maximum Product SubarrayGiven an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.（最大子串乘积）">
+<meta name="keywords" content="medium,array,dynamic programming">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_Subsets">
-<meta property="og:url" content="https://sara-hy.github.io/2019/02/23/leetcode-Subsets/index.html">
+<meta property="og:title" content="LeetCode_Maximum Product Subarray">
+<meta property="og:url" content="https://sara-hy.github.io/2019/03/17/leetcode-MaximumProductSubarray/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="SubsetsGiven a set of distinct integers, nums, return all possible subsets (the power set).（列举所有子集）">
+<meta property="og:description" content="Maximum Product SubarrayGiven an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.（最大子串乘积）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_78.png">
-<meta property="og:updated_time" content="2019-02-23T06:49:17.361Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_152.png">
+<meta property="og:updated_time" content="2019-03-17T14:39:30.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_Subsets">
-<meta name="twitter:description" content="SubsetsGiven a set of distinct integers, nums, return all possible subsets (the power set).（列举所有子集）">
-<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_78.png">
+<meta name="twitter:title" content="LeetCode_Maximum Product Subarray">
+<meta name="twitter:description" content="Maximum Product SubarrayGiven an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.（最大子串乘积）">
+<meta name="twitter:image" content="https://sara-hy.github.io/images/leetcode_152.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://sara-hy.github.io/2019/02/23/leetcode-Subsets/">
+  <link rel="canonical" href="https://sara-hy.github.io/2019/03/17/leetcode-MaximumProductSubarray/">
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>LeetCode_Subsets | Sara</title>
+  <title>LeetCode_Maximum Product Subarray | Sara</title>
   
 
 
@@ -330,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/02/23/leetcode-Subsets/">
+    <link itemprop="mainEntityOfPage" href="https://sara-hy.github.io/2019/03/17/leetcode-MaximumProductSubarray/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sara Han">
@@ -347,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_Subsets
+          <h1 class="post-title" itemprop="name headline">LeetCode_Maximum Product Subarray
               
             
           </h1>
@@ -372,7 +372,7 @@
                 
               
 
-              <time title="Created: 2019-02-23 14:29:21 / Modified: 14:49:17" itemprop="dateCreated datePublished" datetime="2019-02-23T14:29:21+08:00">2019-02-23</time>
+              <time title="Created: 2019-03-17 22:30:00 / Modified: 22:39:30" itemprop="dateCreated datePublished" datetime="2019-03-17T22:30:00+08:00">2019-03-17</time>
             
 
             
@@ -435,15 +435,16 @@
       
 
       
-        <h2 id="Subsets"><a href="#Subsets" class="headerlink" title="Subsets"></a><a href="https://leetcode.com/problems/subsets/" target="_blank" rel="noopener">Subsets</a></h2><p>Given a set of distinct integers, nums, return all possible subsets (the power set).<br>（列举所有子集）</p>
+        <h2 id="Maximum-Product-Subarray"><a href="#Maximum-Product-Subarray" class="headerlink" title="Maximum Product Subarray"></a><a href="https://leetcode.com/problems/maximum-product-subarray/" target="_blank" rel="noopener">Maximum Product Subarray</a></h2><p>Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.<br>（最大子串乘积）</p>
 <a id="more"></a>
 <p><strong>Example:</strong> </p>
-<div align="center"><br>    <img src="/images/leetcode_78.png" width="500" align="center/"><br></div>
+<div align="center"><br>    <img src="/images/leetcode_152.png" width="500" align="center/"><br></div>
 
-<h3 id="1-回溯法-DFS"><a href="#1-回溯法-DFS" class="headerlink" title="1. 回溯法 / DFS"></a>1. 回溯法 / DFS</h3><p>具体实现方法如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, i, re)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> re <span class="keyword">not</span> <span class="keyword">in</span> self.result:</span><br><span class="line">            self.result.append(re)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i, self.n):</span><br><span class="line">            self.dfs(j+<span class="number">1</span>, re + [self.nums[j]])</span><br><span class="line">            self.dfs(j+<span class="number">1</span>, re)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsets</span><span class="params">(self, nums: List[int])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        </span><br><span class="line">        self.nums = nums</span><br><span class="line">        self.n = len(nums)</span><br><span class="line">        self.result = []</span><br><span class="line">        </span><br><span class="line">        self.dfs(<span class="number">0</span>, [])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.result</span><br></pre></td></tr></table></figure>
-<h3 id="2-递归"><a href="#2-递归" class="headerlink" title="2. 递归"></a>2. 递归</h3><p>求子集的过程中，list 中的每一个元素要么出现，要么不出现。可以通过递归的方法，增加一个元素，即是原来的子集 + 子集中的每一个集合加上这个新元素的组合。具体实现过程如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsets</span><span class="params">(self, nums: <span class="string">'List[int]'</span>)</span> -&gt; 'List[List[int]]':</span></span><br><span class="line">        </span><br><span class="line">        res = [[]]</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> sorted(nums):</span><br><span class="line">            res += [item+[num] <span class="keyword">for</span> item <span class="keyword">in</span> res]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-动态规划"><a href="#1-动态规划" class="headerlink" title="1. 动态规划"></a>1. 动态规划</h3><p>根据题意，需要找到数组中的某一个连续子数组，使得改部分的乘积最大，很明显的动规题目。具体实现过程如下：</p>
+<p><strong>Note:</strong> 其中需要特别注意的是数组中存在负数，因此需要在遍历过程中考虑乘积最小的部分，这样通过符号的翻转反而可以得到最大值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProduct</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="comment"># 实际上可以不用维护一个数组，简单的变量即可。</span></span><br><span class="line">        dp_max = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">        dp_min = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">        </span><br><span class="line">        dp_max[<span class="number">0</span>] = nums[<span class="number">0</span>]</span><br><span class="line">        dp_min[<span class="number">0</span>] = nums[<span class="number">0</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">            <span class="keyword">if</span> nums[i] &gt;= <span class="number">0</span>:</span><br><span class="line">                dp_max[i] = max(dp_max[i<span class="number">-1</span>] * nums[i], nums[i])</span><br><span class="line">                dp_min[i] = min(dp_min[i<span class="number">-1</span>] * nums[i], nums[i])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp_max[i] = max(dp_min[i<span class="number">-1</span>] * nums[i], nums[i])</span><br><span class="line">                dp_min[i] = min(dp_max[i<span class="number">-1</span>] * nums[i], nums[i])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max(dp_max)</span><br></pre></td></tr></table></figure>
+<p>降低空间复杂度的情况如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProduct</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">      </span><br><span class="line">        dp_max, dp_min, result = nums[<span class="number">0</span>], nums[<span class="number">0</span>], nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(nums)):</span><br><span class="line">            temp1, temp2 = dp_min * nums[i],  dp_max * nums[i]</span><br><span class="line">            dp_max = max(temp1, temp2, nums[i])</span><br><span class="line">            dp_min = min(temp1, temp2, nums[i])</span><br><span class="line">            result = max(dp_max, result)</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -468,9 +469,7 @@
           
             <a href="/tags/array/" rel="tag"># array</a>
           
-            <a href="/tags/back-tracking/" rel="tag"># back tracking</a>
-          
-            <a href="/tags/bit-manipulation/" rel="tag"># bit manipulation</a>
+            <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
           
         </div>
       
@@ -483,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/23/leetcode-Combinations/" rel="next" title="LeetCode_Combinations">
-                <i class="fa fa-chevron-left"></i> LeetCode_Combinations
+              <a href="/2019/03/17/leetcode-ReverseWordsinaString/" rel="next" title="LeetCode_Reverse Words in a String">
+                <i class="fa fa-chevron-left"></i> LeetCode_Reverse Words in a String
               </a>
             
           </div>
@@ -492,10 +491,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/23/leetcode-WordSearch/" rel="prev" title="LeetCode_Word Search">
-                LeetCode_Word Search <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -695,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Subsets"><span class="nav-number">1.</span> <span class="nav-text">Subsets</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-回溯法-DFS"><span class="nav-number">1.1.</span> <span class="nav-text">1. 回溯法 / DFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-递归"><span class="nav-number">1.2.</span> <span class="nav-text">2. 递归</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Maximum-Product-Subarray"><span class="nav-number">1.</span> <span class="nav-text">Maximum Product Subarray</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-动态规划"><span class="nav-number">1.1.</span> <span class="nav-text">1. 动态规划</span></a></li></ol></li></ol></div>
             
 
           </div>
