@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Find Minimum in Rotated Sorted Array II]]></title>
+    <url>%2F2019%2F03%2F17%2Fleetcode-FindMinimuminRotatedSortedArrayII%2F</url>
+    <content type="text"><![CDATA[Find Minimum in Rotated Sorted Array IISuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]). Find the minimum element. The array may contain duplicates.（确定一个升序序列经过某个位置翻转后的数组的最小值(有重复元素)） Note: Would allow duplicates affect the run-time complexity? How and why? Example: 1. 二分查找与上一个不含重复元素的方法一致，只是在遇到相同的元素时，需要提前移动 left 和 right 指针。两者的时间复杂度都是 O(log(n))，但是在最坏的情况下，数组中全部是相同的元素，时间复杂度为O(n)。具体实现方法如下： 12345678910111213141516171819class Solution: def findMin(self, nums: List[int]) -&gt; int: n = len(nums) if n == 1: return nums[0] left, right = 0, n-1 while left &lt; right: while left &lt; right and nums[left+1] == nums[left]: left += 1 while left &lt; right and nums[right-1] == nums[right]: right -= 1 middle = (left + right) // 2 if nums[middle] &gt; nums[right]: left = middle + 1 else: right = middle return nums[left] 2. 二分查找另一种解决方案如下： 12345678910111213141516class Solution: def findMin(self, nums: List[int]) -&gt; int: n = len(nums) if n == 1: return nums[0] left, right = 0, n-1 while left &lt; right: middle = (left + right) // 2 if nums[middle] &gt; nums[right]: left = middle + 1 elif nums[middle] &lt; nums[left]: right = middle else: right -= 1 return nums[left]]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+        <tag>binary search</tag>
+        <tag>hard</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Find Minimum in Rotated Sorted Array]]></title>
     <url>%2F2019%2F03%2F17%2Fleetcode-FindMinimuminRotatedSortedArray%2F</url>
     <content type="text"><![CDATA[Find Minimum in Rotated Sorted ArraySuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]). Find the minimum element. You may assume no duplicate exists in the array.（确定一个升序序列经过某个位置翻转后的数组的最小值） Example: 1. 二分查找二分查找： 在 nums[middle] &gt; nums[right]，如[3, 4, 5, 1, 2]，说明最小值必然在右边，因此left = middle + 1； 在 nums[middle] &lt;= nums[right]，如[5, 1, 2, 3, 4]，说明最小的必然在左边，因此right = middle；具体实现过程如下： 1234567891011121314class Solution: def findMin(self, nums: List[int]) -&gt; int: n = len(nums) if n == 1: return nums[0] left, right = 0, n-1 while left &lt; right: middle = (left + right) // 2 if nums[middle] &gt; nums[right]: left = middle + 1 else: right = middle return nums[left]]]></content>
@@ -655,8 +668,8 @@
       <tags>
         <tag>medium</tag>
         <tag>tree</tag>
-        <tag>bfs</tag>
         <tag>stack</tag>
+        <tag>bfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1751,8 +1764,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>binary search</tag>
         <tag>hash table</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
