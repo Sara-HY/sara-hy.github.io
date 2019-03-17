@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Min Stack]]></title>
+    <url>%2F2019%2F03%2F17%2Fleetcode-MinStack%2F</url>
+    <content type="text"><![CDATA[Min StackDesign a stack that supports push, pop, top, and retrieving the minimum element in constant time. push(x) – Push element x onto stack. pop() – Removes the element on top of the stack. top() – Get the top element. getMin() – Retrieve the minimum element in the stack. （设计一个堆栈类，并可以O(1)定位到最小值） Example: 1. 牺牲空间复杂度来实现时间复杂度为了能够快速在动态出栈，入栈的过程中得到当前堆栈的最小值，我们需要维护一个与当前栈相同大小的“最小栈”，并在入栈的时候更新一致，具体实现过程如下： 1234567891011121314151617181920212223242526272829303132333435363738394041class MinStack: def __init__(self): """ initialize your data structure here. """ self.stack = [] self.min_ele = [] def push(self, x: int) -&gt; None: if not self.stack: self.stack.append(x) self.min_ele.append(x) else: min_ele = min(self.min_ele[-1], x) self.stack.append(x) self.min_ele.append(min_ele) def pop(self) -&gt; None: self.stack.pop() self.min_ele.pop() def top(self) -&gt; int: if not self.stack: return None else: return self.stack[-1] def getMin(self) -&gt; int: if not self.stack: return None else: return self.min_ele[-1]# Your MinStack object will be instantiated and called as such:# obj = MinStack()# obj.push(x)# obj.pop()# param_3 = obj.top()# param_4 = obj.getMin()]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>easy</tag>
+        <tag>stack</tag>
+        <tag>design</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Find Minimum in Rotated Sorted Array II]]></title>
     <url>%2F2019%2F03%2F17%2Fleetcode-FindMinimuminRotatedSortedArrayII%2F</url>
     <content type="text"><![CDATA[Find Minimum in Rotated Sorted Array IISuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]). Find the minimum element. The array may contain duplicates.（确定一个升序序列经过某个位置翻转后的数组的最小值(有重复元素)） Note: Would allow duplicates affect the run-time complexity? How and why? Example: 1. 二分查找与上一个不含重复元素的方法一致，只是在遇到相同的元素时，需要提前移动 left 和 right 指针。两者的时间复杂度都是 O(log(n))，但是在最坏的情况下，数组中全部是相同的元素，时间复杂度为O(n)。具体实现方法如下： 12345678910111213141516171819class Solution: def findMin(self, nums: List[int]) -&gt; int: n = len(nums) if n == 1: return nums[0] left, right = 0, n-1 while left &lt; right: while left &lt; right and nums[left+1] == nums[left]: left += 1 while left &lt; right and nums[right-1] == nums[right]: right -= 1 middle = (left + right) // 2 if nums[middle] &gt; nums[right]: left = middle + 1 else: right = middle return nums[left] 2. 二分查找另一种解决方案如下： 12345678910111213141516class Solution: def findMin(self, nums: List[int]) -&gt; int: n = len(nums) if n == 1: return nums[0] left, right = 0, n-1 while left &lt; right: middle = (left + right) // 2 if nums[middle] &gt; nums[right]: left = middle + 1 elif nums[middle] &lt; nums[left]: right = middle else: right -= 1 return nums[left]]]></content>
@@ -123,8 +136,8 @@
       </categories>
       <tags>
         <tag>tree</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -354,8 +367,8 @@
       <tags>
         <tag>array</tag>
         <tag>string</tag>
-        <tag>hard</tag>
         <tag>bfs</tag>
+        <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -908,8 +921,8 @@
         <tag>array</tag>
         <tag>hash table</tag>
         <tag>dynamic programming</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -921,8 +934,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1019,8 +1032,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>two pointers</tag>
         <tag>hash table</tag>
+        <tag>two pointers</tag>
         <tag>string</tag>
         <tag>hard</tag>
       </tags>
@@ -1414,8 +1427,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>dynamic programming</tag>
         <tag>greedy</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1427,9 +1440,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>greedy</tag>
         <tag>string</tag>
         <tag>dynamic programming</tag>
-        <tag>greedy</tag>
         <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
@@ -1457,8 +1470,8 @@
       <tags>
         <tag>array</tag>
         <tag>two pointers</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1608,8 +1621,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>two pointers</tag>
         <tag>hash table</tag>
+        <tag>two pointers</tag>
         <tag>string</tag>
         <tag>hard</tag>
       </tags>
@@ -1778,8 +1791,8 @@
       <tags>
         <tag>medium</tag>
         <tag>array</tag>
-        <tag>two pointers</tag>
         <tag>hash table</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
