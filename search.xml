@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Reverse Words in a String]]></title>
+    <url>%2F2019%2F03%2F17%2Fleetcode-ReverseWordsinaString%2F</url>
+    <content type="text"><![CDATA[Reverse Words in a StringGiven an input string, reverse the string word by word.（翻转字符串中的词语） Note: A word is defined as a sequence of non-space characters. Input string may contain leading or trailing spaces. However, your reversed string should not contain leading or trailing spaces. You need to reduce multiple spaces between two words to a single space in the reversed string. Example: 1. 字符串函数使用 split join [::-1] 等常用的字符串换处理函数，具体实现过程如下： 123class Solution: def reverseWords(self, s: str) -&gt; str: return " ".join(word for word in s.split(' ')[::-1] if word)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>string</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Evaluate Reverse Polish Notation]]></title>
     <url>%2F2019%2F03%2F15%2Fleetcode-EvaluateReversePolishNotation%2F</url>
     <content type="text"><![CDATA[Evaluate Reverse Polish NotationEvaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are +, -, *, /. Each operand may be an integer or another expression.（计算逆波兰表达式） Note: Division between two integers should truncate toward zero. The given RPN expression is always valid. That means the expression would always evaluate to a result and there won’t be any divide by zero operation. Example: 1. 栈使用堆栈来计算逆波兰表达式。其中需要注意的是，题目中要求除法运算没有整除时要向 0 靠近，因此在两个异号的数相除时，应该 + 1 处理，或者转换为正数除法再加负号。具体实现过程如下： 1234567891011121314151617181920212223242526272829class Solution(object): def evalRPN(self, tokens): """ :type tokens: List[str] :rtype: int """ stack = [] for i in range(len(tokens)): if tokens[i] not in ['+', '-', '*', '/']: stack.append(int(tokens[i])) else: right = stack.pop() left = stack.pop() if tokens[i] == '+': stack.append(left + right) elif tokens[i] == '-': stack.append(left - right) elif tokens[i] == '*': stack.append(left * right) else: # 6 / -132 if left * right &lt; 0 and left % right != 0: stack.append(left / right + 1) # stack.append(-(abs(left) / abs(right))) else: stack.append(left / right) return stack[-1]]]></content>
@@ -20,8 +32,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>math</tag>
+        <tag>hash table</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -72,8 +84,8 @@
       </categories>
       <tags>
         <tag>tree</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -135,8 +147,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>dynamic programming</tag>
+        <tag>hash table</tag>
         <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
@@ -186,8 +198,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>easy</tag>
+        <tag>hash table</tag>
         <tag>bit manipulation</tag>
       </tags>
   </entry>
@@ -303,8 +315,8 @@
       <tags>
         <tag>array</tag>
         <tag>string</tag>
-        <tag>hard</tag>
         <tag>bfs</tag>
+        <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -710,8 +722,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>tree</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -723,8 +735,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>tree</tag>
+        <tag>dynamic programming</tag>
         <tag>recursion</tag>
       </tags>
   </entry>
@@ -737,8 +749,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>tree</tag>
+        <tag>hash table</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -855,10 +867,10 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hash table</tag>
         <tag>dynamic programming</tag>
-        <tag>hard</tag>
+        <tag>hash table</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -870,8 +882,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -969,8 +981,8 @@
       </categories>
       <tags>
         <tag>two pointers</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
+        <tag>hash table</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1071,9 +1083,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>binary search</tag>
         <tag>easy</tag>
         <tag>math</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1301,8 +1313,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1314,8 +1326,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1406,8 +1418,8 @@
       <tags>
         <tag>array</tag>
         <tag>two pointers</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1494,8 +1506,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>binary search</tag>
         <tag>easy</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1558,8 +1570,8 @@
       </categories>
       <tags>
         <tag>two pointers</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
+        <tag>hash table</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1572,8 +1584,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>binary search</tag>
         <tag>math</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1907,8 +1919,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>binary search</tag>
         <tag>hard</tag>
+        <tag>binary search</tag>
         <tag>divide and conquer</tag>
       </tags>
   </entry>
@@ -1921,9 +1933,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
         <tag>dynamic programming</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1948,8 +1960,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hash table</tag>
         <tag>easy</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
