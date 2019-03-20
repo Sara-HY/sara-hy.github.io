@@ -136,8 +136,8 @@
       </categories>
       <tags>
         <tag>tree</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -367,8 +367,8 @@
       <tags>
         <tag>array</tag>
         <tag>string</tag>
-        <tag>bfs</tag>
         <tag>hard</tag>
+        <tag>bfs</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -921,8 +921,8 @@
         <tag>array</tag>
         <tag>hash table</tag>
         <tag>dynamic programming</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -934,8 +934,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -1032,8 +1032,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
         <tag>string</tag>
         <tag>hard</tag>
       </tags>
@@ -1427,8 +1427,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>greedy</tag>
         <tag>dynamic programming</tag>
+        <tag>greedy</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1440,9 +1440,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>greedy</tag>
         <tag>string</tag>
         <tag>dynamic programming</tag>
+        <tag>greedy</tag>
         <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
@@ -1470,8 +1470,8 @@
       <tags>
         <tag>array</tag>
         <tag>two pointers</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -1621,8 +1621,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
         <tag>string</tag>
         <tag>hard</tag>
       </tags>
@@ -1791,8 +1791,8 @@
       <tags>
         <tag>medium</tag>
         <tag>array</tag>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1811,7 +1811,7 @@
   <entry>
     <title><![CDATA[LeetCode_3Sum Closest]]></title>
     <url>%2F2018%2F11%2F29%2Fleetcode-3SumClosest%2F</url>
-    <content type="text"><![CDATA[3Sum ClosestGiven an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.（寻找数组中三个数的和为target的一个组合） Example: 1. 三个指针排序后三个指针遍历数组。其时间复杂度为 \(O(n^2)\)。123456789101112131415161718192021222324252627class Solution: def threeSumClosest(self, nums, target): """ :type nums: List[int] :type target: int :rtype: int """ nums.sort() n = len(nums) result = nums[0] + nums[1] + nums[2] for i in range(n - 2): l = i + 1 r = n - 1 while l &lt; r: threesum = nums[l] + nums[r] + nums[i] if threesum == target : return threesum if abs(threesum - target) &lt; abs(result - target): result = threesum if threesum &gt; target: r -= 1 else: l += 1 return result]]></content>
+    <content type="text"><![CDATA[3Sum ClosestGiven an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.（寻找数组中三个数的和最接近target的一个组合） Example: 1. 三个指针排序后三个指针遍历数组。其时间复杂度为 \(O(n^2)\)。123456789101112131415161718192021222324252627class Solution: def threeSumClosest(self, nums, target): """ :type nums: List[int] :type target: int :rtype: int """ nums.sort() n = len(nums) result = nums[0] + nums[1] + nums[2] for i in range(n - 2): l = i + 1 r = n - 1 while l &lt; r: threesum = nums[l] + nums[r] + nums[i] if threesum == target : return threesum if abs(threesum - target) &lt; abs(result - target): result = threesum if threesum &gt; target: r -= 1 else: l += 1 return result]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
