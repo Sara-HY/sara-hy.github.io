@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Find Peak Element]]></title>
+    <url>%2F2019%2F03%2F23%2Fleetcode-FindPeakElement%2F</url>
+    <content type="text"><![CDATA[Find Peak ElementA peak element is an element that is greater than its neighbors. sGiven an input array nums, where nums[i] ≠ nums[i+1], find a peak element and return its index. The array may contain multiple peaks, in that case return the index to any one of the peaks is fine. You may imagine that nums[-1] = nums[n] = -∞.（找到数组中的“波峰”值的index，一个即可。要求时间复杂度为O(logn)） Example: 1. 二分查找由于题中要求在时间复杂度为O(logn)的情况下实现，因此使用二分查找。 当 middle 正好是峰值时，直接返回。 当 nums[middle] &lt; nums[middle+1] 时，右边一定会存在峰值，因为 nums[n] = -∞，因此 left = middle。 其他情况，则左边会存在峰值，因此 right = middle。具体实现过程如下： 123456789101112131415161718192021class Solution(object): def findPeakElement(self, nums): """ :type nums: List[int] :rtype: int """ if not nums: return None left, right = 0, len(nums)-1 while left &lt; right - 1: middle = (left + right) // 2 if nums[middle] &gt; nums[middle-1] and nums[middle] &gt; nums[middle+1]: return middle if nums[middle] &lt; nums[middle+1]: left = middle else: right = middle return left if nums[left] &gt;= nums[right] else right]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>array</tag>
+        <tag>binary seach</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Intersection of Two Linked Lists]]></title>
     <url>%2F2019%2F03%2F23%2Fleetcode-IntersectionofTwoLinkedLists%2F</url>
     <content type="text"><![CDATA[Intersection of Two Linked ListsWrite a program to find the node at which the intersection of two singly linked lists begins. For example, the following two linked lists:（两个链表相交的结点） Example: 1. 暴力轮循使用这种方式的时间复杂度为 O(mn)，空间复杂度为 O(1)。 2. 哈希表使用这种方式的时间复杂度为 O(m+n)，空间复杂度为 O(m+n)。 3. 两个指针根据图中的示例，我们可以发现，两个链表若有交叉点，则主要长度不同的部分在交叉点之前。因此我们使用两个指针分别遍历两个链表，当某一个指针遍历到链尾时，从另一个链表开始。如此一来，在两个指针都遇到链尾并从头开始时，这一次的遍历一定会在相交点相遇。若不存在交叉点，则此时两个链表都在链尾为None。使用这种方式的时间复杂度为 O(m+n)，空间复杂度为 O(1)。具体实现过程如下： 12345678910111213141516171819202122232425262728# Definition for singly-linked list.# class ListNode(object):# def __init__(self, x):# self.val = x# self.next = Noneclass Solution(object): def getIntersectionNode(self, headA, headB): """ :type head1, head1: ListNode :rtype: ListNode """ if not headA or not headB: return None pA, pB = headA, headB while pA != pB: if pA: pA = pA.next else: pA = headB if pB: pB = pB.next else: pB = headA return pA]]></content>
@@ -35,8 +48,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>binary search</tag>
         <tag>hard</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -97,9 +110,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>math</tag>
         <tag>hard</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -212,9 +225,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>dynamic programming</tag>
         <tag>hard</tag>
+        <tag>hash table</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -263,8 +276,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>easy</tag>
+        <tag>hash table</tag>
         <tag>bit manipulation</tag>
       </tags>
   </entry>
@@ -814,8 +827,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>tree</tag>
+        <tag>hash table</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -932,9 +945,9 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hash table</tag>
         <tag>dynamic programming</tag>
         <tag>hard</tag>
+        <tag>hash table</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -1046,9 +1059,9 @@
       </categories>
       <tags>
         <tag>two pointers</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
         <tag>hard</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1148,9 +1161,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>binary search</tag>
         <tag>easy</tag>
         <tag>math</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1378,8 +1391,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1391,8 +1404,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1440,8 +1453,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>greedy</tag>
         <tag>dynamic programming</tag>
+        <tag>greedy</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1453,9 +1466,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>greedy</tag>
         <tag>string</tag>
         <tag>dynamic programming</tag>
+        <tag>greedy</tag>
         <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
@@ -1545,8 +1558,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
         <tag>hard</tag>
+        <tag>hash table</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -1571,8 +1584,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>binary search</tag>
         <tag>easy</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1635,9 +1648,9 @@
       </categories>
       <tags>
         <tag>two pointers</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
         <tag>hard</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -1649,8 +1662,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>binary search</tag>
         <tag>math</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1790,8 +1803,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>binary search</tag>
         <tag>hash table</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1984,8 +1997,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>binary search</tag>
         <tag>hard</tag>
+        <tag>binary search</tag>
         <tag>divide and conquer</tag>
       </tags>
   </entry>
@@ -1998,9 +2011,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>string</tag>
         <tag>dynamic programming</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -2025,8 +2038,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hash table</tag>
         <tag>easy</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
