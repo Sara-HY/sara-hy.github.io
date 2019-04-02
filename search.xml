@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Fraction to Recurring Decimal]]></title>
+    <url>%2F2019%2F04%2F02%2Fleetcode-FractiontoRecurringDecimal%2F</url>
+    <content type="text"><![CDATA[Fraction to Recurring DecimalGiven two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses.（分数-&gt;小数） Example: 1. 哈希表本题意在将分数转换为小数点的形式表示，主要考察的是无限循环小数。在除法与商和余数的过程中，首先需要考虑符号的问题。其次，我们需要把每次的余数保存在 remainder_map 中，当下次出现余数已经出现了则说明出现了循环。具体实现方法如下： 12345678910111213141516171819202122232425class Solution: def fractionToDecimal(self, numerator: int, denominator: int) -&gt; str: if numerator * denominator &lt; 0: sign = '-' else: sign = '' result = sign integer, remainder = divmod(abs(numerator), abs(denominator)) result += str(integer) if remainder: result += '.' remainder_map = &#123;&#125; while remainder: if remainder not in remainder_map: remainder_map[remainder] = len(result) integer, remainder = divmod(remainder * 10, abs(denominator)) result += str(integer) else: index = remainder_map[remainder] result = result[:index] + '(' + result[index:] + ')' break return result]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>hash table</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Compare Version Numbers]]></title>
     <url>%2F2019%2F03%2F25%2Fleetcode-CompareVersionNumbers%2F</url>
     <content type="text"><![CDATA[Compare Version NumbersCompare two version numbers version1 and version2. If version1 &gt; version2 return 1; if version1 &lt; version2 return -1; otherwise return 0. You may assume that the version strings are non-empty and contain only digits and the . character. The . character does not represent a decimal point and is used to separate number sequences. For instance, 2.5 is not “two and a half” or “half way to version three”, it is the fifth second-level revision of the second first-level revision. You may assume the default revision number for each level of a version number to be 0. For example, version number 3.4 has a revision number of 3 and 4 for its first and second level revision number. Its third and fourth level revision number are both 0.（比较’.’分开的数值大小） Example: 1. 字符串处理123456789101112131415161718192021222324252627282930313233class Solution(object): def compareVersion(self, version1, version2): """ :type version1: str :type version2: str :rtype: int """ data1 = version1.split('.') data2 = version2.split('.') m, n = len(data1), len(data2) for i in range(min(m, n)): if int(data1[i]) &gt; int(data2[i]): return 1 elif int(data1[i]) &lt; int(data2[i]): return -1 if m == n: return 0 if m &gt; n: num = int(''.join(data1[n:])) if num: return 1 else: return 0 if m &lt; n: num = int(''.join(data2[m:])) if num: return -1 else: return 0]]></content>
@@ -186,8 +199,8 @@
       </categories>
       <tags>
         <tag>tree</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -410,7 +423,7 @@
   <entry>
     <title><![CDATA[LeetCode_Word Ladder II]]></title>
     <url>%2F2019%2F03%2F13%2Fleetcode-WordLadderII%2F</url>
-    <content type="text"><![CDATA[Word Ladder IIGiven two words (beginWord and endWord), and a dictionary’s word list, find the length of shortest transformation sequence from beginWord to endWord.（词语阶梯） Note: Only one letter can be changed at a time. Each transformed word must exist in the word list. Note that beginWord is not a transformed word. Return 0 if there is no such transformation sequence. All words have the same length. All words contain only lowercase alphabetic characters. You may assume no duplicates in the word list. You may assume beginWord and endWord are non-empty and are not the same. Example: 1. BFS + DFS + BackTracking下面这个解法最终并没有成功AC，主要就是超时(Time Limit Exceeded)的问题。先根据 BFS 找到最短的转换次数，然后在 DFS 进行求解的过程中将解法超过最短的转换次数的剪枝。具体实现过程如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152class Solution: def minladderLength(self, beginWord): queue = [(beginWord, 1)] visited = [beginWord] while queue: word, step = queue.pop(0) if word == self.endWord: return step for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern in self.word_map: for _word in self.word_map[word_pattern]: if _word not in visited: queue.append((_word, step+1)) visited.append(_word) return 0 def back_tracking(self, res, visited): if len(res) &gt; self.min_step: return word = res[-1] if word == self.endWord: self.results.append(res) for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern in self.word_map: for _word in self.word_map[word_pattern]: if _word != word and _word not in visited: visited.append(_word) self.back_tracking(res + [_word], visited) visited.remove(_word) def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -&gt; List[List[str]]: if not wordList or endWord not in wordList: return [] self.word_map = &#123;&#125; for word in wordList: for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern not in self.word_map: self.word_map[word_pattern] = [word] else: self.word_map[word_pattern].append(word) self.endWord = endWord self.min_step = self.minladderLength(beginWord) self.results = [] self.back_tracking([beginWord], [beginWord]) return self.results 2. BFS + DFS + BackTracking下面这个方案是参照别人的解法，改进的地方就是在BFS的过程中，记录每个访问过的word距离beginWord的距离，显然 dis[beginword]=0, dis[endword]=minstep-1。然后逆向DFS(从终止点开始)，对于每个每个即将要拓展的点最短路径必然满足的条件是：dis[word] + pathsize = minstep。具体实现过程如下： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class Solution: def minladderLength(self, beginWord): queue = [(beginWord, 1)] visited = [beginWord] while queue: word, step = queue.pop(0) if word == self.endWord: return step for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern in self.word_map: for _word in self.word_map[word_pattern]: if _word not in visited: self.dis[_word] = step # get the distance to the begin word queue.append((_word, step+1)) visited.append(_word) return 0 def back_tracking(self, res, visited): if len(res) &gt; self.min_step: return word = res[0] # confirm the second word in the path if len(res) == self.min_step-1 and self.dis[word] == 1: self.results.append([self.beginWord] + res) for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern in self.word_map: for _word in self.word_map[word_pattern]: if _word != word and _word not in visited: # 剪枝 if _word not in self.dis or self.dis[_word] + len(res) &gt; self.min_step: continue else: visited.append(_word) self.back_tracking([_word] + res, visited) visited.remove(_word) def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -&gt; List[List[str]]: if not wordList or endWord not in wordList: return [] self.word_map = &#123;&#125; for word in wordList: for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern not in self.word_map: self.word_map[word_pattern] = [word] else: self.word_map[word_pattern].append(word) self.endWord = endWord self.beginWord = beginWord self.dis = &#123;&#125; self.dis[beginWord] = 0 self.min_step = self.minladderLength(beginWord) self.results = [] self.back_tracking([endWord], [endWord]) return self.results 3. BackTracking另一种比较简单的做法，从 beginWord 出发，逐一修改 beginWord 中的字符，将第一次出现在 wordList 的词维护一个map保存，按同样的方式遍历这些词语直到找到 endWord。 然后从 endWord 出发逆向 DFS，具体实现过程如下： 1234567891011121314151617181920212223242526272829303132333435from collections import defaultdictfrom string import ascii_lowercaseclass Solution: def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -&gt; List[List[str]]: dictionary = set(wordList) result, cur, visited, found, trace = [], [beginWord], set([beginWord]), False, defaultdict(list) while cur and not found: for word in cur: visited.add(word) next = set() for word in cur: for i in range(len(word)): for c in ascii_lowercase: candidate = word[:i] + c + word[i + 1:] if candidate not in visited and candidate in dictionary: if candidate == endWord: found = True next.add(candidate) trace[candidate].append(word) cur = next if found: self.backtrack(result, trace, [], endWord) return result def backtrack(self, result, trace, path, word): if not trace[word]: result.append([word] + path) else: for prev in trace[word]: self.backtrack(result, trace, [word] + path, prev) Note: 这里dictionary = set(wordList)很重要，不然也会超时(Time Limit Exceeded)。set和lsit可以自由转换，在删除list中多个/海量重复元素时，可以先转换成set，然后再转回list并排序(set没有排序)，此种方法不仅方便且效率较高。]]></content>
+    <content type="text"><![CDATA[Word Ladder IIGiven two words (beginWord and endWord), and a dictionary’s word list, find the length of shortest transformation sequence from beginWord to endWord.（词语阶梯） Note: Only one letter can be changed at a time. Each transformed word must exist in the word list. Note that beginWord is not a transformed word. Return 0 if there is no such transformation sequence. All words have the same length. All words contain only lowercase alphabetic characters. You may assume no duplicates in the word list. You may assume beginWord and endWord are non-empty and are not the same. Example: 1. BFS + DFS + BackTracking下面这个解法最终并没有成功AC，主要就是超时(Time Limit Exceeded)的问题。先根据 BFS 找到最短的转换次数，然后在 DFS 进行求解的过程中将解法超过最短的转换次数的剪枝。具体实现过程如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152class Solution: def minladderLength(self, beginWord): queue = [(beginWord, 1)] visited = [beginWord] while queue: word, step = queue.pop(0) if word == self.endWord: return step for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern in self.word_map: for _word in self.word_map[word_pattern]: if _word not in visited: queue.append((_word, step+1)) visited.append(_word) return 0 def back_tracking(self, res, visited): if len(res) &gt; self.min_step: return word = res[-1] if word == self.endWord: self.results.append(res) for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern in self.word_map: for _word in self.word_map[word_pattern]: if _word != word and _word not in visited: visited.append(_word) self.back_tracking(res + [_word], visited) visited.remove(_word) def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -&gt; List[List[str]]: if not wordList or endWord not in wordList: return [] self.word_map = &#123;&#125; for word in wordList: for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern not in self.word_map: self.word_map[word_pattern] = [word] else: self.word_map[word_pattern].append(word) self.endWord = endWord self.min_step = self.minladderLength(beginWord) self.results = [] self.back_tracking([beginWord], [beginWord]) return self.results 2. BFS + DFS + BackTracking下面这个方案是参照别人的解法，改进的地方就是在BFS的过程中，记录每个访问过的word距离beginWord的距离，显然 dis[beginword]=0, dis[endword]=minstep-1。然后逆向DFS(从终止点开始)，对于每个每个即将要拓展的点最短路径必然满足的条件是：dis[word] + pathsize = minstep。具体实现过程如下： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class Solution: def minladderLength(self, beginWord): queue = [(beginWord, 1)] visited = [beginWord] while queue: word, step = queue.pop(0) if word == self.endWord: return step for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern in self.word_map: for _word in self.word_map[word_pattern]: if _word not in visited: self.dis[_word] = step # get the distance to the begin word queue.append((_word, step+1)) visited.append(_word) return 0 def back_tracking(self, res, visited): if len(res) &gt; self.min_step: return word = res[0] # confirm the second word in the path if len(res) == self.min_step-1 and self.dis[word] == 1: self.results.append([self.beginWord] + res) for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern in self.word_map: for _word in self.word_map[word_pattern]: if _word != word and _word not in visited: # 剪枝 if _word not in self.dis or self.dis[_word] + len(res) &gt; self.min_step: continue else: visited.append(_word) self.back_tracking([_word] + res, visited) visited.remove(_word) def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -&gt; List[List[str]]: if not wordList or endWord not in wordList: return [] self.word_map = &#123;&#125; for word in wordList: for i in range(len(word)): word_pattern = word[:i] + '*' + word[i+1:] if word_pattern not in self.word_map: self.word_map[word_pattern] = [word] else: self.word_map[word_pattern].append(word) self.endWord = endWord self.beginWord = beginWord self.dis = &#123;&#125; self.dis[beginWord] = 0 self.min_step = self.minladderLength(beginWord) self.results = [] self.back_tracking([endWord], [endWord]) return self.results 3. BackTracking另一种比较简单的做法，从 beginWord 出发，逐一修改 beginWord 中的字符，将第一次出现在 wordList 的词维护一个map保存，按同样的方式遍历这些词语直到找到 endWord。 然后从 endWord 出发逆向 DFS，具体实现过程如下： 1234567891011121314151617181920212223242526272829303132333435from collections import defaultdictfrom string import ascii_lowercaseclass Solution: def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -&gt; List[List[str]]: dictionary = set(wordList) result, cur, visited, found, trace = [], [beginWord], set([beginWord]), False, defaultdict(list) while cur and not found: for word in cur: visited.add(word) next = set() for word in cur: for i in range(len(word)): for c in ascii_lowercase: candidate = word[:i] + c + word[i + 1:] if candidate not in visited and candidate in dictionary: if candidate == endWord: found = True next.add(candidate) trace[candidate].append(word) cur = next if found: self.backtrack(result, trace, [], endWord) return result def backtrack(self, result, trace, path, word): if not trace[word]: result.append([word] + path) else: for prev in trace[word]: self.backtrack(result, trace, [word] + path, prev) Note: 这里dictionary = set(wordList)很重要，不然也会超时(Time Limit Exceeded)。set和list可以自由转换，在删除list中多个/海量重复元素时，可以先转换成set，然后再转回list并排序(set没有排序)，此种方法不仅方便且效率较高。]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
@@ -570,8 +583,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -724,7 +737,7 @@
   <entry>
     <title><![CDATA[LeetCode_Binary Tree Zigzag Level Order Traversal]]></title>
     <url>%2F2019%2F03%2F04%2Fleetcode-BinaryTreeZigzagLevelOrderTraversal%2F</url>
-    <content type="text"><![CDATA[Binary Tree Zigzag Level Order TraversalGiven a binary tree, return the zigzag level order traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).（按层从左到右-&gt;c从右到左遍历二叉树） Example: 1. 递归与上一题类似，按层遍历，每次都把同层的树节点 Node 组合成一个 List 输入到队列，并在偶数行翻转（变形之后的BFS）。 123456789101112131415161718192021222324252627282930313233343536373839# Definition for a binary tree node.# class TreeNode:# def __init__(self, x):# self.val = x# self.left = None# self.right = Noneclass Solution: def zigzagLevelOrder(self, root: TreeNode) -&gt; List[List[int]]: if not root: return [] results = [[root.val]] queue = [[root]] reverse_flag = 1 while len(queue) &gt; 0: top = queue.pop() result = [] level_node = [] for node in top: if node.left: level_node.append(node.left) result.append(node.left.val) if node.right: level_node.append(node.right) result.append(node.right.val) if result: if reverse_flag: result.reverse() reverse_flag = 1 - reverse_flag queue.insert(0, level_node) results.append(result) return results]]></content>
+    <content type="text"><![CDATA[Binary Tree Zigzag Level Order TraversalGiven a binary tree, return the zigzag level order traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).（按层从左到右-&gt;从右到左遍历二叉树） Example: 1. 递归与上一题类似，按层遍历，每次都把同层的树节点 Node 组合成一个 List 输入到队列，并在偶数行翻转（变形之后的BFS）。 123456789101112131415161718192021222324252627282930313233343536373839# Definition for a binary tree node.# class TreeNode:# def __init__(self, x):# self.val = x# self.left = None# self.right = Noneclass Solution: def zigzagLevelOrder(self, root: TreeNode) -&gt; List[List[int]]: if not root: return [] results = [[root.val]] queue = [[root]] reverse_flag = 1 while len(queue) &gt; 0: top = queue.pop() result = [] level_node = [] for node in top: if node.left: level_node.append(node.left) result.append(node.left.val) if node.right: level_node.append(node.right) result.append(node.right.val) if result: if reverse_flag: result.reverse() reverse_flag = 1 - reverse_flag queue.insert(0, level_node) results.append(result) return results]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
@@ -811,8 +824,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -824,8 +837,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dynamic programming</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -837,8 +850,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dynamic programming</tag>
+        <tag>tree</tag>
         <tag>recursion</tag>
       </tags>
   </entry>
@@ -890,8 +903,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -941,8 +954,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
         <tag>recursion</tag>
       </tags>
@@ -971,8 +984,8 @@
         <tag>array</tag>
         <tag>hash table</tag>
         <tag>dynamic programming</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -984,8 +997,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1123,8 +1136,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1490,8 +1503,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>greedy</tag>
         <tag>hard</tag>
         <tag>back tracking</tag>
@@ -1520,8 +1533,8 @@
       <tags>
         <tag>array</tag>
         <tag>two pointers</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1646,8 +1659,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1943,8 +1956,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
         <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
@@ -2008,8 +2021,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -2036,8 +2049,8 @@
       <tags>
         <tag>medium</tag>
         <tag>hash table</tag>
-        <tag>dynamic programming</tag>
         <tag>string</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
