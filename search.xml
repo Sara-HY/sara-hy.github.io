@@ -300,8 +300,8 @@
       </categories>
       <tags>
         <tag>hash table</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -401,8 +401,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -467,8 +467,8 @@
       <tags>
         <tag>string</tag>
         <tag>array</tag>
-        <tag>hard</tag>
         <tag>bfs</tag>
+        <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -519,8 +519,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -621,8 +621,8 @@
       </categories>
       <tags>
         <tag>string</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -781,8 +781,8 @@
       <tags>
         <tag>medium</tag>
         <tag>tree</tag>
-        <tag>stack</tag>
         <tag>bfs</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -992,8 +992,8 @@
       </categories>
       <tags>
         <tag>string</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>recursion</tag>
       </tags>
   </entry>
@@ -1020,9 +1020,9 @@
       <tags>
         <tag>array</tag>
         <tag>hash table</tag>
+        <tag>dynamic programming</tag>
         <tag>stack</tag>
         <tag>hard</tag>
-        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -1174,8 +1174,8 @@
       </categories>
       <tags>
         <tag>string</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1528,8 +1528,8 @@
       <tags>
         <tag>array</tag>
         <tag>greedy</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1542,8 +1542,8 @@
       <tags>
         <tag>string</tag>
         <tag>greedy</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -1697,8 +1697,8 @@
       </categories>
       <tags>
         <tag>string</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1994,8 +1994,8 @@
       </categories>
       <tags>
         <tag>string</tag>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
