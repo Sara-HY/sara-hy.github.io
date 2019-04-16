@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Reverse Bits]]></title>
+    <url>%2F2019%2F04%2F16%2FLeetCode-ReverseBits%2F</url>
+    <content type="text"><![CDATA[Reverse BitsReverse bits of a given 32 bits unsigned integer.（翻转2进制无符号数表示） Example: 1. 转换为字符串将输入的数值用format函数转换为32位的二进制的形式，然后翻转后再转换为2进制即可。具体实现如下： 123456class Solution: # @param n, an integer # @return an integer def reverseBits(self, n): string_n = '&#123;:032b&#125;'.format(n) return int(string_n[::-1], 2) Note: 这里可以总结的是format函数可以转换进制并表示，这里的b表示二进制，032表示32位表示，不足的位置补0。 2. 位操作按位操作，将数值的2进制表示从右向左逐渐加载result的后面。具体实现过程如下： 12345678910class Solution: # @param n, an integer # @return an integer def reverseBits(self, n): result = 0 for i in range(32): result &lt;&lt;= 1 result |= (n&amp;1) n &gt;&gt;= 1 return result]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>bit manipulation</tag>
+        <tag>easy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Rotate Array]]></title>
     <url>%2F2019%2F04%2F15%2FLeetCode-RotateArray%2F</url>
     <content type="text"><![CDATA[Rotate ArrayGiven an array, rotate the array to the right by k steps, where k is non-negative.（翻转数组） Note: Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem. Could you do it in-place with O(1) extra space? Example: 1. 数组拼接根据上面的例子我们可以总结出如下规律，在经历了 k 次旋转之后的数组为原始数组的 [n-k:] 和 [:n-k] 两个数组拼接在一起的结果。其时间复杂度为 O(n) ，空间复杂度为 O(1) 。具体实现过程如下： 123456789class Solution: def rotate(self, nums: List[int], k: int) -&gt; None: """ Do not return anything, modify nums in-place instead. """ n = len(nums) k = k % n nums[:] = nums[n-k:] + nums[:n-k] # nums[:] = nums[-k:] + nums[:-k] 2. 3次旋转数组根据上面的例子我们可以总结出如下规律，在经历了 k 次旋转之后的数组为 1-原始数组全部旋转，2-前k项旋转，3-后n-k项旋转的结果。其时间复杂度为 O(n) ，空间复杂度为 O(1) 。具体实现过程如下： 12345678910111213141516class Solution: def reverse(self, nums, start, end): while start &lt; end: nums[start], nums[end] = nums[end], nums[start] start, end = start + 1, end - 1 def rotate(self, nums: List[int], k: int) -&gt; None: """ Do not return anything, modify nums in-place instead. """ if k is None or k &lt;= 0: return k, end = k % len(nums), len(nums) - 1 self.reverse(nums, 0, end - k) self.reverse(nums, end - k + 1, end) self.reverse(nums, 0, end)]]></content>
@@ -59,8 +71,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>binary search</tag>
         <tag>dynamic programming</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -351,8 +363,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>design</tag>
         <tag>hard</tag>
+        <tag>design</tag>
       </tags>
   </entry>
   <entry>
@@ -363,9 +375,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>hard</tag>
         <tag>stack</tag>
         <tag>tree</tag>
-        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -621,8 +633,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>string</tag>
         <tag>two pointers</tag>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -633,8 +645,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>hard</tag>
+        <tag>tree</tag>
         <tag>dfs</tag>
       </tags>
   </entry>
@@ -962,8 +974,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>hard</tag>
+        <tag>tree</tag>
         <tag>dfs</tag>
       </tags>
   </entry>
@@ -1002,8 +1014,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dynamic programming</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,8 +1027,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dynamic programming</tag>
+        <tag>tree</tag>
         <tag>recursion</tag>
       </tags>
   </entry>
@@ -1148,9 +1160,9 @@
       <tags>
         <tag>hash table</tag>
         <tag>array</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -1162,8 +1174,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -1262,8 +1274,8 @@
       <tags>
         <tag>hash table</tag>
         <tag>hard</tag>
-        <tag>string</tag>
         <tag>two pointers</tag>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -1697,8 +1709,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>stack</tag>
         <tag>hard</tag>
+        <tag>stack</tag>
         <tag>two pointers</tag>
       </tags>
   </entry>
@@ -1851,8 +1863,8 @@
       <tags>
         <tag>hash table</tag>
         <tag>hard</tag>
-        <tag>string</tag>
         <tag>two pointers</tag>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -1877,8 +1889,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>string</tag>
         <tag>two pointers</tag>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
