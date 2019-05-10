@@ -117,7 +117,8 @@
 <meta property="og:description" content="Linux 终端指令总结。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://sara-hy.github.io/images/leetcode_192.png">
-<meta property="og:updated_time" content="2019-05-10T14:04:21.943Z">
+<meta property="og:image" content="https://sara-hy.github.io/images/leetcode_192.png">
+<meta property="og:updated_time" content="2019-05-10T14:16:22.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bash Script">
 <meta name="twitter:description" content="Linux 终端指令总结。">
@@ -372,7 +373,7 @@
                 
               
 
-              <time title="Created: 2019-05-10 21:47:22 / Modified: 22:04:21" itemprop="dateCreated datePublished" datetime="2019-05-10T21:47:22+08:00">2019-05-10</time>
+              <time title="Created: 2019-05-10 21:47:22 / Modified: 22:16:22" itemprop="dateCreated datePublished" datetime="2019-05-10T21:47:22+08:00">2019-05-10</time>
             
 
             
@@ -447,6 +448,13 @@
 <li>awk: 从标准输入中选择字段输出</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat words.txt | tr -s <span class="string">' '</span> <span class="string">'\n'</span> | sort | uniq -c | sort -r | awk <span class="string">'&#123;print $2, $1&#125;'</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-输出第-N-行"><a href="#2-输出第-N-行" class="headerlink" title="2. 输出第 N 行"></a>2. 输出第 N 行</h3><p><strong>Example:</strong> </p>
+<div align="center"><br>    <img src="/images/leetcode_192.png" width="500" align="center/"><br></div>
+
+<ul>
+<li>sed : -n，只打印匹配的行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n 10p file.txt</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -696,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-词频统计"><span class="nav-number">1.</span> <span class="nav-text">1. 词频统计</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-词频统计"><span class="nav-number">1.</span> <span class="nav-text">1. 词频统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-输出第-N-行"><span class="nav-number">2.</span> <span class="nav-text">2. 输出第 N 行</span></a></li></ol></div>
             
 
           </div>
