@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Number of Islands]]></title>
+    <url>%2F2019%2F05%2F11%2FLeetCode-NumberofIslands%2F</url>
+    <content type="text"><![CDATA[Number of IslandsGiven a 2d grid map of ‘1’s (land) and ‘0’s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.（求岛屿的个数） Example: 1. DFS遍历1234567891011121314151617181920212223class Solution: def dfs(self, i, j): if 0 &lt;= i &lt; self.m and 0 &lt;= j &lt; self.n and self.grid[i][j] == '1': self.grid[i][j] = '0' self.dfs(i+1, j) self.dfs(i-1, j) self.dfs(i, j+1) self.dfs(i, j-1) def numIslands(self, grid: List[List[str]]) -&gt; int: if not grid: return 0 self.m, self.n = len(grid), len(grid[0]) self.grid = grid count = 0 for i in range(self.m): for j in range(self.n): if self.grid[i][j] == '1': self.dfs(i, j) count += 1 return count]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>dfs</tag>
+        <tag>bfs</tag>
+        <tag>union find</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Binary Tree Right Side View]]></title>
     <url>%2F2019%2F05%2F11%2FLeetCode-BinaryTreeRightSideView%2F</url>
     <content type="text"><![CDATA[Binary Tree Right Side ViewGiven a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.（二叉树的右视图） Example: 1. BFS按层遍历12345678910111213141516171819202122232425# Definition for a binary tree node.# class TreeNode:# def __init__(self, x):# self.val = x# self.left = None# self.right = Noneclass Solution: def rightSideView(self, root: TreeNode) -&gt; List[int]: if not root: return [] result = [] stack = [root] while stack: result.append(stack[0].val) new_stack = [] for node in stack: if node.right: new_stack.append(node.right) if node.left: new_stack.append(node.left) stack = new_stack return result]]></content>
@@ -9,9 +23,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -45,8 +59,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>bit manipulation</tag>
         <tag>easy</tag>
+        <tag>bit manipulation</tag>
       </tags>
   </entry>
   <entry>
@@ -121,8 +135,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>stack</tag>
         <tag>tree</tag>
+        <tag>stack</tag>
         <tag>design</tag>
       </tags>
   </entry>
@@ -159,8 +173,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>bit manipulation</tag>
         <tag>easy</tag>
+        <tag>bit manipulation</tag>
         <tag>divide and conquer</tag>
         <tag>hash map</tag>
       </tags>
@@ -413,8 +427,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>stack</tag>
         <tag>tree</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -426,8 +440,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>stack</tag>
         <tag>tree</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -527,9 +541,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>easy</tag>
         <tag>hash table</tag>
         <tag>bit manipulation</tag>
-        <tag>easy</tag>
       </tags>
   </entry>
   <entry>
@@ -617,8 +631,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -644,8 +658,8 @@
       <tags>
         <tag>hard</tag>
         <tag>array</tag>
-        <tag>string</tag>
         <tag>bfs</tag>
+        <tag>string</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -683,8 +697,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -772,8 +786,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -785,8 +799,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -811,8 +825,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -824,8 +838,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -836,9 +850,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>dfs</tag>
         <tag>easy</tag>
         <tag>tree</tag>
-        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -849,10 +863,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>easy</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
+        <tag>easy</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -863,9 +877,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>dfs</tag>
         <tag>easy</tag>
         <tag>tree</tag>
-        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -876,8 +890,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>easy</tag>
         <tag>dfs</tag>
+        <tag>easy</tag>
         <tag>linked list</tag>
       </tags>
   </entry>
@@ -889,9 +903,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>dfs</tag>
         <tag>easy</tag>
         <tag>tree</tag>
-        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -902,9 +916,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>bfs</tag>
         <tag>easy</tag>
         <tag>tree</tag>
-        <tag>bfs</tag>
       </tags>
   </entry>
   <entry>
@@ -917,8 +931,8 @@
       <tags>
         <tag>array</tag>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -931,8 +945,8 @@
       <tags>
         <tag>array</tag>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -943,9 +957,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>dfs</tag>
         <tag>easy</tag>
         <tag>tree</tag>
-        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -957,9 +971,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>stack</tag>
-        <tag>tree</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -971,8 +985,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -983,10 +997,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>easy</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
+        <tag>easy</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -997,9 +1011,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>dfs</tag>
         <tag>easy</tag>
         <tag>tree</tag>
-        <tag>dfs</tag>
         <tag>recursion</tag>
       </tags>
   </entry>
@@ -1012,8 +1026,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1025,8 +1039,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1078,9 +1092,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
+        <tag>tree</tag>
         <tag>hash table</tag>
         <tag>stack</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -2289,8 +2303,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>hash table</tag>
         <tag>easy</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
