@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Reverse Linked List]]></title>
+    <url>%2F2019%2F06%2F03%2FLeetCode-ReverseLinkedList%2F</url>
+    <content type="text"><![CDATA[Reverse Linked ListReverse a singly linked list.（翻转链表） Note:A linked list can be reversed either iteratively or recursively. Could you implement both? Example: 1. 迭代法构建一个头结点，在遍历链表的过程中不断地采用头插法即可翻转链表。具体实现过程如下： 123456789101112131415161718# Definition for singly-linked list.# class ListNode:# def __init__(self, x):# self.val = x# self.next = Noneclass Solution: def reverseList(self, head: ListNode) -&gt; ListNode: new_head = ListNode(0) p = head while p: tmp = p.next p.next = new_head.next new_head.next = p p = tmp return new_head.next 2. 递归法递归的翻转后面的字符串，然后将当前的头结点放在最尾部，具体实现过程如下： 12345678910111213141516# Definition for singly-linked list.# class ListNode:# def __init__(self, x):# self.val = x# self.next = Noneclass Solution: def reverseList(self, head: ListNode) -&gt; ListNode: if not head or not head.next: return head new_head = self.reverseList(head.next) head.next.next = head head.next = None return new_head]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>easy</tag>
+        <tag>linked list</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Isomorphic Strings]]></title>
     <url>%2F2019%2F05%2F12%2FLeetCode-IsomorphicStrings%2F</url>
     <content type="text"><![CDATA[Isomorphic StringsGiven two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the characters in s can be replaced to get t. All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.（判断是否为同构字符串） Example: 1. 哈希表用哈希表保存相同字符的index。具体实现过程如下： 1234567891011121314151617from collections import defaultdict class Solution: def isIsomorphic(self, s: str, t: str) -&gt; bool: if not s: return True map_s, map_t = defaultdict(list), defaultdict(list) for i in range(len(s)): map_s[s[i]].append(i) map_t[t[i]].append(i) if map_s[s[i]] != map_t[t[i]]: return False return True 2. zip &amp; 集合首先判断组成两个字符串的字符的数目是否相同，然后使用 zip 函数判断字符串相同位置的字符组合是否相同。具体实现过程如下： 123456class Solution: def isIsomorphic(self, s: str, t: str) -&gt; bool: if(len(set(zip(s,t)))==len(set(s))==len(set(t))): return True else: return False]]></content>
@@ -95,9 +107,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -133,8 +145,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>binary search</tag>
       </tags>
   </entry>
@@ -185,8 +197,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>array</tag>
         <tag>bit manipulation</tag>
+        <tag>array</tag>
         <tag>divide and conquer</tag>
         <tag>hash map</tag>
       </tags>
@@ -299,8 +311,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>two pointers</tag>
         <tag>linked list</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -324,8 +336,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>binary search</tag>
       </tags>
   </entry>
@@ -351,8 +363,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -388,8 +400,8 @@
       </categories>
       <tags>
         <tag>hash table</tag>
-        <tag>hard</tag>
         <tag>math</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -401,8 +413,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>sort</tag>
         <tag>linked list</tag>
+        <tag>sort</tag>
       </tags>
   </entry>
   <entry>
@@ -414,8 +426,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>sort</tag>
         <tag>linked list</tag>
+        <tag>sort</tag>
       </tags>
   </entry>
   <entry>
@@ -426,8 +438,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>design</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -439,8 +451,8 @@
       </categories>
       <tags>
         <tag>tree</tag>
-        <tag>hard</tag>
         <tag>stack</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -477,8 +489,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>two pointers</tag>
         <tag>linked list</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -490,8 +502,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>two pointers</tag>
         <tag>linked list</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -502,9 +514,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>dynamic programming</tag>
         <tag>hash table</tag>
         <tag>hard</tag>
-        <tag>dynamic programming</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -604,8 +616,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -655,9 +667,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>array</tag>
         <tag>union find</tag>
+        <tag>array</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -669,8 +681,8 @@
       </categories>
       <tags>
         <tag>bfs</tag>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>string</tag>
         <tag>back tracking</tag>
       </tags>
@@ -696,8 +708,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>two pointers</tag>
         <tag>string</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -721,9 +733,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -748,8 +760,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -761,8 +773,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -823,8 +835,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -1194,8 +1206,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>string</tag>
         <tag>recursion</tag>
       </tags>
@@ -1209,8 +1221,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>two pointers</tag>
         <tag>linked list</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -1221,11 +1233,11 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hash table</tag>
-        <tag>hard</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>hash table</tag>
         <tag>stack</tag>
+        <tag>array</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1236,9 +1248,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>array</tag>
         <tag>stack</tag>
+        <tag>array</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1310,8 +1322,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
         <tag>bit manipulation</tag>
+        <tag>array</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -1337,8 +1349,8 @@
       <tags>
         <tag>hash table</tag>
         <tag>hard</tag>
-        <tag>two pointers</tag>
         <tag>string</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -1376,8 +1388,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -1439,8 +1451,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>binary search</tag>
         <tag>math</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1477,8 +1489,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>math</tag>
+        <tag>hard</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -1491,8 +1503,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -1504,8 +1516,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -1517,8 +1529,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -1578,8 +1590,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>sort</tag>
       </tags>
   </entry>
@@ -1630,8 +1642,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
         <tag>divide and conquer</tag>
       </tags>
   </entry>
@@ -1729,9 +1741,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>array</tag>
         <tag>dynamic programming</tag>
+        <tag>array</tag>
+        <tag>hard</tag>
         <tag>greedy</tag>
       </tags>
   </entry>
@@ -1743,8 +1755,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>string</tag>
         <tag>greedy</tag>
         <tag>back tracking</tag>
@@ -1771,9 +1783,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>array</tag>
         <tag>stack</tag>
+        <tag>array</tag>
+        <tag>hard</tag>
         <tag>two pointers</tag>
       </tags>
   </entry>
@@ -1785,8 +1797,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1899,8 +1911,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -1926,8 +1938,8 @@
       <tags>
         <tag>hash table</tag>
         <tag>hard</tag>
-        <tag>two pointers</tag>
         <tag>string</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -1939,8 +1951,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>binary search</tag>
         <tag>math</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -1952,8 +1964,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>two pointers</tag>
         <tag>string</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -1990,8 +2002,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>linked list</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -2014,9 +2026,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>linked list</tag>
         <tag>hard</tag>
         <tag>divide and conquer</tag>
-        <tag>linked list</tag>
         <tag>heap</tag>
       </tags>
   </entry>
@@ -2067,8 +2079,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>two pointers</tag>
         <tag>linked list</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -2196,8 +2208,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>dynamic programming</tag>
+        <tag>hard</tag>
         <tag>string</tag>
         <tag>back tracking</tag>
       </tags>
@@ -2273,8 +2285,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>binary search</tag>
         <tag>divide and conquer</tag>
       </tags>
@@ -2288,8 +2300,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>dynamic programming</tag>
+        <tag>hash table</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -2302,8 +2314,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>math</tag>
         <tag>linked list</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
