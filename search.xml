@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Kth Largest Element in an Array]]></title>
+    <url>%2F2019%2F06%2F05%2FLeetCode-KthLargestElementinanArray%2F</url>
+    <content type="text"><![CDATA[Kth Largest Element in an ArrayFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.(数组定位第k大的元素) Note:You may assume k is always valid, 1 ≤ k ≤ array’s length. Example: 1. 堆1234567import heapqclass Solution: def findKthLargest(self, nums: List[int], k: int) -&gt; int: heapq.heapify(nums) nlarge = heapq.nlargest(k, nums) return nlarge[-1]]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>divide and conquer</tag>
+        <tag>heap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Shortest Palindrome]]></title>
     <url>%2F2019%2F06%2F05%2FLeetCode-ShortestPalindrome%2F</url>
     <content type="text"><![CDATA[Shortest PalindromeGiven a string s, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.（在字符串前面增加字符使其为回文序列） Example: 1. KMP算法首先要找到s的最长回文前缀s1，剩余部分为s2，那么将s2反转和原s串拼接在一起，即可得到要求的回文串。这里用到 KMP 算法的 next 数组的求最长回文前缀s1，设置一个字符串tmp = s1 + s2 + ‘#’ + s2’ + s1’，具体实现过程如下： 123456789101112131415class Solution: def shortestPalindrome(self, s: str) -&gt; str: n = len(s) if n &lt;= 1: return s tmp = s + '#' + s[::-1] k = 0 next = [0 for i in range(len(tmp))] for i in range(1, len(tmp)): while k &gt; 0 and tmp[i] != tmp[k]: k = next[k-1] if tmp[i] == tmp[k]: k += 1 next[i] = k return s[:next[-1]-1:-1] + s]]></content>
@@ -32,8 +45,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>trie</tag>
         <tag>hard</tag>
+        <tag>trie</tag>
         <tag>back tracking</tag>
       </tags>
   </entry>
@@ -152,9 +165,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -264,8 +277,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>design</tag>
         <tag>tree</tag>
+        <tag>design</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -303,8 +316,8 @@
       <tags>
         <tag>array</tag>
         <tag>easy</tag>
-        <tag>bit manipulation</tag>
         <tag>divide and conquer</tag>
+        <tag>bit manipulation</tag>
         <tag>hash map</tag>
       </tags>
   </entry>
@@ -543,8 +556,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>design</tag>
         <tag>hard</tag>
+        <tag>design</tag>
       </tags>
   </entry>
   <entry>
@@ -760,8 +773,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -825,8 +838,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -915,8 +928,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -928,8 +941,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -954,8 +967,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -967,8 +980,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -979,8 +992,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -992,9 +1005,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
-        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1006,8 +1019,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1032,8 +1045,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1045,8 +1058,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>bfs</tag>
         <tag>tree</tag>
+        <tag>bfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1059,8 +1072,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>array</tag>
       </tags>
   </entry>
@@ -1073,8 +1086,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>array</tag>
       </tags>
   </entry>
@@ -1086,8 +1099,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1100,8 +1113,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>bfs</tag>
         <tag>tree</tag>
+        <tag>bfs</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -1114,8 +1127,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>bfs</tag>
         <tag>tree</tag>
+        <tag>bfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1126,9 +1139,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
-        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1140,8 +1153,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
         <tag>recursion</tag>
       </tags>
@@ -1154,8 +1167,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>hard</tag>
       </tags>
   </entry>
@@ -1168,8 +1181,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -2135,9 +2148,9 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>linked list</tag>
         <tag>divide and conquer</tag>
         <tag>heap</tag>
+        <tag>linked list</tag>
       </tags>
   </entry>
   <entry>
@@ -2395,8 +2408,8 @@
       <tags>
         <tag>hard</tag>
         <tag>array</tag>
-        <tag>binary search</tag>
         <tag>divide and conquer</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
