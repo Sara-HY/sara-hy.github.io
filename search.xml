@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Shortest Palindrome]]></title>
+    <url>%2F2019%2F06%2F05%2FLeetCode-ShortestPalindrome%2F</url>
+    <content type="text"><![CDATA[Shortest PalindromeGiven a string s, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.（在字符串前面增加字符使其为回文序列） Example: 1. KMP算法首先要找到s的最长回文前缀s1，剩余部分为s2，那么将s2反转和原s串拼接在一起，即可得到要求的回文串。这里用到 KMP 算法的 next 数组的求最长回文前缀s1，设置一个字符串tmp = s1 + s2 + ‘#’ + s2’ + s1’，具体实现过程如下： 123456789101112131415class Solution: def shortestPalindrome(self, s: str) -&gt; str: n = len(s) if n &lt;= 1: return s tmp = s + '#' + s[::-1] k = 0 next = [0 for i in range(len(tmp))] for i in range(1, len(tmp)): while k &gt; 0 and tmp[i] != tmp[k]: k = next[k-1] if tmp[i] == tmp[k]: k += 1 next[i] = k return s[:next[-1]-1:-1] + s]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>hard</tag>
+        <tag>string</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_House Robber II]]></title>
     <url>%2F2019%2F06%2F05%2FLeetCode-HouseRobberII%2F</url>
     <content type="text"><![CDATA[House Robber IIYou are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.（圆环数组中不相邻数组成的和最大） Example: 1. 动态规划这道题是之前那道 House Robber 的拓展，但是现在房子排成了一个圆圈，则如果抢了第一家，就不能抢最后一家，因为首尾相连了，所以第一家和最后一家只能抢其中的一家，或者都不抢，那我们这里变通一下，如果我们把第一家和最后一家分别去掉，各算一遍能抢的最大值，然后比较两个值取其中较大的一个即为所求。那我们只需参考之前的 House Robber 中的解题方法，然后调用两边取较大值，具体实现过程如下： 123456789101112131415161718class Solution: def rob_list(self, nums): before_before, before = 0, 0 for i in range(0, len(nums)): temp = before before = max(before_before + nums[i], before) before_before = temp return max(before_before, before) def rob(self, nums: List[int]) -&gt; int: if len(nums) == 1: return nums[0] left_max = self.rob_list(nums[1:]) right_max = self.rob_list(nums[:-1]) return max(left_max, right_max)]]></content>
@@ -140,9 +152,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -543,8 +555,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>tree</tag>
+        <tag>hard</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -748,8 +760,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -773,11 +785,11 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>bfs</tag>
         <tag>hard</tag>
         <tag>array</tag>
-        <tag>bfs</tag>
-        <tag>back tracking</tag>
         <tag>string</tag>
+        <tag>back tracking</tag>
       </tags>
   </entry>
   <entry>
@@ -813,9 +825,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -903,8 +915,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -916,8 +928,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -942,8 +954,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -955,8 +967,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -967,8 +979,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -980,9 +992,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -994,8 +1006,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1020,8 +1032,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1033,8 +1045,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1047,9 +1059,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -1061,9 +1073,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -1074,8 +1086,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1088,8 +1100,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -1102,8 +1114,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1114,9 +1126,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
+        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1128,8 +1140,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
         <tag>easy</tag>
         <tag>recursion</tag>
       </tags>
@@ -1142,9 +1154,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1156,8 +1168,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>tree</tag>
         <tag>dfs</tag>
+        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1182,8 +1194,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>tree</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -1195,8 +1207,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>tree</tag>
+        <tag>dynamic programming</tag>
         <tag>recursion</tag>
       </tags>
   </entry>
@@ -1223,8 +1235,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>back tracking</tag>
         <tag>string</tag>
+        <tag>back tracking</tag>
       </tags>
   </entry>
   <entry>
@@ -1444,8 +1456,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -1522,8 +1534,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>stack</tag>
         <tag>string</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -1560,8 +1572,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>math</tag>
         <tag>string</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -1586,8 +1598,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>math</tag>
         <tag>string</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -1853,8 +1865,8 @@
       <tags>
         <tag>hard</tag>
         <tag>dynamic programming</tag>
-        <tag>back tracking</tag>
         <tag>string</tag>
+        <tag>back tracking</tag>
         <tag>greedy</tag>
       </tags>
   </entry>
@@ -1867,8 +1879,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>math</tag>
         <tag>string</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -2033,8 +2045,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -2137,8 +2149,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>back tracking</tag>
         <tag>string</tag>
+        <tag>back tracking</tag>
       </tags>
   </entry>
   <entry>
@@ -2162,8 +2174,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>stack</tag>
         <tag>string</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -2188,8 +2200,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>hash table</tag>
         <tag>binary search</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -2202,8 +2214,8 @@
       <tags>
         <tag>medium</tag>
         <tag>array</tag>
-        <tag>hash table</tag>
         <tag>two pointers</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -2215,8 +2227,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>back tracking</tag>
         <tag>string</tag>
+        <tag>back tracking</tag>
       </tags>
   </entry>
   <entry>
@@ -2266,8 +2278,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>math</tag>
         <tag>string</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -2279,8 +2291,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>math</tag>
         <tag>string</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -2306,8 +2318,8 @@
       <tags>
         <tag>hard</tag>
         <tag>dynamic programming</tag>
-        <tag>back tracking</tag>
         <tag>string</tag>
+        <tag>back tracking</tag>
       </tags>
   </entry>
   <entry>
@@ -2331,8 +2343,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>math</tag>
         <tag>string</tag>
+        <tag>math</tag>
         <tag>regular expression</tag>
       </tags>
   </entry>
