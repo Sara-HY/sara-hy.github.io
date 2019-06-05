@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_House Robber II]]></title>
+    <url>%2F2019%2F06%2F05%2FLeetCode-HouseRobberII%2F</url>
+    <content type="text"><![CDATA[House Robber IIYou are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.（圆环数组中不相邻数组成的和最大） Example: 1. 动态规划这道题是之前那道 House Robber 的拓展，但是现在房子排成了一个圆圈，则如果抢了第一家，就不能抢最后一家，因为首尾相连了，所以第一家和最后一家只能抢其中的一家，或者都不抢，那我们这里变通一下，如果我们把第一家和最后一家分别去掉，各算一遍能抢的最大值，然后比较两个值取其中较大的一个即为所求。那我们只需参考之前的 House Robber 中的解题方法，然后调用两边取较大值，具体实现过程如下： 123456789101112131415161718class Solution: def rob_list(self, nums): before_before, before = 0, 0 for i in range(0, len(nums)): temp = before before = max(before_before + nums[i], before) before_before = temp return max(before_before, before) def rob(self, nums: List[int]) -&gt; int: if len(nums) == 1: return nums[0] left_max = self.rob_list(nums[1:]) right_max = self.rob_list(nums[:-1]) return max(left_max, right_max)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>dynamic programming</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Word Search II]]></title>
     <url>%2F2019%2F06%2F05%2FLeetCode-WordSearchII%2F</url>
     <content type="text"><![CDATA[Word Search IIGiven a 2D board and a list of words from the dictionary, find all words in the board. Each word must be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.（矩阵中进行一组词语搜索） Example: 1. 回溯法 / DFS根据 Word Search 中的方法，可以直接对数组中的每一个 word 都进行一次 DFS，但是这样会造成很大的时间复杂度 O(K*M*N*M*N)（K 表示词语个数，M 为矩阵行数， N 为矩阵列数）。因此，可以考虑使用字典树首先来表示这 K 个 word，这样可以一次的找出所有的 word。具体实现过程如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667import collectionsclass TireNode(object): def __init__(self): self.children = collections.defaultdict(TireNode) self.is_word = Falseclass Tire(object): def __init__(self): self.root = TireNode() def add(self, word): current = self.root for w in word: current = current.children[w] current.is_word = True def search(self, word): current = self.root for w in word: current = current.children.get(w) if not current: return False return current.iswordclass Solution: def dfs(self, board, p_word_trie, results, word, m, n, i, j): if i &lt; 0 or i &gt;= m or j &lt; 0 or j &gt;= n: return w = board[i][j] board[i][j] = '0' word += w current = p_word_trie.children.get(w) if current: if current.is_word: results.add(word) self.dfs(board, current, results, word, m, n, i-1, j) self.dfs(board, current, results, word, m, n, i+1, j) self.dfs(board, current, results, word, m, n, i, j-1) self.dfs(board, current, results, word, m, n, i, j+1) board[i][j] = w word = word[:-1] def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]: if not words: return [] if not board or not board[0]: return [] word_tire = Tire() for word in words: word_tire.add(word) results = set() m, n = len(board), len(board[0]) for i in range(m): for j in range(n): self.dfs(board, word_tire.root, results, '', m, n, i, j) return list(results)]]></content>
@@ -328,9 +340,9 @@
       </categories>
       <tags>
         <tag>array</tag>
+        <tag>easy</tag>
         <tag>two pointers</tag>
         <tag>binary search</tag>
-        <tag>easy</tag>
       </tags>
   </entry>
   <entry>
@@ -391,8 +403,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>two pointers</tag>
         <tag>easy</tag>
+        <tag>two pointers</tag>
         <tag>linked list</tag>
       </tags>
   </entry>
@@ -582,8 +594,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>two pointers</tag>
         <tag>easy</tag>
+        <tag>two pointers</tag>
         <tag>linked list</tag>
       </tags>
   </entry>
@@ -788,8 +800,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>two pointers</tag>
         <tag>easy</tag>
+        <tag>two pointers</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -1275,8 +1287,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>two pointers</tag>
         <tag>easy</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -1380,8 +1392,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>two pointers</tag>
         <tag>easy</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -1432,8 +1444,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>two pointers</tag>
         <tag>hash table</tag>
+        <tag>two pointers</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -1534,8 +1546,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>binary search</tag>
         <tag>easy</tag>
+        <tag>binary search</tag>
         <tag>math</tag>
       </tags>
   </entry>
@@ -1957,8 +1969,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>binary search</tag>
         <tag>easy</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -2021,8 +2033,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>two pointers</tag>
         <tag>hash table</tag>
+        <tag>two pointers</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -2047,8 +2059,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>two pointers</tag>
         <tag>easy</tag>
+        <tag>two pointers</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -2061,8 +2073,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>two pointers</tag>
         <tag>easy</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -2074,8 +2086,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>two pointers</tag>
         <tag>easy</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -2176,8 +2188,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>binary search</tag>
         <tag>hash table</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
@@ -2190,8 +2202,8 @@
       <tags>
         <tag>medium</tag>
         <tag>array</tag>
-        <tag>two pointers</tag>
         <tag>hash table</tag>
+        <tag>two pointers</tag>
       </tags>
   </entry>
   <entry>
