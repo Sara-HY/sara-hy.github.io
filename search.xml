@@ -178,9 +178,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -291,8 +291,8 @@
       <tags>
         <tag>medium</tag>
         <tag>design</tag>
-        <tag>stack</tag>
         <tag>tree</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -442,8 +442,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>linked list</tag>
         <tag>two pointers</tag>
+        <tag>linked list</tag>
       </tags>
   </entry>
   <entry>
@@ -582,8 +582,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>stack</tag>
         <tag>tree</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -595,8 +595,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>stack</tag>
         <tag>tree</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -620,8 +620,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>linked list</tag>
         <tag>two pointers</tag>
+        <tag>linked list</tag>
       </tags>
   </entry>
   <entry>
@@ -633,8 +633,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>linked list</tag>
         <tag>two pointers</tag>
+        <tag>linked list</tag>
       </tags>
   </entry>
   <entry>
@@ -647,8 +647,8 @@
       <tags>
         <tag>hard</tag>
         <tag>dynamic programming</tag>
-        <tag>hash table</tag>
         <tag>back tracking</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -786,8 +786,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -839,8 +839,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>string</tag>
         <tag>two pointers</tag>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -852,8 +852,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -941,8 +941,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -954,8 +954,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -980,8 +980,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -993,8 +993,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1005,9 +1005,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>easy</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1018,10 +1018,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
         <tag>easy</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1032,9 +1032,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>easy</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1058,9 +1058,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>easy</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1071,9 +1071,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>bfs</tag>
         <tag>easy</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1086,8 +1086,8 @@
       <tags>
         <tag>medium</tag>
         <tag>array</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1100,8 +1100,8 @@
       <tags>
         <tag>medium</tag>
         <tag>array</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1112,9 +1112,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>easy</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1126,9 +1126,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
+        <tag>tree</tag>
         <tag>bfs</tag>
         <tag>stack</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1140,8 +1140,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>bfs</tag>
         <tag>tree</tag>
+        <tag>bfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1152,10 +1152,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
         <tag>easy</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1166,9 +1166,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>easy</tag>
-        <tag>tree</tag>
         <tag>recursion</tag>
       </tags>
   </entry>
@@ -1181,8 +1181,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1194,8 +1194,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1247,9 +1247,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
+        <tag>tree</tag>
         <tag>hash table</tag>
         <tag>stack</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1352,8 +1352,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>linked list</tag>
         <tag>two pointers</tag>
+        <tag>linked list</tag>
       </tags>
   </entry>
   <entry>
@@ -1457,8 +1457,8 @@
       <tags>
         <tag>medium</tag>
         <tag>array</tag>
-        <tag>bit manipulation</tag>
         <tag>back tracking</tag>
+        <tag>bit manipulation</tag>
       </tags>
   </entry>
   <entry>
@@ -1483,8 +1483,8 @@
       <tags>
         <tag>hard</tag>
         <tag>hash table</tag>
-        <tag>string</tag>
         <tag>two pointers</tag>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -1982,8 +1982,8 @@
       </categories>
       <tags>
         <tag>hard</tag>
-        <tag>hash table</tag>
         <tag>back tracking</tag>
+        <tag>hash table</tag>
       </tags>
   </entry>
   <entry>
@@ -2072,8 +2072,8 @@
       <tags>
         <tag>hard</tag>
         <tag>hash table</tag>
-        <tag>string</tag>
         <tag>two pointers</tag>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -2098,8 +2098,8 @@
       </categories>
       <tags>
         <tag>easy</tag>
-        <tag>string</tag>
         <tag>two pointers</tag>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -2213,8 +2213,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>linked list</tag>
         <tag>two pointers</tag>
+        <tag>linked list</tag>
       </tags>
   </entry>
   <entry>
@@ -2421,8 +2421,8 @@
       <tags>
         <tag>hard</tag>
         <tag>array</tag>
-        <tag>divide and conquer</tag>
         <tag>binary search</tag>
+        <tag>divide and conquer</tag>
       </tags>
   </entry>
   <entry>
