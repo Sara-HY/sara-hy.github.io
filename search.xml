@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Sliding Window Maximum]]></title>
+    <url>%2F2019%2F06%2F21%2FLeetCode-SlidingWindowMaximum%2F</url>
+    <content type="text"><![CDATA[Sliding Window MaximumGiven an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.（寻找大小为 k 的滑动窗口中的最大值） Example: 1.常规思路遍历数组，每次计算最大值，时间复杂度为O(N*K), 实际操作中会 TLE. 2. 最大堆堆分为最小堆和最大堆，是一种完全二叉树的结构，最小（大）堆的每个节点均不大（小）于为其孩子节点的值。 1234567891011121314151617import heapqclass Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: if not nums: return [] heap, results = [], [] for i, n in enumerate(nums): while heap and heap[0][1] + k &lt;= i: heapq.heappop(heap) # 默认为最小堆，并根据push的第一个值排序，因此push (-n, i) heapq.heappush(heap, (-n, i)) if i &gt;= k-1: results.append(-heap[0][0]) return results 3. 双端队列双端队列类似于一个list，但是可以对两段都进行加入或删除操作。 使用双端队列，队列元素降序排序，队首元素为所求最大值。滑动窗口右移，每次窗口右移的时候需要判断当前的最大值是否在有效范围，若不在，则需要将其从队列中删除。若出现的元素比队尾（最小元素）大，此时移除比起小的数。时间复杂度为 O(n)，空间复杂度为 O(k)，具体实现过程如下： 1234567891011121314151617181920from collections import deque class Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: if not nums: return [] q = deque() results = [] for i in range(len(nums)): while q and q[0] + k &lt;= i: q.popleft() while q and nums[i] &gt;= nums[q[-1]]: q.pop() q.append(i) if i &gt;= k-1: results.append(nums[q[0]]) return results 应用：构造哈夫曼树，任务调度算法]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>hard</tag>
+        <tag>heap</tag>
+        <tag>sliding window</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode_Summary Ranges]]></title>
+    <url>%2F2019%2F06%2F21%2FLeetCode-SummaryRanges%2F</url>
+    <content type="text"><![CDATA[Summary RangesGiven a sorted integer array without duplicates, return the summary of its ranges.（将数组中连续的范围合并） Example: 1. 设置标志位 left具体实现过程如下： 123456789101112131415161718192021222324class Solution: def summaryRanges(self, nums: List[int]) -&gt; List[str]: n = len(nums) if not n: return [] results = [] left = -1 for i in range(n-1): if nums[i] == nums[i+1] - 1: if left == -1: left = i else: if left == -1: results.append(str(nums[i])) else: results.append("%s-&gt;%s"%(str(nums[left]), str(nums[i]))) left = -1 if left == -1: results.append(str(nums[n-1])) else: results.append("%s-&gt;%s"%(str(nums[left]), str(nums[n-1]))) return results 2. 直接统计range在遍历数组的过程中不断地更新统计中range的右界，具体实现过程如下： 1234567def summaryRanges(self, nums): ranges = [] for n in nums: if not ranges or n &gt; ranges[-1][-1] + 1: ranges += [], ranges[-1][1:] = n, return ['-&gt;'.join(map(str, r)) for r in ranges]]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Combination Sum III]]></title>
     <url>%2F2019%2F06%2F06%2FLeetCode-CombinationSumIII%2F</url>
     <content type="text"><![CDATA[Combination Sum IIIFind all possible combinations of k numbers that add up to a number n, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.（从1-9中选取k个数的和为n） Note: All numbers will be positive integers. The solution set must not contain duplicate combinations. Example: 1. 回溯法12345678910111213class Solution: def back_tracking(self, list, i, k, count): if count == 0 and k == 0: self.results.append(list) for j in range(i, 10): self.back_tracking(list+[j], j+1, k-1, count-j) def combinationSum3(self, k: int, n: int) -&gt; List[List[int]]: self.results = [] self.back_tracking([], 1, k, n) return self.results]]></content>
@@ -2421,8 +2446,8 @@
       <tags>
         <tag>hard</tag>
         <tag>array</tag>
-        <tag>binary search</tag>
         <tag>divide and conquer</tag>
+        <tag>binary search</tag>
       </tags>
   </entry>
   <entry>
