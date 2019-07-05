@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Sara">
 <meta property="og:description" content="KMP（Knuth-Morris-Pratt 字符串子串位置）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-04T08:40:59.645Z">
+<meta property="og:updated_time" content="2019-07-01T13:49:10.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithm_KMP">
 <meta name="twitter:description" content="KMP（Knuth-Morris-Pratt 字符串子串位置）">
@@ -387,7 +387,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-04 16:40:59" itemprop="dateModified" datetime="2019-04-04T16:40:59+08:00">2019-04-04</time>
+                <time title="Modified: 2019-07-01 21:49:10" itemprop="dateModified" datetime="2019-07-01T21:49:10+08:00">2019-07-01</time>
               
             
           </span>
@@ -448,7 +448,7 @@
         <h2 id="KMP（Knuth-Morris-Pratt-字符串子串位置）"><a href="#KMP（Knuth-Morris-Pratt-字符串子串位置）" class="headerlink" title="KMP（Knuth-Morris-Pratt 字符串子串位置）"></a><a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E5%8A%AA%E6%96%AF-%E8%8E%AB%E9%87%8C%E6%96%AF-%E6%99%AE%E6%8B%89%E7%89%B9%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">KMP</a>（Knuth-Morris-Pratt 字符串子串位置）</h2><a id="more"></a>
 <p>在字符串 <strong>S</strong> 内查找子串 <strong>T</strong> 出现的位置，如果我们不考虑使用 KMP 算法，使用简单的轮循，具体实现过程如下：</p>
 <h3 id="1-暴力轮循"><a href="#1-暴力轮循" class="headerlink" title="1. 暴力轮循"></a>1. 暴力轮循</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'bbc abcbab abcdabcdabde'</span></span><br><span class="line">t = <span class="string">'abcdabd'</span></span><br><span class="line"></span><br><span class="line">m, n = len(s), len(t)</span><br><span class="line">i, j = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i &lt; m <span class="keyword">and</span> j &lt; n:</span><br><span class="line">    <span class="keyword">if</span> s[i] == t[j]:</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        i = i - j + <span class="number">1</span></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> j == n:</span><br><span class="line">    <span class="keyword">return</span> i - j</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-KMP"><a href="#2-KMP" class="headerlink" title="2. KMP"></a>2. KMP</h3><p>KMP 算法的主要 trick 就是在于：若当前的 <strong>S</strong> 中的字符串序列与 <strong>T</strong> 不匹配，则它会记录下一个匹配可能从哪里开始（因为我们已经遍历了前面的字符），从而避免重新检查先前匹配的字符。</p>
+<h3 id="2-KMP"><a href="#2-KMP" class="headerlink" title="2. KMP"></a>2. KMP</h3><p>KMP 算法的主要 trick 就是在于：若当前的 <strong>S</strong> 中的字符串序列与 <strong>T</strong> 不匹配，则它会记录下一个匹配可能从哪里开始（因为我们已经遍历了前面的字符），从而避免重新检查先前匹配的字符。时间复杂度为 O(m + n)。</p>
 <p><strong>Example:</strong> </p>
 <p>如 <code>S = BBC ABCDAB ABCDABCDABDE</code> ，<code>T= ABCDABD</code>，则在外层循环扫描到 S中的 “A” 时，：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&apos;BBC ABCDAB ABCDABCDABDE&apos;</span><br><span class="line">&apos;    ABCDABD&apos;                # 此时不匹配，我们可以直接从下一个 &quot;A&quot; 开始</span><br><span class="line">&apos;BBC ABCDAB ABCDABCDABDE&apos;</span><br><span class="line">&apos;        ABCDABD&apos;            # 此时不匹配，我们可以直接从下一个 &quot;A&quot; 开始</span><br><span class="line">&apos;BBC ABCDAB ABCDABCDABDE&apos;</span><br><span class="line">&apos;           ABCDABD&apos;         # 此时不匹配，我们可以直接从下一个 &quot;A&quot; 开始</span><br><span class="line">&apos;BBC ABCDAB ABCDABCDABDE&apos;</span><br><span class="line">&apos;               ABCDABD&apos;     # 此时不匹配，我们可以直接从下一个 &quot;A&quot; 开始</span><br></pre></td></tr></table></figure>
