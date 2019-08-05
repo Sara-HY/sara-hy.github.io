@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sara-hy.github.io/2019/02/19/leetcode-EditDistance/</loc>
+    
+    <lastmod>2019-08-05T13:08:39.030Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sara-hy.github.io/2019/03/15/leetcode-BinaryTreePreorderTraversal/</loc>
+    
+    <lastmod>2019-08-02T10:13:25.509Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sara-hy.github.io/2019/06/30/leetcode-UglyNumberII/</loc>
     
     <lastmod>2019-07-05T14:10:36.313Z</lastmod>
@@ -411,13 +425,6 @@
     <loc>https://sara-hy.github.io/2019/03/15/leetcode-BinaryTreePostorderTraversal/</loc>
     
     <lastmod>2019-03-15T07:02:14.261Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sara-hy.github.io/2019/03/15/leetcode-BinaryTreePreorderTraversal/</loc>
-    
-    <lastmod>2019-03-15T06:54:00.720Z</lastmod>
     
   </url>
   
@@ -894,13 +901,6 @@
     <loc>https://sara-hy.github.io/2019/02/21/leetcode-SearchA2dMatrix/</loc>
     
     <lastmod>2019-02-21T09:40:53.708Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sara-hy.github.io/2019/02/19/leetcode-EditDistance/</loc>
-    
-    <lastmod>2019-02-19T16:16:18.125Z</lastmod>
     
   </url>
   
