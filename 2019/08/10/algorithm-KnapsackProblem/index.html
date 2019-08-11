@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="Knapsack Problem">
+  <meta name="description" content="Knapsack Problem背包问题">
 <meta name="keywords" content="dynamic programming,knapsack,back_tracking,greedy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Algorithm_Knapsack Problem">
 <meta property="og:url" content="https://sara-hy.github.io/2019/08/10/algorithm-KnapsackProblem/index.html">
 <meta property="og:site_name" content="Sara">
-<meta property="og:description" content="Knapsack Problem">
+<meta property="og:description" content="Knapsack Problem背包问题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-11T09:23:39.281Z">
+<meta property="og:updated_time" content="2019-08-11T09:28:26.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithm_Knapsack Problem">
-<meta name="twitter:description" content="Knapsack Problem">
+<meta name="twitter:description" content="Knapsack Problem背包问题">
 
 
 
@@ -387,7 +387,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-11 17:23:39" itemprop="dateModified" datetime="2019-08-11T17:23:39+08:00">2019-08-11</time>
+                <time title="Modified: 2019-08-11 17:28:26" itemprop="dateModified" datetime="2019-08-11T17:28:26+08:00">2019-08-11</time>
               
             
           </span>
@@ -445,7 +445,8 @@
       
 
       
-        <h2 id="Knapsack-Problem"><a href="#Knapsack-Problem" class="headerlink" title="Knapsack Problem"></a><a href="https://zh.wikipedia.org/wiki/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">Knapsack Problem</a></h2><a id="more"></a>
+        <h2 id="Knapsack-Problem"><a href="#Knapsack-Problem" class="headerlink" title="Knapsack Problem"></a><a href="https://zh.wikipedia.org/wiki/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">Knapsack Problem</a></h2><p>背包问题</p>
+<a id="more"></a>
 <p>背包问题（Knapsack problem）是一种组合优化的 NP 完全问题。问题可以描述为：给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择才能使得物品的总价格最高。</p>
 <h3 id="1-背包问题"><a href="#1-背包问题" class="headerlink" title="1. 背包问题"></a>1. 背包问题</h3><p>这个问题是指每个物体的可以拆分，即可以得到单位重量的价值，最终要求选择后的结果使得物品的总价格最高，这种问题最后背包一定会放满，使用贪心算法。具体实现过程如下:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">weights = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">5</span>]</span><br><span class="line">values = [<span class="number">7</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">8</span>]</span><br><span class="line">C = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">n = len(weights)</span><br><span class="line"></span><br><span class="line">value_per_weights = [(values[i]/weights[i], weights[i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">value_per_weights.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>], reverse=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">results = [<span class="number">0</span>] * n</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    <span class="keyword">if</span> value_per_weights[i][<span class="number">1</span>] &gt; C:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    results[i] = <span class="number">1</span></span><br><span class="line">    C -= value_per_weights[i][<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> i &lt; n:</span><br><span class="line">    results[i] = C / value_per_weights[i][<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> value_per_weight, result <span class="keyword">in</span> zip(value_per_weights, results):</span><br><span class="line">    print(value_per_weight[<span class="number">1</span>], result)</span><br></pre></td></tr></table></figure>
