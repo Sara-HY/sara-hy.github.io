@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Sara">
 <meta property="og:description" content="Knapsack Problem背包问题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-11T09:28:26.087Z">
+<meta property="og:updated_time" content="2019-08-13T03:19:06.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithm_Knapsack Problem">
 <meta name="twitter:description" content="Knapsack Problem背包问题">
@@ -387,7 +387,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-11 17:28:26" itemprop="dateModified" datetime="2019-08-11T17:28:26+08:00">2019-08-11</time>
+                <time title="Modified: 2019-08-13 11:19:06" itemprop="dateModified" datetime="2019-08-13T11:19:06+08:00">2019-08-13</time>
               
             
           </span>
@@ -456,7 +456,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">weights = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">5</span>]</span><br><span class="line">values = [<span class="number">7</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">8</span>]</span><br><span class="line">C = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">n = len(weights)</span><br><span class="line">dp = [[<span class="number">0</span>] * (C+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(C+<span class="number">1</span>):</span><br><span class="line">        dp[i][j] = max(dp[i][j], dp[i<span class="number">-1</span>][j])</span><br><span class="line">        <span class="keyword">if</span> weights[i<span class="number">-1</span>] &lt;= j:</span><br><span class="line">            dp[i][j] = max(dp[i][j], dp[i<span class="number">-1</span>][j-weights[i<span class="number">-1</span>]]+values[i<span class="number">-1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> dp[n][C]</span><br></pre></td></tr></table></figure>
 <h3 id="3-非01背包问题"><a href="#3-非01背包问题" class="headerlink" title="3. 非01背包问题"></a>3. 非01背包问题</h3><p>非01背包问题是指每个物体都有很多个(无限个)，最终要求选择后的结果使得物品的总价格最高。具体实现过程如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">weights = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">5</span>]</span><br><span class="line">values = [<span class="number">7</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">8</span>]</span><br><span class="line">C = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">n = len(weights)</span><br><span class="line">dp = [[<span class="number">0</span>] * (C+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(C+<span class="number">1</span>):</span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> k*weights[i<span class="number">-1</span>] &lt;= j:</span><br><span class="line">            dp[i][j] = max(dp[i][j], dp[i<span class="number">-1</span>][j-k*weights[i<span class="number">-1</span>]]+k*values[i<span class="number">-1</span>])</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> max(map(max, dp))</span><br></pre></td></tr></table></figure>
-<h3 id="4-变种之选硬币问题"><a href="#4-变种之选硬币问题" class="headerlink" title="4. 变种之选硬币问题"></a>4. 变种之选硬币问题</h3><p>给定一些物品数组和一个目标值，问有多少种可以组成目标的组合数，比如给定物品数组 [2,3,6,7] 和目标值 7 （2种可能）。可以考虑使用动态规划：<br>dp[n][C] 表示从前i中里面组成 C 的组合数，则<br>dp[n][C] = dp[n-1][C] + dp[n-1][C-values[n-1]* 1] + dp[n-2][C-values[n-1]* 2] + …</p>
+<h3 id="4-变种之选硬币问题"><a href="#4-变种之选硬币问题" class="headerlink" title="4. 变种之选硬币问题"></a>4. 变种之选硬币问题</h3><p>给定一些物品数组和一个目标值，问有多少种可以组成目标的组合数，比如给定物品数组 [2,3,6,7] 和目标值 7 （2种可能）。可以考虑使用动态规划：<br>dp[n][C] 表示从前i中里面组成 C 的组合数，则<br>dp[n][C] = dp[n-1][C] + dp[n-1][C-values[n-1]* 1] + dp[n-1][C-values[n-1]* 2] + …</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">values = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">C = <span class="number">7</span></span><br><span class="line"></span><br><span class="line">n = len(values)</span><br><span class="line">dp = [[<span class="number">0</span>] * (C+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(C+<span class="number">1</span>):</span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> k*values[i<span class="number">-1</span>] &lt;= j:</span><br><span class="line">            dp[i][j] += dp[i - <span class="number">1</span>][j - k * values[i - <span class="number">1</span>]];</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> dp[n][C]</span><br></pre></td></tr></table></figure>
 
       
@@ -506,6 +506,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/20/leetcode-ValidateStackSequences/" rel="prev" title="LeetCode_Validate Stack Sequences">
+                LeetCode_Validate Stack Sequences <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -575,7 +579,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">202</span>
+                    <span class="site-state-item-count">203</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

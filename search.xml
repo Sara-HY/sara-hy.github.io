@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Validate Stack Sequences]]></title>
+    <url>%2F2019%2F08%2F20%2Fleetcode-ValidateStackSequences%2F</url>
+    <content type="text"><![CDATA[Validate Stack SequencesGiven two sequences pushed and popped with distinct values, return true if and only if this could have been the result of a sequence of push and pop operations on an initially empty stack.（判断有效的栈压入、压出序列） Note: 0 &lt;= pushed.length == popped.length &lt;= 1000 0 &lt;= pushed[i], popped[i] &lt; 1000 pushed is a permutation of popped. pushed and popped have distinct values. Example: 1. 模拟栈构建一个新的栈来模拟栈压入、压出的过程，直到最后栈为空时表示是有效的序列。时间复杂度为O(n)，空间复杂度为O(n)。具体实现过程如下： 12345678910class Solution: def validateStackSequences(self, pushed: List[int], popped: List[int]) -&gt; bool: temp_stack = [] while pushed: top = pushed.pop(0) temp_stack.append(top) while temp_stack and popped and popped[0] == temp_stack[-1]: popped.pop(0) temp_stack.pop() return not temp_stack]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>medium</tag>
+        <tag>stack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Algorithm_Knapsack Problem]]></title>
     <url>%2F2019%2F08%2F10%2Falgorithm-KnapsackProblem%2F</url>
-    <content type="text"><![CDATA[Knapsack Problem背包问题 背包问题（Knapsack problem）是一种组合优化的 NP 完全问题。问题可以描述为：给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择才能使得物品的总价格最高。 1. 背包问题这个问题是指每个物体的可以拆分，即可以得到单位重量的价值，最终要求选择后的结果使得物品的总价格最高，这种问题最后背包一定会放满，使用贪心算法。具体实现过程如下: 123456789101112131415161718192021weights = [3, 4, 8, 5]values = [7, 4, 3, 8]C = 10n = len(weights)value_per_weights = [(values[i]/weights[i], weights[i]) for i in range(n)]value_per_weights.sort(key=lambda x: x[0], reverse=True)results = [0] * nfor i in range(n): if value_per_weights[i][1] &gt; C: break results[i] = 1 C -= value_per_weights[i][1]if i &lt; n: results[i] = C / value_per_weights[i][1]for value_per_weight, result in zip(value_per_weights, results): print(value_per_weight[1], result) 2. 01背包问题01背包问题是指每个物体都有且只有一个（即选或不选），最终要求选择后的结果使得物品的总价格最高，这种问题最后背包不一定会放满，使用动态规划算法。具体实现过程如下： f[n][C] 表示容量 C 是否可以放置前 i 个物品。 f[i][j] = max( f[i-1][j-weights[i]] + values[i] if j&gt;=weights[i], f[i-1][j]) 1234567891011121314weights = [3, 4, 8, 5]values = [7, 4, 3, 8]C = 10n = len(weights)dp = [[0] * (C+1) for _ in range(n+1)]for i in range(1, n+1): for j in range(C+1): dp[i][j] = max(dp[i][j], dp[i-1][j]) if weights[i-1] &lt;= j: dp[i][j] = max(dp[i][j], dp[i-1][j-weights[i-1]]+values[i-1])return dp[n][C] 3. 非01背包问题非01背包问题是指每个物体都有很多个(无限个)，最终要求选择后的结果使得物品的总价格最高。具体实现过程如下： 123456789101112131415weights = [3, 4, 8, 5]values = [7, 4, 3, 8]C = 10n = len(weights)dp = [[0] * (C+1) for _ in range(n+1)]for i in range(1, n+1): for j in range(C+1): k = 0 while k*weights[i-1] &lt;= j: dp[i][j] = max(dp[i][j], dp[i-1][j-k*weights[i-1]]+k*values[i-1]) k += 1return max(map(max, dp)) 4. 变种之选硬币问题给定一些物品数组和一个目标值，问有多少种可以组成目标的组合数，比如给定物品数组 [2,3,6,7] 和目标值 7 （2种可能）。可以考虑使用动态规划：dp[n][C] 表示从前i中里面组成 C 的组合数，则dp[n][C] = dp[n-1][C] + dp[n-1][C-values[n-1]* 1] + dp[n-2][C-values[n-1]* 2] + … 123456789101112131415values = [2, 3, 6, 7]C = 7n = len(values)dp = [[0] * (C+1) for _ in range(n+1)]dp[0][0] = 1for i in range(1, n+1): for j in range(C+1): k = 0 while k*values[i-1] &lt;= j: dp[i][j] += dp[i - 1][j - k * values[i - 1]]; k += 1return dp[n][C]]]></content>
+    <content type="text"><![CDATA[Knapsack Problem背包问题 背包问题（Knapsack problem）是一种组合优化的 NP 完全问题。问题可以描述为：给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择才能使得物品的总价格最高。 1. 背包问题这个问题是指每个物体的可以拆分，即可以得到单位重量的价值，最终要求选择后的结果使得物品的总价格最高，这种问题最后背包一定会放满，使用贪心算法。具体实现过程如下: 123456789101112131415161718192021weights = [3, 4, 8, 5]values = [7, 4, 3, 8]C = 10n = len(weights)value_per_weights = [(values[i]/weights[i], weights[i]) for i in range(n)]value_per_weights.sort(key=lambda x: x[0], reverse=True)results = [0] * nfor i in range(n): if value_per_weights[i][1] &gt; C: break results[i] = 1 C -= value_per_weights[i][1]if i &lt; n: results[i] = C / value_per_weights[i][1]for value_per_weight, result in zip(value_per_weights, results): print(value_per_weight[1], result) 2. 01背包问题01背包问题是指每个物体都有且只有一个（即选或不选），最终要求选择后的结果使得物品的总价格最高，这种问题最后背包不一定会放满，使用动态规划算法。具体实现过程如下： f[n][C] 表示容量 C 是否可以放置前 i 个物品。 f[i][j] = max( f[i-1][j-weights[i]] + values[i] if j&gt;=weights[i], f[i-1][j]) 1234567891011121314weights = [3, 4, 8, 5]values = [7, 4, 3, 8]C = 10n = len(weights)dp = [[0] * (C+1) for _ in range(n+1)]for i in range(1, n+1): for j in range(C+1): dp[i][j] = max(dp[i][j], dp[i-1][j]) if weights[i-1] &lt;= j: dp[i][j] = max(dp[i][j], dp[i-1][j-weights[i-1]]+values[i-1])return dp[n][C] 3. 非01背包问题非01背包问题是指每个物体都有很多个(无限个)，最终要求选择后的结果使得物品的总价格最高。具体实现过程如下： 123456789101112131415weights = [3, 4, 8, 5]values = [7, 4, 3, 8]C = 10n = len(weights)dp = [[0] * (C+1) for _ in range(n+1)]for i in range(1, n+1): for j in range(C+1): k = 0 while k*weights[i-1] &lt;= j: dp[i][j] = max(dp[i][j], dp[i-1][j-k*weights[i-1]]+k*values[i-1]) k += 1return max(map(max, dp)) 4. 变种之选硬币问题给定一些物品数组和一个目标值，问有多少种可以组成目标的组合数，比如给定物品数组 [2,3,6,7] 和目标值 7 （2种可能）。可以考虑使用动态规划：dp[n][C] 表示从前i中里面组成 C 的组合数，则dp[n][C] = dp[n-1][C] + dp[n-1][C-values[n-1]* 1] + dp[n-1][C-values[n-1]* 2] + … 123456789101112131415values = [2, 3, 6, 7]C = 7n = len(values)dp = [[0] * (C+1) for _ in range(n+1)]dp[0][0] = 1for i in range(1, n+1): for j in range(C+1): k = 0 while k*values[i-1] &lt;= j: dp[i][j] += dp[i - 1][j - k * values[i - 1]]; k += 1return dp[n][C]]]></content>
       <categories>
         <category>Algorithm</category>
       </categories>
@@ -23,8 +35,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>bfs</tag>
+        <tag>dynamic programming</tag>
         <tag>math</tag>
       </tags>
   </entry>
@@ -162,8 +174,8 @@
       </categories>
       <tags>
         <tag>trie</tag>
-        <tag>hard</tag>
         <tag>back tracking</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -281,9 +293,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
-        <tag>tree</tag>
       </tags>
   </entry>
   <entry>
@@ -341,8 +353,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>dynamic programming</tag>
       </tags>
   </entry>
@@ -570,8 +582,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>binary search</tag>
       </tags>
   </entry>
@@ -684,8 +696,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>tree</tag>
+        <tag>hard</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -748,9 +760,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>back tracking</tag>
         <tag>hard</tag>
         <tag>dynamic programming</tag>
-        <tag>back tracking</tag>
         <tag>hash table</tag>
       </tags>
   </entry>
@@ -889,8 +901,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -901,8 +913,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>union find</tag>
       </tags>
   </entry>
@@ -914,10 +926,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
+        <tag>bfs</tag>
         <tag>array</tag>
         <tag>back tracking</tag>
-        <tag>bfs</tag>
+        <tag>hard</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -954,9 +966,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -967,8 +979,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>dynamic programming</tag>
       </tags>
   </entry>
@@ -1044,8 +1056,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1057,8 +1069,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1083,8 +1095,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1096,8 +1108,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1108,8 +1120,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1121,9 +1133,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
-        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1135,8 +1147,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1161,8 +1173,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1174,8 +1186,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>bfs</tag>
         <tag>tree</tag>
+        <tag>bfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1188,9 +1200,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -1202,9 +1214,9 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>array</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -1215,8 +1227,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1229,8 +1241,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>bfs</tag>
         <tag>tree</tag>
+        <tag>bfs</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -1243,8 +1255,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>bfs</tag>
         <tag>tree</tag>
+        <tag>bfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1255,9 +1267,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>tree</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
-        <tag>tree</tag>
         <tag>easy</tag>
       </tags>
   </entry>
@@ -1269,8 +1281,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
         <tag>easy</tag>
         <tag>recursion</tag>
       </tags>
@@ -1283,9 +1295,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1297,8 +1309,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dfs</tag>
         <tag>tree</tag>
+        <tag>dfs</tag>
       </tags>
   </entry>
   <entry>
@@ -1323,8 +1335,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>tree</tag>
+        <tag>dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -1336,8 +1348,8 @@
       </categories>
       <tags>
         <tag>medium</tag>
-        <tag>dynamic programming</tag>
         <tag>tree</tag>
+        <tag>dynamic programming</tag>
         <tag>recursion</tag>
       </tags>
   </entry>
@@ -1467,8 +1479,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>dynamic programming</tag>
         <tag>hash table</tag>
         <tag>stack</tag>
@@ -1482,8 +1494,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>stack</tag>
       </tags>
   </entry>
@@ -1827,8 +1839,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>sort</tag>
       </tags>
   </entry>
@@ -1892,8 +1904,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>back tracking</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1904,8 +1916,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>back tracking</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -1978,8 +1990,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>dynamic programming</tag>
         <tag>greedy</tag>
       </tags>
@@ -1992,9 +2004,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>back tracking</tag>
         <tag>hard</tag>
         <tag>dynamic programming</tag>
-        <tag>back tracking</tag>
         <tag>string</tag>
         <tag>greedy</tag>
       </tags>
@@ -2020,8 +2032,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>two pointers</tag>
         <tag>stack</tag>
       </tags>
@@ -2034,8 +2046,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
       </tags>
   </entry>
   <entry>
@@ -2084,8 +2096,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>back tracking</tag>
+        <tag>hard</tag>
         <tag>hash table</tag>
       </tags>
   </entry>
@@ -2445,9 +2457,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>back tracking</tag>
         <tag>hard</tag>
         <tag>dynamic programming</tag>
-        <tag>back tracking</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -2522,8 +2534,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>hard</tag>
         <tag>array</tag>
+        <tag>hard</tag>
         <tag>divide and conquer</tag>
         <tag>binary search</tag>
       </tags>
