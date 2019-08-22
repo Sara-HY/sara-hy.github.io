@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Maximum Product of Three Numbers]]></title>
+    <url>%2F2019%2F08%2F22%2Fleetcode-MaximumProductofThreeNumbers%2F</url>
+    <content type="text"><![CDATA[Maximum Product of Three NumbersGiven an integer array, find three numbers whose product is maximum and output the maximum product.（从数组中找出乘积最大的3个数） Note: The length of the given array will be in range [3, 104] and all elements are in the range [-1000, 1000]. Multiplication of any three numbers in the input won’t exceed the range of 32-bit signed integer. Example: 1. 遍历暴力轮训，时间复杂度为 O(n^3)，空间复杂度为 O(1)。 2. 排序排序，最终的结果为 max(nums[0]×nums[1]×nums[n−1], nums[n-3]×nums[n-2]×nums[n-1])。排序的时间复杂度为 O(nlogn)，空间复杂度为 O(logn)。 3. 遍历仅仅遍历一次，其中维护5个变量，保留最大的三个数和最小的两个数，最终的结果表示同上。时间复杂度为 O(n)，空间复杂度为 O(1)。具体实现过程如下： 123456789101112131415161718192021class Solution: def maximumProduct(self, nums: List[int]) -&gt; int: max_array = [float('-inf'), float('-inf'), float('-inf')] min_array = [float('inf'), float('inf')] for num in nums: if num &gt;= max_array[0]: max_array = [num] + max_array[:-1] elif num &gt;= max_array[1]: max_array = [max_array[0]] + [num] + [max_array[1]] elif num &gt;= max_array[2]: max_array = max_array[:-1] + [num] if num &lt;= min_array[0]: min_array = [num, min_array[0]] elif num &lt;= min_array[1]: min_array[1] = num candidate_1 = max_array[0] * max_array[1] * max_array[2] candidate_2 = max_array[0] * min_array[0] * min_array[1] return max(candidate_1, candidate_2)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+        <tag>easy</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Convert Binary Search Tree to Sorted Doubly Linked List]]></title>
     <url>%2F2019%2F08%2F20%2Fleetcode-ConvertBinarySearchTreetoSortedDoublyLinkedList%2F</url>
     <content type="text"><![CDATA[Convert Binary Search Tree to Sorted Doubly Linked ListConvert a BST to a sorted circular doubly-linked list in-place. Think of the left and right pointers as synonymous to the previous and next pointers in a doubly-linked list.（将二叉搜索树转换为一个有序的双向链表） Example: 1. 中序遍历首先对二叉树进行中序遍历，将遍历后的结果进行指针调整，时间复杂度为O(n)，空间复杂度为O(n)。具体实现过程如下： 1234567891011121314151617181920212223# class TreeNode:# def __init__(self, x):# self.val = x# self.left = None# self.right = Noneclass Solution: def in_order(self, root): if not root: return self.in_order(root.left) self.list.append(root) self.in_order(root.right) def Convert(self, pRootOfTree): if not pRootOfTree: return self.list = [] self.in_order(pRootOfTree) for i, node in enumerate(self.list[:-1]): node.right = self.list[i + 1] self.list[i + 1].left = node return self.list[0] 2. 中序遍历在对二叉树进行中序遍历时进行指针调整，时间复杂度为O(n)，空间复杂度为O(1)。具体实现过程如下： 123456789101112131415161718192021222324# -*- coding:utf-8 -*-# class TreeNode:# def __init__(self, x):# self.val = x# self.left = None# self.right = Noneclass Solution: def __init__(self): self.listHead = None self.listTail = None def Convert(self, pRootOfTree): if pRootOfTree==None: return self.Convert(pRootOfTree.left) if self.listHead==None: self.listHead = pRootOfTree self.listTail = pRootOfTree else: self.listTail.right = pRootOfTree pRootOfTree.left = self.listTail self.listTail = pRootOfTree self.Convert(pRootOfTree.right) return self.listHead]]></content>
@@ -456,8 +469,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>divide and conquer</tag>
         <tag>easy</tag>
+        <tag>divide and conquer</tag>
         <tag>bit manipulation</tag>
         <tag>hash map</tag>
       </tags>
@@ -941,8 +954,8 @@
       <tags>
         <tag>hard</tag>
         <tag>array</tag>
-        <tag>back tracking</tag>
         <tag>bfs</tag>
+        <tag>back tracking</tag>
         <tag>string</tag>
       </tags>
   </entry>
@@ -1905,8 +1918,8 @@
       <tags>
         <tag>array</tag>
         <tag>dynamic programming</tag>
-        <tag>divide and conquer</tag>
         <tag>easy</tag>
+        <tag>divide and conquer</tag>
       </tags>
   </entry>
   <entry>
