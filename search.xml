@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Meeting Rooms II]]></title>
+    <url>%2F2019%2F08%2F22%2Fleetcode-MeetingRoomsII%2F</url>
+    <content type="text"><![CDATA[Meeting Rooms II给定一系列的会议时间间隔intervals，包括起始和结束时间[[s1,e1],[s2,e2],…]，找到所需的最小的会议室数量。（区间重叠最多部分） Example: 1. 排序首先对所有区间进行标记，区分起始点和终止点，然后对所有时间节点进行排序（若时间相同保证结束点在开始点前面），再依次遍历每个点，遇到起始点+1，遇到终止点-1，并更新记录最大值。具体实现过程如下： 1234567891011121314151617181920def minMeetingRooms(intervals): if intervals is None or len(intervals) == 0: return 0 time_points = [] for inter in intervals: time_points.append((inter[0], True)) time_points.append((inter[1], False)) # 先按x[0]升序，x[0]想等时按照x[1]升序，其中end=False=0， start=True=1 time_points.sort(key=lambda x: (x[0], x[1])) count, max_count = 0, 0 for time_point in time_points: if time_point[1]: count += 1 else: count -= 1 max_count = max(max_count, count) return max_count 2.求区间维护两个数组分别保存开始时间和结束时间并排序；然后再遍历开始时间数组，这时不断地更新当前的区间的起止时间；在遇到开始时间大于结束时间时，更新新的结束时间。具体实现过程入下： 12345678910111213141516171819202122232425# [[10, 14], [12, 16], [12, 18]] ---&gt; (3, [12, 14])# [[3, 5], [4, 10], [5, 7], [10, 14], [12, 16], [12, 18]] ---&gt; (3, [12, 14])def minMeetingRooms(intervals): if intervals is None or len(intervals) == 0: return 0 start_points, end_points = [], [] for inter in intervals: start_points.append(inter[0]) end_points.append(inter[1]) start_points.sort() end_points.sort() count, endpos, result = 0, 0, [-1, -1] for i in range(len(intervals)): if start_points[i] &lt; end_points[endpos]: count += 1 result[0] = start_points[i] result[1] = end_points[endpos] else: endpos+= 1 return count, result]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>hard</tag>
+        <tag>sort</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Maximum Product of Three Numbers]]></title>
     <url>%2F2019%2F08%2F22%2Fleetcode-MaximumProductofThreeNumbers%2F</url>
     <content type="text"><![CDATA[Maximum Product of Three NumbersGiven an integer array, find three numbers whose product is maximum and output the maximum product.（从数组中找出乘积最大的3个数） Note: The length of the given array will be in range [3, 104] and all elements are in the range [-1000, 1000]. Multiplication of any three numbers in the input won’t exceed the range of 32-bit signed integer. Example: 1. 遍历暴力轮训，时间复杂度为 O(n^3)，空间复杂度为 O(1)。 2. 排序排序，最终的结果为 max(nums[0]×nums[1]×nums[n−1], nums[n-3]×nums[n-2]×nums[n-1])。排序的时间复杂度为 O(nlogn)，空间复杂度为 O(logn)。 3. 遍历仅仅遍历一次，其中维护5个变量，保留最大的三个数和最小的两个数，最终的结果表示同上。时间复杂度为 O(n)，空间复杂度为 O(1)。具体实现过程如下： 123456789101112131415161718192021class Solution: def maximumProduct(self, nums: List[int]) -&gt; int: max_array = [float('-inf'), float('-inf'), float('-inf')] min_array = [float('inf'), float('inf')] for num in nums: if num &gt;= max_array[0]: max_array = [num] + max_array[:-1] elif num &gt;= max_array[1]: max_array = [max_array[0]] + [num] + [max_array[1]] elif num &gt;= max_array[2]: max_array = max_array[:-1] + [num] if num &lt;= min_array[0]: min_array = [num, min_array[0]] elif num &lt;= min_array[1]: min_array[1] = num candidate_1 = max_array[0] * max_array[1] * max_array[2] candidate_2 = max_array[0] * min_array[0] * min_array[1] return max(candidate_1, candidate_2)]]></content>
@@ -469,8 +481,8 @@
       </categories>
       <tags>
         <tag>array</tag>
-        <tag>easy</tag>
         <tag>divide and conquer</tag>
+        <tag>easy</tag>
         <tag>bit manipulation</tag>
         <tag>hash map</tag>
       </tags>
@@ -1918,8 +1930,8 @@
       <tags>
         <tag>array</tag>
         <tag>dynamic programming</tag>
-        <tag>easy</tag>
         <tag>divide and conquer</tag>
+        <tag>easy</tag>
       </tags>
   </entry>
   <entry>
