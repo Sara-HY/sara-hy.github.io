@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode_Split Array Largest Sum]]></title>
+    <url>%2F2019%2F08%2F29%2Fleetcode-SplitArrayLargestSum%2F</url>
+    <content type="text"><![CDATA[Split Array Largest SumGiven an array which consists of non-negative integers and an integer m, you can split the array into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these m subarrays.（分割数组的最大值最小） Note: If n is the length of array, assume the following constraints are satisfied: 1 ≤ n ≤ 1000 1 ≤ m ≤ min(50, n) Example: 1. 二分查找首先设置 left = max(nums), right = sum(nums)。然后我们在 [left, right] 区间去查找最小的 _sum ，根据 _sum 去划分数组使得划分的子数组的数目小于等于 m ，具体实现过程如下： 123456789101112131415161718192021222324252627class Solution: def checkSplit(self, nums, m, maxSum): if maxSum &lt; max(nums): return False count, _sum = 1, 0 for num in nums: _sum += num if _sum &gt; maxSum: _sum = num count += 1 if count &gt; m: return False return True def splitArray(self, nums: List[int], m: int) -&gt; int: left = max(nums) right = sum(nums) while left &lt; right: middle = (left + right) // 2 if self.checkSplit(nums, m, middle): right = middle else: left = middle + 1 return left 2. 动态规划二维动规： 数组dp：dp[i][j]表示将数组中前i个数字分成j组所能得到的最小的各个子数组中最大值。 递推公式：dp[i][j] = min(dp[i][j], max(dp[k][j-1], sums[i] - sums[k])。 其中dp[k][j-1]表示数组中前k个数字分成j-1组所能得到的最小的各个子数组中最大值，而sums[i]-sums[k]就是后面的数字之和，我们取二者之间的较大值；然后和dp[i][j]原有值进行对比，更新dp[i][j]为二者之中的较小值；这样k在[0,i-1]的范围内扫过一遍，dp[i][j]就能更新到最小值。棘突实现过程如下：(Java 会 AC，Python 会 TLE) 1234567891011121314151617class Solution: def splitArray(self, nums: List[int], m: int) -&gt; int: n = len(nums) _sums = [0 for _ in range(n+1)] for i in range(1, n+1): _sums[i] = _sums[i-1] + nums[i-1] dp = [[float('inf')]*(m+1) for _ in range(n+1)] dp[0][0] = 0 for i in range(1, n+1): for j in range(1, m+1): for k in range(i): dp[i][j] = min(dp[i][j], max(dp[k][j - 1], _sums[i] - _sums[k])) return dp[n][m]]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>hard</tag>
+        <tag>dynamic programming</tag>
+        <tag>binary seach</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode_Meeting Rooms II]]></title>
     <url>%2F2019%2F08%2F22%2Fleetcode-MeetingRoomsII%2F</url>
     <content type="text"><![CDATA[Meeting Rooms II给定一系列的会议时间间隔intervals，包括起始和结束时间[[s1,e1],[s2,e2],…]，找到所需的最小的会议室数量。（区间重叠最多部分） Example: 1. 排序首先对所有区间进行标记，区分起始点和终止点，然后对所有时间节点进行排序（若时间相同保证结束点在开始点前面），再依次遍历每个点，遇到起始点+1，遇到终止点-1，并更新记录最大值。具体实现过程如下： 1234567891011121314151617181920def minMeetingRooms(intervals): if intervals is None or len(intervals) == 0: return 0 time_points = [] for inter in intervals: time_points.append((inter[0], True)) time_points.append((inter[1], False)) # 先按x[0]升序，x[0]想等时按照x[1]升序，其中end=False=0， start=True=1 time_points.sort(key=lambda x: (x[0], x[1])) count, max_count = 0, 0 for time_point in time_points: if time_point[1]: count += 1 else: count -= 1 max_count = max(max_count, count) return max_count 2.求区间维护两个数组分别保存开始时间和结束时间并排序；然后再遍历开始时间数组，这时不断地更新当前的区间的起止时间；在遇到开始时间大于结束时间时，更新新的结束时间。具体实现过程入下： 12345678910111213141516171819202122232425# [[10, 14], [12, 16], [12, 18]] ---&gt; (3, [12, 14])# [[3, 5], [4, 10], [5, 7], [10, 14], [12, 16], [12, 18]] ---&gt; (3, [12, 14])def minMeetingRooms(intervals): if intervals is None or len(intervals) == 0: return 0 start_points, end_points = [], [] for inter in intervals: start_points.append(inter[0]) end_points.append(inter[1]) start_points.sort() end_points.sort() count, endpos, result = 0, 0, [-1, -1] for i in range(len(intervals)): if start_points[i] &lt; end_points[endpos]: count += 1 result[0] = start_points[i] result[1] = end_points[endpos] else: endpos+= 1 return count, result]]></content>
